@@ -1,0 +1,26 @@
+@import './base/bootstrap-extended/include'; // Bootstrap includes
+@import './base/components/include'; // Components includes
+
+// --- file input button for dark layout ----- //
+.dark-layout {
+  .form-control {
+    &[type='file'] {
+      &::file-selector-button {
+        background-color: $theme-dark-input-bg;
+      }
+    }
+  }
+}
+
+.demo-inline-spacing > *{
+    margin-top: .65rem !important;
+}
+
+@media (min-width: 992px) {
+    .w-lg-50 {
+        width: 50% !important;
+    }
+    .w-lg-75{
+        width: 75% !important;
+    }
+}
