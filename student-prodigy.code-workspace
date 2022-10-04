@@ -1,0 +1,98 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"typescript.tsdk": "node_modules\\typescript\\lib",
+		"editor.insertSpaces": false,
+		"editor.wordWrap": "on",
+		"editor.autoClosingOvertype": "auto",
+		"editor.smoothScrolling": true,
+		"git.autofetch": true,
+		"git.enabled": true,
+		"html-css-class-completion.enableEmmetSupport": true,
+		"emmet.triggerExpansionOnTab": true,
+		"editor.renderControlCharacters": true,
+		"cssPeek.trace.server": "messages",
+		"git.confirmSync": false,
+		"editor.suggest.filterGraceful": true,
+		"workbench.editor.highlightModifiedTabs": true,
+		"workbench.editor.enablePreview": false,
+		"files.associations": {
+			"*.json": "jsonc"
+		},
+		"terminal.integrated.cursorStyle": "line",
+		"editor.minimap.enabled": false,
+		"files.exclude": {
+			"**/.git": false
+		},
+		"explorer.confirmDelete": false,
+		"workbench.list.smoothScrolling": true,
+		"editor.cursorSmoothCaretAnimation": true,
+		"editor.inlineSuggest.enabled": true,
+		"github.copilot.enable": {
+			"*": true,
+			"yaml": false,
+			"plaintext": false,
+			"markdown": false,
+			"scss": false,
+			"css": false,
+			"json": true,
+			"jsonc": true,
+			"javascript": true,
+			"typescript": true,
+			"html": true,
+			"php": true,
+			"dockerfile": true,
+			"git-commit": true,
+			"git-rebase": true
+		},
+		"terminal.integrated.enableBell": true,
+		"terminal.integrated.profiles.windows": {
+			"PowerShell": {
+				"source": "PowerShell",
+				"args": ["-nolog"]
+			}
+		},
+		"terminal.integrated.defaultProfile.windows": "PowerShell",
+		"editor.formatOnType": false,
+		"editor.formatOnSave": true,
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 600,
+		"git.enableSmartCommit": true,
+		"workbench.editor.untitled.hint": "hidden",
+		"php-docblocker.alignParams": true,
+		"php-docblocker.alignReturn": true,
+		"files.trimTrailingWhitespace": true,
+		"[jsonc]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"terminal.integrated.fontFamily": "Cascadia Code PL",
+		"git.ignoreRebaseWarning": true,
+		"diffEditor.ignoreTrimWhitespace": false,
+		"intelephense.diagnostics.undefinedTypes": false,
+		"intelephense.diagnostics.undefinedVariables": false,
+		"intelephense.diagnostics.typeErrors": false,
+		"bladeFormatter.format.wrapLineLength": 160,
+		"editor.wordWrapColumn": 100,
+		"html.format.wrapLineLength": 160,
+		"[php]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+		},
+		"[blade]": {
+			"editor.defaultFormatter": "shufo.vscode-blade-formatter"
+		},
+		"[scss]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		}
+	}
+}

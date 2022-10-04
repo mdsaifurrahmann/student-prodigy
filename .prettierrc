@@ -1,0 +1,18 @@
+{
+	"tabWidth": 4,
+	"useTabs": true,
+	"overrides": [
+		{
+			"files": "*.php",
+			"options": {
+				"tabWidth": 4,
+				"useTabs": false,
+				"singleQuote": true,
+				"bracketSpacing": true,
+				"bracketSameLine": true,
+				"arrowParens": "always",
+				"singleAttributePerLine": true
+			}
+		}
+	]
+}
