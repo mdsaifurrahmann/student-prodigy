@@ -85,14 +85,14 @@
 			"editor.formatOnSave": true,
 			"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
 		},
-		"[blade]": {
-			"editor.defaultFormatter": "shufo.vscode-blade-formatter"
-		},
 		"[scss]": {
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		},
 		"[javascript]": {
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[blade]": {
+			"editor.defaultFormatter": "shufo.vscode-blade-formatter"
 		}
 	}
 }

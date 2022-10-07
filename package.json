@@ -10,10 +10,10 @@
         "production": "mix --production"
     },
     "dependencies": {
+        "@prettier/plugin-php": "^0.18.9",
         "alpinejs": "^3.10.3",
         "bootstrap": "~5.1.0",
-        "prettier": "^2.7.1",
-        "@prettier/plugin-php": "^0.18.9"
+        "prettier": "^2.7.1"
     },
     "devDependencies": {
         "axios": "^0.25",

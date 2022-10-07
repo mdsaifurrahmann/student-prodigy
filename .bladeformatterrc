@@ -1,10 +1,9 @@
 {
-	"indentSize": 4,
+	"indentSize": 3,
 	"wrapAttributes": "auto",
-	"wrapLineLength": 120,
-	"endWithNewLine": true,
+	"wrapLineLength": 160,
+	"endWithNewLine": false,
 	"noMultipleEmptyLines": false,
 	"useTabs": false,
-	"sortTailwindcssClasses": true,
-	"sortHtmlAttributes": "vuejs"
+	"sortTailwindcssClasses": true
 }

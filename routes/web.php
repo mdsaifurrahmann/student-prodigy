@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\appViews;
+use App\Http\Controllers\FormHandlerController;
 use App\Http\Controllers\LanguageController;
 
 /*
@@ -16,4 +17,6 @@ use App\Http\Controllers\LanguageController;
 */
 
 Route::get('/', [appViews::class, 'root'])->name('root');
-Route::get('/student-form', [appViews::class, 'form'])->name('form');
+Route::get('/confirmation/{id}', [appViews::class, 'confirm'])->name('confirm');
+Route::get('/student-form', [FormHandlerController::class, 'create'])->name('form');
+Route::post('/student-form', [FormHandlerController::class, 'store'])->name('formHandler');

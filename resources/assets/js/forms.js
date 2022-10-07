@@ -302,12 +302,7 @@ window.onload = function () {
 				"Rampal",
 				"Sarankhola",
 			],
-			Chuadanga: [
-				"Chuadanga Sadar",
-				"Alamdanga",
-				"Jibannagar",
-				"Damurhuda",
-			],
+			Chuadanga: ["Chuadanga Sadar", "Alamdanga", "Jibannagar", "Damurhuda"],
 			Jessore: [
 				"Abhaynagar ",
 				"Bagherpara",
@@ -623,10 +618,7 @@ window.onload = function () {
 		presUpozilla.length = 1;
 
 		for (var y in divDist[this.value]) {
-			presDistricts.options[presDistricts.options.length] = new Option(
-				y,
-				y
-			);
+			presDistricts.options[presDistricts.options.length] = new Option(y, y);
 		}
 	};
 
@@ -658,10 +650,7 @@ window.onload = function () {
 		permUpozilla.length = 1;
 
 		for (var y in divDist[this.value]) {
-			permDistricts.options[permDistricts.options.length] = new Option(
-				y,
-				y
-			);
+			permDistricts.options[permDistricts.options.length] = new Option(y, y);
 		}
 	};
 
@@ -703,10 +692,7 @@ window.onload = function () {
 		var z = divDist[peDivisions.value][this.value];
 
 		for (var i = 0; i < z.length; i++) {
-			peUpozilla.options[peUpozilla.options.length] = new Option(
-				z[i],
-				z[i]
-			);
+			peUpozilla.options[peUpozilla.options.length] = new Option(z[i], z[i]);
 		}
 	};
 
@@ -735,10 +721,7 @@ window.onload = function () {
 		var z = divDist[ceDivisions.value][this.value];
 
 		for (var i = 0; i < z.length; i++) {
-			ceUpozilla.options[ceUpozilla.options.length] = new Option(
-				z[i],
-				z[i]
-			);
+			ceUpozilla.options[ceUpozilla.options.length] = new Option(z[i], z[i]);
 		}
 	};
 
@@ -747,39 +730,85 @@ window.onload = function () {
 	var mobile_bank_div = document.querySelector("#payment-mobile-info");
 	var bank_div = document.querySelector("#payment-bank-info");
 
+	// check on click
+
+	//mobile bank
 	mobile_bank.onclick = function () {
 		mobile_bank_div.style.display = "flex";
 		bank_div.style.display = "none";
+
+		document.querySelectorAll(".mobile-unchecked").forEach((item) => {
+			item.setAttribute("required", "required");
+			item.classList.add("is-invalid");
+		});
+
+		document.querySelectorAll(".banking-unchecked").forEach((item) => {
+			item.removeAttribute("required", "required");
+			item.classList.remove("is-invalid");
+		});
 	};
 
+	//Bank
 	bank.onclick = function () {
 		mobile_bank_div.style.display = "none";
 		bank_div.style.display = "flex";
+
+		document.querySelectorAll(".banking-unchecked").forEach((item) => {
+			item.setAttribute("required", "required");
+			item.classList.add("is-invalid");
+		});
+
+		document.querySelectorAll(".mobile-unchecked").forEach((item) => {
+			item.removeAttribute("required", "required");
+			item.classList.remove("is-invalid");
+		});
 	};
+
+	// if checked by default
+	if (bank.checked) {
+		bank_div.style.display = "flex";
+		mobile_bank_div.style.display = "none";
+
+		document.querySelectorAll(".banking-unchecked").forEach((item) => {
+			item.setAttribute("required", "required");
+			item.classList.add("is-invalid");
+		});
+
+		document.querySelectorAll(".mobile-unchecked").forEach((item) => {
+			item.removeAttribute("required", "required");
+			item.classList.remove("is-invalid");
+		});
+	} else {
+		bank_div.style.display = "none";
+		mobile_bank_div.style.display = "flex";
+
+		document.querySelectorAll(".mobile-unchecked").forEach((item) => {
+			item.setAttribute("required", "required");
+		});
+
+		document.querySelectorAll(".banking-unchecked").forEach((item) => {
+			item.removeAttribute("required", "required");
+		});
+	}
 };
 
-//form validator
+// form validator
 
 $(function () {
 	"use strict";
 
-	var bootstrapForm = $(".needs-validation"),
-		picker = $(".picker"),
-		select = $(".select2");
+	if (document.querySelector(".invalid")) {
+		document.querySelectorAll(".text-danger").forEach(function (element) {
+			document
+				.querySelectorAll(".invalid-feedback")
+				.forEach(function (element) {
+					element.remove("invalid-feedback");
+				});
+		});
+	}
 
-	// select2
-	select.each(function () {
-		var $this = $(this);
-		$this.wrap('<div class="position-relative"></div>');
-		$this
-			.select2({
-				placeholder: "Select value",
-				dropdownParent: $this.parent(),
-			})
-			.change(function () {
-				$(this).valid();
-			});
-	});
+	var bootstrapForm = $(".needs-validation"),
+		picker = $(".picker");
 
 	// Picker
 	if (picker.length) {
@@ -800,9 +829,10 @@ $(function () {
 			form.addEventListener("submit", function (event) {
 				if (form.checkValidity() === false) {
 					form.classList.add("invalid");
+					preventDefault();
 				}
 				form.classList.add("was-validated");
-				event.preventDefault();
+
 				// if (inputGroupValidation) {
 				//   inputGroupValidation(form);
 				// }
@@ -815,6 +845,16 @@ $(function () {
 				//   inputGroupValidation(this);
 				// }
 			});
+		});
+	}
+
+	if (document.querySelector(".invalid")) {
+		document.querySelectorAll(".text-danger").forEach(function (element) {
+			document
+				.querySelectorAll(".invalid-feedback")
+				.forEach(function (element) {
+					element.remove("invalid-feedback");
+				});
 		});
 	}
 });
