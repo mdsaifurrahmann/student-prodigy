@@ -829,7 +829,7 @@ $(function () {
 			form.addEventListener("submit", function (event) {
 				if (form.checkValidity() === false) {
 					form.classList.add("invalid");
-					preventDefault();
+					event.preventDefault();
 				}
 				form.classList.add("was-validated");
 
