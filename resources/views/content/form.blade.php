@@ -1045,7 +1045,7 @@
                            <label class="form-label">Select payment method:</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="payment-mobile" class="form-check-input" type="radio" name="payment-method" value="mobile-banking" required
+                                 <input id="payment-mobile" class="form-check-input" type="radio" name="payment-method" value="mobile banking" required
                                     checked {{ old('payment-method') == 'mobile-banking' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="payment-mobile">Mobile Banking</label>
 
@@ -1086,7 +1086,7 @@
                            <div class="mb-1">
                               <label class="form-label" for="mobile-bank-account">Mobile banking account number</label>
                               <input type="number" id="mobile-bank-account" class="form-control mobile-unchecked" name="mobile-bank-account"
-                                 placeholder="017xxxxxxxx" value="{{ old('mobile-bank-account') }}">
+                                 placeholder="017xxxxxxxx" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" value="{{ old('mobile-bank-account') }}">
 
                               <div class="invalid-feedback">Please enter mobile banking account number.</div>
                               @error('mobile-bank-account')
