@@ -282,7 +282,7 @@
                      <tbody>
                         <tr>
                            <th colspan="2" class="w-25">Payment Method:</th>
-                           <td colspan="2">{{ old('payment-method') }}Mehod</td>
+                           <td colspan="2">{{ old('payment-method') }}</td>
                         </tr>
                         <tr>
                            <th colspan="2" class="w-50 text-center">Banking</th>
