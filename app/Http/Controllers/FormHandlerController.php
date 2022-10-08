@@ -26,6 +26,7 @@ class FormHandlerController extends Controller
     */
    public function create()
    {
+
       $mobile_banking_providers = [
          'Rocket',
          'bKash',
@@ -107,7 +108,7 @@ class FormHandlerController extends Controller
       $request->validated();
 
       // Hanfle the file name for Database
-      $formal_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student-name-english')) . '-' . $request->input('ce-reg') . '.' .  $request->formal_image->extension();
+      $formal_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student-name-english')) . '-' . $request->input('ce-roll') . '.' .  $request->formal_image->extension();
       // move the file
       $request->formal_image->move(public_path('/student-images/formal-images/'), $formal_image_name_handler);
 
@@ -120,7 +121,10 @@ class FormHandlerController extends Controller
 
       // Insert data to database
       formHandler::create($request->all() + ['formal_image_path' => $formal_image_name_handler] + ['signature_image_path' => $signature_image_name_handler]);
-      return redirect()->route('form')->with('success', 'Data saved successfully!');
+      // return redirect()->route('form')->with('success', 'Data saved successfully!');
+
+      // redirect to confirmation page
+      return redirect()->route('confirm', ['id' => $request->input('ce-reg')])->with('success', 'Data saved successfully!')->withInput();
    }
 
    /**

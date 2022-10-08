@@ -20,11 +20,80 @@
 	height: 60vh;
 }
 
+.w-30 {
+	width: 30% !important;
+}
+
 @media (min-width: 992px) {
 	.w-lg-50 {
 		width: 50% !important;
 	}
 	.w-lg-75 {
 		width: 75% !important;
+	}
+}
+
+.no-print {
+}
+
+@page {
+	size: A4;
+	margin: 0;
+}
+
+@page :left {
+	margin-left: 0.3cm;
+}
+
+@page :right {
+	margin-left: 0.3cm;
+}
+
+@page :top {
+	margin-top: 0.3cm;
+}
+
+@page :bottom {
+	margin-bottom: 0.3cm;
+}
+
+@media print {
+	@page {
+		size: A4;
+	}
+
+	@page :left {
+		margin-left: 0.3cm;
+	}
+
+	@page :right {
+		margin-left: 0.3cm;
+	}
+
+	@page :top {
+		margin-top: 0.3cm;
+	}
+
+	@page :bottom {
+		margin-bottom: 0.3cm;
+	}
+
+	.no-print {
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+	}
+	td {
+		border-bottom: 1px solid gray;
+	}
+
+	th.w-25 {
+		border-bottom: 1px solid gray;
+	}
+	.container {
+		width: 100%;
+		max-width: 100%;
+		margin: auto;
 	}
 }

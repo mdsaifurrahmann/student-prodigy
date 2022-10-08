@@ -15,8 +15,6 @@ class appViews extends Controller
    // form
    public function form()
    {
-
-      
    }
 
    public function confirm()
