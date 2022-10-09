@@ -1216,9 +1216,9 @@
 
 
                      {{--                            submit button --}}
-                     <div class="col-12 d-flex justify-content-center mt-2">
-                        <a href="/" class="btn btn-outline-secondary waves-effect me-1">Back to Home</a>
-                        <button type="reset" class="btn btn-outline-secondary me-1 waves-effect">Reset</button>
+                     <div class="col-12 d-flex justify-content-center flex-column flex-md-row mt-2">
+                        <a href="/" class="btn btn-outline-secondary waves-effect me-md-1 mb-md-0 mb-1">Back to Home</a>
+                        <button type="reset" class="btn btn-outline-secondary me-md-1 mb-md-0 waves-effect mb-1">Reset</button>
                         <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Submit</button>
                      </div>
                   </div>

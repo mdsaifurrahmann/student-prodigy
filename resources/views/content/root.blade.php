@@ -5,7 +5,7 @@
 @section('content')
    <div class="row">
       <div class="col-12 p-4">
-         <div class="container">
+         <div class="container-lg">
             <h2 class="text-uppercase text-center">Student Database - Textile Institute Dinajpur</h2>
          </div>
       </div>
