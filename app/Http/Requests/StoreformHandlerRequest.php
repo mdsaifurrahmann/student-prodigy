@@ -96,7 +96,7 @@ class StoreformHandlerRequest extends FormRequest
          'bank-acc-name'            => 'exclude_if:payment-method,==,mobile-banking|required',
          'bank-acc-number'          => 'exclude_if:payment-method,==,mobile-banking|required',
          'formal_image'             => 'required|mimes:jpg,png,jpeg|max:512',
-         'signature_image'                => 'required|mimes:jpeg,png,jpg|max:512',
+         'signature_image'          => 'required|mimes:jpeg,png,jpg|max:512',
       ];
    }
 

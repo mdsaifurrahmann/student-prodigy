@@ -40,7 +40,7 @@
    </div>
 
    @if (session('success'))
-      <div class="container">
+      <div class="container-lg">
          <div class="row" id="table-responsive" style="margin: 0 auto">
             <div class="col-12">
                <div class="table-responsive">
@@ -304,18 +304,26 @@
                         <tr>
                            <th class="w-25">Bank Routing Number:</th>
                            <td>{{ old('bank-routing') }}</td>
+                           <th class="w-25"></th>
+                           <td></td>
                         </tr>
                         <tr>
                            <th class="w-25">Account Type:</th>
                            <td>{{ old('bank-acc-type') }}</td>
+                           <th class="w-25"></th>
+                           <td></td>
                         </tr>
                         <tr>
                            <th class="w-25">Account Holder Name:</th>
                            <td>{{ old('bank-acc-name') }}</td>
+                           <th class="w-25"></th>
+                           <td></td>
                         </tr>
                         <tr>
                            <th class="w-25">Account Number:</th>
                            <td>{{ old('bank-acc-number') }}</td>
+                           <th class="w-25"></th>
+                           <td></td>
                         </tr>
                      </tbody>
                   </table>
@@ -325,7 +333,7 @@
       </div>
    @endif
 
-   <div class="row" style="position:sticky; width: 100%; bottom:0;">
+   <div class="row pt-1">
       <div class="col-12 px-4">
          <p class="text-center">
             Copyright © 2022 <a href="/">Textile Institute Dinajpur</a> | Powered by <a href="https://codebumble.net" rel="dofollow">Codebumble
