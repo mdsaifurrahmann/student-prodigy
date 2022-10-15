@@ -18,5 +18,5 @@ use App\Http\Controllers\LanguageController;
 
 Route::get('/', [appViews::class, 'root'])->name('root');
 Route::get('/confirmation/{id}', [appViews::class, 'confirm'])->name('confirm');
-Route::get('/student-form', [FormHandlerController::class, 'create'])->name('form');
+Route::get('/student-form', [FormHandlerController::class, 'create'])->name('form')->middleware('verified');
 Route::post('/student-form', [FormHandlerController::class, 'store'])->name('formHandler');

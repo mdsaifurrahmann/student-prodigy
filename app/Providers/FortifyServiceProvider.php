@@ -63,7 +63,5 @@ class FortifyServiceProvider extends ServiceProvider
             return $user;
          }
       });
-
-
    }
 }
