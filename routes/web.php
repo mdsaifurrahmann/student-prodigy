@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\appViews;
 use App\Http\Controllers\FormHandlerController;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\LanguageController;
 
 /*
@@ -20,3 +21,11 @@ Route::get('/', [appViews::class, 'root'])->name('root');
 Route::get('/confirmation/{id}', [appViews::class, 'confirm'])->name('confirm');
 Route::get('/student-form', [FormHandlerController::class, 'create'])->name('form')->middleware('verified');
 Route::post('/student-form', [FormHandlerController::class, 'store'])->name('formHandler');
+
+
+Route::get('authenticate/register', [RegisteredUserController::class, 'create'])
+   ->middleware('verified')
+   ->name('register');
+
+Route::post('authenticate/register', [RegisteredUserController::class, 'store'])
+   ->middleware('verified');
