@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\appViews;
 use App\Http\Controllers\LanguageController;
@@ -14,8 +15,8 @@ use App\Http\Controllers\LanguageController;
 |
 */
 
-Route::get('login', [appViews::class, 'login'])->name('login');
-Route::get('register', [appViews::class, 'register'])->name('register');
+// Route::get('login', [appViews::class, 'login'])->name('loginx');
+// Route::get('register', [appViews::class, 'register'])->name('registerx');
 Route::get('forgot-password', [appViews::class, 'forgot'])->name('forgot-password');
 Route::get('reset-password', [appViews::class, 'reset'])->name('reset-password');
 Route::get('verify-email', [appViews::class, 'verify'])->name('verify-email');
