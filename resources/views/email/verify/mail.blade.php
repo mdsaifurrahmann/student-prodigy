@@ -82,7 +82,8 @@
                                     Hello There,</p>
 
                                  <p style="font-family: 'Montserrat', sans-serif; mso-line-height-rule: exactly; margin: 0; margin-bottom: 24px;">
-                                    Please verify your email address by clicking the below button and activate your account to explore Prodigy App.
+                                    Please verify your email address and activate your Prodigy Account by clicking the below button and
+                                    explore Prodigy App.
                                  </p>
                                  <p style="font-family: 'Montserrat', sans-serif; mso-line-height-rule: exactly; margin: 0; margin-bottom: 24px;">
                                     If you did not sign up to Prodigy, please ignore this email or contact us at

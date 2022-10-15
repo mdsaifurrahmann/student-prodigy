@@ -31,5 +31,9 @@ class AppServiceProvider extends ServiceProvider
       Fortify::registerView(function () {
          return view('content.auth.auth-register');
       });
+
+      Fortify::verifyEmailView(function () {
+         return view('content.auth.auth-verify-email');
+      });
    }
 }

@@ -19,4 +19,4 @@ use App\Http\Controllers\LanguageController;
 // Route::get('register', [appViews::class, 'register'])->name('registerx');
 Route::get('forgot-password', [appViews::class, 'forgot'])->name('forgot-password');
 Route::get('reset-password', [appViews::class, 'reset'])->name('reset-password');
-Route::get('verify-email', [appViews::class, 'verify'])->name('verify-email');
+// Route::get('verify-email', [appViews::class, 'verify'])->name('verify-email');

@@ -48,45 +48,42 @@
                   <h2 class="brand-text text-primary ms-1">Vuexy</h2>
                </a>
 
-               @if ($errors->any())
-                  @foreach ($errors as $error)
-                     <li>{{ $error }}</li>
-                  @endforeach
-               @endif
-
                <form class="auth-register-form mt-2" action="{{ route('register') }}" method="POST">
                   @csrf
                   <div class="mb-1">
                      <label for="register-username" class="form-label">Username</label>
                      <input type="text" class="form-control" id="register-username" name="username" placeholder="johndoe" aria-describedby="register-username"
                         tabindex="1" autofocus />
+                     @error('username')
+                        <div class="text-danger">{{ $message }}</div>
+                     @enderror
                   </div>
 
                   <div class="mb-1">
                      <label for="full-name" class="form-label">Full Name</label>
                      <input type="text" class="form-control" id="full-name" name="name" placeholder="Jhone Doe" aria-describedby="full-name" tabindex="1"
                         autofocus />
+                     @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                     @enderror
                   </div>
 
                   <div class="mb-1">
                      <label for="mobile-number" class="form-label">Mobile Number</label>
                      <input type="tel" class="form-control" id="mobile-number" name="mobile" placeholder="01700000000" aria-describedby="mobile-number"
                         tabindex="1" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" autofocus />
-                  </div>
-
-                  <div class="mb-1">
-                     <label for="user-as" class="form-label">You're a</label>
-                     <select name="user-as" id="user-as" class="form-select">
-                        <option></option>
-                        <option value="teacher">Teacher</option>
-                        <option value="student">Student</option>
-                     </select>
+                     @error('mobile')
+                        <div class="text-danger">{{ $message }}</div>
+                     @enderror
                   </div>
 
                   <div class="mb-1">
                      <label for="register-email" class="form-label">Email</label>
                      <input type="text" class="form-control" id="register-email" name="email" placeholder="john@example.com"
                         aria-describedby="register-email" tabindex="2" />
+                     @error('email')
+                        <div class="text-danger">{{ $message }}</div>
+                     @enderror
                   </div>
 
                   <div class="mb-1">
@@ -98,6 +95,9 @@
                            tabindex="3" />
                         <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                      </div>
+                     @error('password')
+                        <div class="text-danger">{{ $message }}</div>
+                     @enderror
                   </div>
 
                   <div class="mb-1">
