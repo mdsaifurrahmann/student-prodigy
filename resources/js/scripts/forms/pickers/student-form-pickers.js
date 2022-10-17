@@ -7,14 +7,13 @@
     Author URL: hhttp://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 (function (window, document, $) {
-  'use strict';
+	"use strict";
 
-  /*******  Flatpickr  *****/
-  var basicPickr = $('.flatpickr-basic')
+	/*******  Flatpickr  *****/
+	var basicPickr = $(".flatpickr-basic");
 
-  // Default
-  if (basicPickr.length) {
-    basicPickr.flatpickr();
-  }
-
+	// Default
+	if (basicPickr.length) {
+		basicPickr.flatpickr();
+	}
 })(window, document, jQuery);

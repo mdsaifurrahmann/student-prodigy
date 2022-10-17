@@ -39,7 +39,7 @@
                         <div class="mb-1">
                            <label class="form-label" for="student-name-bangla-column">Student Name (In Bengali)</label>
                            <input type="text" id="student-name-bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="student-name-bangla" required
-                              value="{{ old('student-name-bangla') }}">
+                              pattern="[\s\u0980-\u09FF]+$" value="{{ old('student-name-bangla') }}">
 
                            <div class="invalid-feedback">Please enter your name in Bengali.</div>
                            @error('student-name-bangla')
@@ -62,8 +62,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="birth-certificate-number">Birth Certificate Number</label>
-                           <input type="number" id="birth-certificate-number" class="form-control" placeholder="20072722000000008" name="birth-certificate-number"
-                              minlength="13" required value="{{ old('birth-certificate-number') }}">
+                           <input type="text" id="birth-certificate-number" class="form-control" placeholder="20072722000000008" name="birth-certificate-number"
+                              pattern="[0-9]{15,17}" required value="{{ old('birth-certificate-number') }}">
 
                            <div class="invalid-feedback">Please enter your birth certificate number.</div>
                            @error('birth-certificate-number')
@@ -87,7 +87,7 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="student-mobile">Student's Mobile Number</label>
-                           <input type="number" id="student-mobile" class="form-control" placeholder="017xxxxxxxx" name="student-mobile"
+                           <input type="text" id="student-mobile" class="form-control" placeholder="017xxxxxxxx" name="student-mobile"
                               pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('student-mobile') }}">
 
                            <div class="invalid-feedback">Please enter your mobile number.</div>
@@ -174,7 +174,7 @@
                         <div class="mb-1">
                            <label class="form-label" for="father-name-bangla-column">Father's Name (In Bengali)</label>
                            <input type="text" id="father-name-bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="father-name-bangla"
-                              required value="{{ old('father-name-bangla') }}">
+                              pattern="[\s\u0980-\u09FF]+$" required value="{{ old('father-name-bangla') }}">
 
                            <div class="invalid-feedback">Please enter your father's name in Bengali.</div>
                            @error('father-name-bangla')
@@ -197,7 +197,7 @@
                         <div class="mb-1">
                            <label class="form-label" for="mother-name-bangla-column">Mother's Name (In Bengali)</label>
                            <input type="text" id="mother-name-bangla-column" class="form-control" placeholder="শাকিলা আহমেদ" name="mother-name-bangla"
-                              required value="{{ old('mother-name-bangla') }}">
+                              required pattern="[\s\u0980-\u09FF]+$" value="{{ old('mother-name-bangla') }}">
                            <div class="invalid-feedback">Please enter your mother's name in Bengali.</div>
                            @error('mother-name-bangla')
                               <div class="text-danger">{{ $message }}</div>
@@ -221,8 +221,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="father-nid">Father's NID Number</label>
-                           <input type="number" id="father-nid" class="form-control" placeholder="132 456 6789" name="father-nid" required
-                              value="{{ old('father-nid') }}">
+                           <input type="text" id="father-nid" class="form-control" placeholder="132 456 6789" name="father-nid" required
+                              pattern="[0-9]{10,18}" value="{{ old('father-nid') }}">
                            <div class="invalid-feedback">Please enter your father's NID no.</div>
                            @error('father-nid')
                               <div class="text-danger">{{ $message }}</div>
@@ -233,8 +233,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="mother-nid">Mother's NID Number</label>
-                           <input type="number" id="mother-nid" class="form-control" placeholder="132 456 6789" name="mother-nid" required
-                              value="{{ old('mother-nid') }}">
+                           <input type="text" id="mother-nid" class="form-control" placeholder="132 456 6789" name="mother-nid" required
+                              pattern="[0-9]{10,18}" value="{{ old('mother-nid') }}">
                            <div class="invalid-feedback">Please enter your mother's NID no.</div>
                            @error('mother-nid')
                               <div class="text-danger">{{ $message }}</div>
@@ -363,8 +363,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label for="pres-post-code" class="form-label">Post Code</label>
-                           <input type="number" name="pres-post-code" id="pres-post-code" class="form-control" placeholder="5200" required
-                              value="{{ old('pres-post-code') }}">
+                           <input type="text" name="pres-post-code" id="pres-post-code" class="form-control" placeholder="5200" required
+                              pattern="[0-9]{4}" value="{{ old('pres-post-code') }}">
 
                            <div class="invalid-feedback">Please enter zip/post code.</div>
                            @error('pres-post-code')
@@ -456,8 +456,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label for="perm-post-code" class="form-label">Post Code</label>
-                           <input type="number" name="perm-post-code" id="perm-post-code" class="form-control" placeholder="5200" required
-                              value="{{ old('perm-post-code') }}">
+                           <input type="text" name="perm-post-code" id="perm-post-code" class="form-control" placeholder="5200" required
+                              pattern="[0-9]{4}" value="{{ old('perm-post-code') }}">
 
                            <div class="invalid-feedback">Please enter zip/post code.</div>
                            @error('perm-post-code')
@@ -853,7 +853,7 @@
                         <div class="mb-1">
                            <label for="guardian-name-bangla" class="form-label">Guardian's Name (in Bengali)</label>
                            <input type="text" id="guardian-name-bangla" name="guardian-name-bangla" class="form-control" placeholder="ফজলে রাব্বি" required
-                              value="{{ old('guardian-name-bangla') }}">
+                              pattern="[\s\u0980-\u09FF]+$" value="{{ old('guardian-name-bangla') }}">
 
                            <div class="invalid-feedback">Please enter guardian's name in Bengali.</div>
                            @error('guardian-name-bangla')
@@ -879,7 +879,7 @@
                         <div class="mb-1">
                            <label for="guardian-nid" class="form-label">Guardian's NID</label>
                            <input type="text" id="guardian-nid" name="guardian-nid" class="form-control" placeholder="123 456 6789" required
-                              value="{{ old('guardian-nid') }}">
+                              pattern="[0-9]{10,18}" value="{{ old('guardian-nid') }}">
 
                            <div class="invalid-feedback">Please enter guardian's NID.</div>
                            @error('guardian-nid')
@@ -905,7 +905,7 @@
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="guardian-mobile">Guardian's Mobile Number</label>
-                           <input type="number" id="guardian-mobile" class="form-control" placeholder="017xxxxxxxx" name="guardian-mobile"
+                           <input type="text" id="guardian-mobile" class="form-control" placeholder="017xxxxxxxx" name="guardian-mobile"
                               pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('guardian-mobile') }}">
 
                            <div class="invalid-feedback">Please enter guardian's mobile number.</div>
@@ -1085,7 +1085,7 @@
                         <div class="col-md-6 col-12">
                            <div class="mb-1">
                               <label class="form-label" for="mobile-bank-account">Mobile banking account number</label>
-                              <input type="number" id="mobile-bank-account" class="form-control mobile-unchecked" name="mobile-bank-account"
+                              <input type="text" id="mobile-bank-account" class="form-control mobile-unchecked" name="mobile-bank-account"
                                  placeholder="017xxxxxxxx" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" value="{{ old('mobile-bank-account') }}">
 
                               <div class="invalid-feedback">Please enter mobile banking account number.</div>
@@ -1192,7 +1192,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="formal-photo">Select your Formal Photo</label>
-                           <input type="file" id="formal-photo" class="form-control" name="formal_image" accept="image/png, image/jpeg, .jpg" required>
+                           <input type="file" id="formal-photo" class="form-control" name="formal_image" accept="image/png, image/jpeg, .jpg"
+                              required>
 
                            <div class="invalid-feedback">Please select your formal image.</div>
                            @error('formal-photo')
@@ -1237,8 +1238,6 @@
 
 @section('vendor-script')
    <!-- vendor files -->
-   <script src="{{ asset(mix('vendors/js/pickers/pickadate/picker.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/pickers/pickadate/legacy.js')) }}"></script>
    <script src="{{ asset(mix('vendors/js/pickers/flatpickr/flatpickr.min.js')) }}"></script>
 @endsection
 

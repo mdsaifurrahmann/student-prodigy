@@ -837,14 +837,16 @@ $(function () {
 				//   inputGroupValidation(form);
 				// }
 			});
-			bootstrapForm.find("input, textarea").on("focusout", function () {
-				$(this)
-					.removeClass("is-valid is-invalid")
-					.addClass(this.checkValidity() ? "is-valid" : "is-invalid");
-				// if (inputGroupValidation) {
-				//   inputGroupValidation(this);
-				// }
-			});
+			bootstrapForm
+				.find("input, textarea, select")
+				.on("focusout", function () {
+					$(this)
+						.removeClass("is-valid is-invalid")
+						.addClass(this.checkValidity() ? "is-valid" : "is-invalid");
+					// if (inputGroupValidation) {
+					//   inputGroupValidation(this);
+					// }
+				});
 		});
 	}
 
