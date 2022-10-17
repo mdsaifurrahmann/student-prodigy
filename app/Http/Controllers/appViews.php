@@ -12,6 +12,12 @@ class appViews extends Controller
       return view('/content/root');
    }
 
+   // welcome
+   public function welcome()
+   {
+      return view('/content/dashboard/welcome');
+   }
+
    // form
    public function form()
    {
@@ -23,32 +29,8 @@ class appViews extends Controller
    }
 
    // login
-   public function login()
+   public function logout()
    {
       return view('/content/auth/auth-login');
-   }
-
-   // register
-   public function register()
-   {
-      return view('/content/auth/auth-register');
-   }
-
-   // forgot password
-   public function forgot()
-   {
-      return view('/content/auth/auth-forgot-password');
-   }
-
-   // reset password
-   public function reset()
-   {
-      return view('/content/auth/auth-reset-password');
-   }
-
-   // verify email
-   public function verify()
-   {
-      return view('/content/auth/auth-verify-email');
    }
 }

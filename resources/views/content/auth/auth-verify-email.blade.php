@@ -68,6 +68,13 @@
                      @csrf
                      <button type="submit" class="btn btn-primary w-100">&nbsp;Resend</button>
                   </form>
+
+                  <p class="mt-2 text-center">Or</p>
+
+                  <form action="{{ route('logout') }}" method="POST">
+                     @csrf
+                     <button type="submit" class="btn btn-primary w-100">&nbsp;Logout</button>
+                  </form>
                   </p>
                @endif
             </div>

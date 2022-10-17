@@ -21,11 +21,19 @@ Route::get('/', [appViews::class, 'root'])->name('root');
 Route::get('/confirmation/{id}', [appViews::class, 'confirm'])->name('confirm');
 Route::get('/student-form', [FormHandlerController::class, 'create'])->name('form')->middleware('verified');
 Route::post('/student-form', [FormHandlerController::class, 'store'])->name('formHandler');
+// Route::get('authenticate/logout', [appViews::class, 'welcome'])->name('logout')->middleware('auth:' . config('fortify.guard'));
 
+Route::get('authenticate/logout', function () {
+   return redirect()->route('welcome');
+})->middleware('auth');
 
-Route::get('authenticate/register', [RegisteredUserController::class, 'create'])
-   ->middleware('verified')
-   ->name('register');
+Route::group(['prefix' => 'authenticated/dash'], function () {
+   Route::get('welcome', [appViews::class, 'welcome'])->name('welcome')->middleware('verified');
+   Route::get('profile', [appViews::class, 'profile'])->name('profile')->middleware('verified');
+   Route::get('settings', [appViews::class, 'settings'])->name('settings')->middleware('verified');
+});
 
-Route::post('authenticate/register', [RegisteredUserController::class, 'store'])
-   ->middleware('verified');
+Route::group(['prefix' => 'authenticate'], function () {
+   Route::get('register', [RegisteredUserController::class, 'create'])->name('register')->middleware('verified');
+   Route::post('register', [RegisteredUserController::class, 'store'])->middleware('verified');
+});

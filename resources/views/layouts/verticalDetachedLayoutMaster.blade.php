@@ -11,13 +11,13 @@ data-asset-path="{{ asset('/')}}">
   @endif
 
   {{-- Include Navbar --}}
-  @include('panels.navbar')
+  {{-- @include('panels.navbar') --}}
 
   <!-- BEGIN: Content-->
   <div class="app-content content {{ $configData['pageClass'] }}">
     <!-- BEGIN: Header-->
     <div class="content-overlay"></div>
-    <div class="header-navbar-shadow"></div>
+    {{-- <div class="header-navbar-shadow"></div> --}}
 
     <div class="content-wrapper {{ $configData['layoutWidth'] === 'boxed' ? 'container-xxl p-0' : '' }}">
       {{-- Include Breadcrumb --}}

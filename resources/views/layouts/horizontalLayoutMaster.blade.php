@@ -7,7 +7,7 @@ data-framework="laravel"
 data-asset-path="{{ asset('/')}}">
 
   <!-- BEGIN: Header-->
-  @include('panels.navbar')
+  {{-- @include('panels.navbar') --}}
 
   {{-- Include Sidebar --}}
   @if((isset($configData['showMenu']) && $configData['showMenu'] === true))
@@ -17,7 +17,7 @@ data-asset-path="{{ asset('/')}}">
   <!-- BEGIN: Content-->
   <div class="app-content content {{$configData['pageClass']}}">
     <div class="content-overlay"></div>
-    <div class="header-navbar-shadow"></div>
+    {{-- <div class="header-navbar-shadow"></div> --}}
 
     @if(($configData['contentLayout']!=='default') && isset($configData['contentLayout']))
     <div class="content-area-wrapper {{ $configData['layoutWidth'] === 'boxed' ? 'container-xxl p-0' : '' }}">

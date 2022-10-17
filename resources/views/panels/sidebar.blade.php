@@ -1,98 +1,131 @@
 @php
-$configData = Helper::applClasses();
+   $configData = Helper::applClasses();
 @endphp
 <div
-  class="main-menu menu-fixed {{ $configData['theme'] === 'dark' || $configData['theme'] === 'semi-dark' ? 'menu-dark' : 'menu-light' }} menu-accordion menu-shadow"
-  data-scroll-to-active="true">
-  <div class="navbar-header">
-    <ul class="nav navbar-nav flex-row">
-      <li class="nav-item me-auto">
-        <a class="navbar-brand" href="{{ url('/') }}">
-          <span class="brand-logo">
-            <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
-              <defs>
-                <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
-                  <stop stop-color="#000000" offset="0%"></stop>
-                  <stop stop-color="#FFFFFF" offset="100%"></stop>
-                </lineargradient>
-                <lineargradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%" x2="37.373316%" y2="100%">
-                  <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
-                  <stop stop-color="#FFFFFF" offset="100%"></stop>
-                </lineargradient>
-              </defs>
-              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="Artboard" transform="translate(-400.000000, -178.000000)">
-                  <g id="Group" transform="translate(400.000000, 178.000000)">
-                    <path class="text-primary" id="Path"
-                      d="M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z"
-                      style="fill:currentColor"></path>
-                    <path id="Path1"
-                      d="M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z"
-                      fill="url(#linearGradient-1)" opacity="0.2"></path>
-                    <polygon id="Path-2" fill="#000000" opacity="0.049999997"
-                      points="69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325"></polygon>
-                    <polygon id="Path-21" fill="#000000" opacity="0.099999994"
-                      points="69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338"></polygon>
-                    <polygon id="Path-3" fill="url(#linearGradient-2)" opacity="0.099999994"
-                      points="101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"></polygon>
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </span>
-          <h2 class="brand-text">Vuexy</h2>
-        </a>
-      </li>
-      <li class="nav-item nav-toggle">
-        <a class="nav-link modern-nav-toggle pe-0" data-toggle="collapse">
-          <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
-          <i class="d-none d-xl-block collapse-toggle-icon font-medium-4 text-primary" data-feather="disc"
-            data-ticon="disc"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="shadow-bottom"></div>
-  <div class="main-menu-content">
-    <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-      {{-- Foreach menu item starts --}}
-      @if (isset($menuData[0]))
-        @foreach ($menuData[0]->menu as $menu)
-          @if (isset($menu->navheader))
-            <li class="navigation-header">
-              <span>{{ __('locale.' . $menu->navheader) }}</span>
-              <i data-feather="more-horizontal"></i>
-            </li>
-          @else
-            {{-- Add Custom Class with nav-item --}}
-            @php
-              $custom_classes = '';
-              if (isset($menu->classlist)) {
-                  $custom_classes = $menu->classlist;
-              }
-            @endphp
-            <li
-              class="nav-item {{ $custom_classes }} {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }}">
-              <a href="{{ isset($menu->url) ? url($menu->url) : 'javascript:void(0)' }}" class="d-flex align-items-center"
-                target="{{ isset($menu->newTab) ? '_blank' : '_self' }}">
-                <i data-feather="{{ $menu->icon }}"></i>
-                <span class="menu-title text-truncate">{{ __('locale.' . $menu->name) }}</span>
-                @if (isset($menu->badge))
-                  <?php $badgeClasses = 'badge rounded-pill badge-light-primary ms-auto me-1'; ?>
-                  <span
-                    class="{{ isset($menu->badgeClass) ? $menu->badgeClass : $badgeClasses }}">{{ $menu->badge }}</span>
-                @endif
-              </a>
-              @if (isset($menu->submenu))
-                @include('panels/submenu', ['menu' => $menu->submenu])
-              @endif
-            </li>
-          @endif
-        @endforeach
-      @endif
-      {{-- Foreach menu item ends --}}
-    </ul>
-  </div>
+   class="main-menu menu-fixed {{ $configData['theme'] === 'dark' || $configData['theme'] === 'semi-dark' ? 'menu-dark' : 'menu-light' }} menu-accordion menu-shadow"
+   data-scroll-to-active="true">
+   <div class="navbar-header">
+      <ul class="nav navbar-nav flex-row">
+         <li class="nav-item me-auto">
+            <a class="navbar-brand" href="{{ url('/') }}">
+               <span class="brand-logo">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.45 47.45" height="38">
+                     <defs>
+                        <linearGradient id="linear-gradient" x1="11.02" y1="11.1" x2="18.08" y2="15.18" gradientUnits="userSpaceOnUse">
+                           <stop offset="0" stop-color="#7367f0" />
+                           <stop offset="1" stop-color="#8f85f3" />
+                        </linearGradient>
+                        <linearGradient id="New_Gradient_Swatch_1" x1="29.41" y1="11.1" x2="36.44" y2="15.15" xlink:href="#linear-gradient" />
+                        <linearGradient id="New_Gradient_Swatch_1-2" x1="11.62" y1="27.69" x2="28.99" y2="37.72"
+                           xlink:href="#linear-gradient" />
+                        <linearGradient id="linear-gradient-2" x1="31.63" y1="7.91" x2="47.45" y2="7.91" xlink:href="#linear-gradient" />
+                        <linearGradient id="linear-gradient-3" x1="0" y1="7.91" x2="15.82" y2="7.91" xlink:href="#linear-gradient" />
+                        <linearGradient id="linear-gradient-4" x1="31.63" y1="39.54" x2="47.45" y2="39.54" xlink:href="#linear-gradient" />
+                        <linearGradient id="linear-gradient-5" x1="0" y1="39.54" x2="15.82" y2="39.54" xlink:href="#linear-gradient" />
+                     </defs>
+                     <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                           <path d="M10.47,13.12a4.06,4.06,0,1,1,4.06,4.06A4.05,4.05,0,0,1,10.47,13.12Z" style="fill:url(#linear-gradient)" />
+                           <path d="M37,13.12a4.06,4.06,0,1,1-4.06-4A4.06,4.06,0,0,1,37,13.12Z" style="fill:url(#New_Gradient_Swatch_1)" />
+                           <path
+                              d="M27.44,37.58C21.5,40.77,14.78,33.81,12.35,28A2,2,0,1,1,16,26.46c1.82,4.37,4.89,5.18,12.12,6.54C28.09,33,34.1,34,27.44,37.58Z"
+                              style="fill:url(#New_Gradient_Swatch_1-2)" />
+                           <path
+                              d="M45.47,15.82a2,2,0,0,1-2-2V5.93a2,2,0,0,0-2-2H33.61a2,2,0,1,1,0-3.95h7.91a5.94,5.94,0,0,1,5.93,5.93v7.91A2,2,0,0,1,45.47,15.82Z"
+                              style="fill:url(#linear-gradient-2)" />
+                           <path d="M2,15.82a2,2,0,0,1-2-2V5.93A5.94,5.94,0,0,1,5.93,0h7.91a2,2,0,1,1,0,4H5.93a2,2,0,0,0-2,2v7.91A2,2,0,0,1,2,15.82Z"
+                              style="fill:url(#linear-gradient-3)" />
+                           <path d="M41.52,47.45H33.61a2,2,0,1,1,0-4h7.91a2,2,0,0,0,2-2V33.61a2,2,0,1,1,4,0v7.91A5.94,5.94,0,0,1,41.52,47.45Z"
+                              style="fill:url(#linear-gradient-4)" />
+                           <path d="M13.84,47.45H5.93A5.94,5.94,0,0,1,0,41.52V33.61a2,2,0,1,1,4,0v7.91a2,2,0,0,0,2,2h7.91a2,2,0,1,1,0,4Z"
+                              style="fill:url(#linear-gradient-5)" />
+                        </g>
+                     </g>
+                  </svg>
+               </span>
+               <h2 class="brand-text">{{ env('APP_NAME') }}</h2>
+            </a>
+         </li>
+         <li class="nav-item nav-toggle">
+            <a class="nav-link-style nav-link modern-nav-toggle pe-1">
+               <i class="ficon" data-feather="{{ $configData['theme'] === 'dark' ? 'sun' : 'moon' }}"></i>
+            </a>
+         </li>
+         <li class="nav-item nav-toggle">
+            <a class="nav-link modern-nav-toggle pe-0" data-toggle="collapse" style="margin-top: 26px">
+               <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
+               <i class="d-none d-xl-block collapse-toggle-icon font-medium-4 text-primary" data-feather="disc" data-ticon="disc"></i>
+            </a>
+         </li>
+      </ul>
+   </div>
+   <div class="shadow-bottom"></div>
+   <div class="main-menu-content">
+      <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+         <li class="navigation-header">
+            <span>Login As</span>
+            <i data-feather="more-horizontal"></i>
+         </li>
+
+         <li class="nav-item mb-1">
+            <a href="javascript:void(0)" class="d-flex align-items-center border-primary rounded border">
+               <span class="avatar">
+
+                  <img class="round" style="object-fit: cover; margin-left:-5px"
+                     src="{{ Auth::user()->profile_photo_url ? Auth::user()->profile_photo_url : asset('images/portrait/small/avatar-s-11.jpg') }}"
+                     height="30" width="30" alt="avatar">
+                  <span class="avatar-status-online"></span>
+               </span>
+               <div class="d-flex flex-column ms-1">
+                  <span class="fw-bolder">{{ strtoupper(Auth::user()->name) }}</span>
+                  {{-- <span class="user-status fs-6">{{ Auth::user()->designation }}</span> --}}
+               </div>
+
+            </a>
+            <ul class="menu-content mb-2">
+               <li>
+                  <form method="POST" id="logout-form" action="{{ route('logout') }}">
+                     @csrf
+                     <button class="dropdown-item w-100" type="submit"><i class="me-50" data-feather="power"></i> Logout</button>
+                  </form>
+               </li>
+            </ul>
+         </li>
+         {{-- Foreach menu item starts --}}
+         @if (isset($menuData[0]))
+            @foreach ($menuData[0]->menu as $menu)
+               @if (isset($menu->navheader))
+                  <li class="navigation-header">
+                     <span>{{ __('locale.' . $menu->navheader) }}</span>
+                     <i data-feather="more-horizontal"></i>
+                  </li>
+               @else
+                  {{-- Add Custom Class with nav-item --}}
+                  @php
+                     $custom_classes = '';
+                     if (isset($menu->classlist)) {
+                         $custom_classes = $menu->classlist;
+                     }
+                  @endphp
+                  <li class="nav-item {{ $custom_classes }} {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }}">
+                     <a href="{{ isset($menu->url) ? url($menu->url) : 'javascript:void(0)' }}" class="d-flex align-items-center"
+                        target="{{ isset($menu->newTab) ? '_blank' : '_self' }}">
+                        <i data-feather="{{ $menu->icon }}"></i>
+                        <span class="menu-title text-truncate">{{ __('locale.' . $menu->name) }}</span>
+                        @if (isset($menu->badge))
+                           <?php $badgeClasses = 'badge rounded-pill badge-light-primary ms-auto me-1'; ?>
+                           <span class="{{ isset($menu->badgeClass) ? $menu->badgeClass : $badgeClasses }}">{{ $menu->badge }}</span>
+                        @endif
+                     </a>
+                     @if (isset($menu->submenu))
+                        @include('panels/submenu', ['menu' => $menu->submenu])
+                     @endif
+                  </li>
+               @endif
+            @endforeach
+         @endif
+         {{-- Foreach menu item ends --}}
+      </ul>
+   </div>
 </div>
 <!-- END: Main Menu-->

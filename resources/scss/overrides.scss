@@ -37,6 +37,18 @@ td {
 	}
 }
 
+.nav-toggle {
+	.feather,
+	[data-feather] {
+		height: 1.2rem !important;
+		width: 1.2rem !important;
+	}
+}
+
+html .content.app-content {
+	padding: 2rem !important;
+}
+
 .no-print {
 }
 
