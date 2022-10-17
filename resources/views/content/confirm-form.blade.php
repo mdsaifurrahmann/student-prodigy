@@ -53,7 +53,7 @@
                      <tbody>
                         <tr>
                            <th class="w-25">Student's Name (Bengali):</th>
-                           <td colspan="3">{{ old('student-name-bangla') }} lol</td>
+                           <td colspan="3">{{ old('student-name-bangla') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Student's Name (English):</th>

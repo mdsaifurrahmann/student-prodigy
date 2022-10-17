@@ -1045,7 +1045,7 @@
                            <label class="form-label">Select payment method:</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="payment-mobile" class="form-check-input" type="radio" name="payment-method" value="mobile-banking" required
+                                 <input id="payment-mobile" class="form-check-input" type="radio" name="payment-method" value="mobile banking" required
                                     checked {{ old('payment-method') == 'mobile-banking' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="payment-mobile">Mobile Banking</label>
 
