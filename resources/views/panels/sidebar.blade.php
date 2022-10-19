@@ -86,7 +86,8 @@
                <li>
                   <form method="POST" id="logout-form" action="{{ route('logout') }}">
                      @csrf
-                     <button class="dropdown-item w-100" type="submit"><i class="me-50" data-feather="power"></i> Logout</button>
+                     <button class="dropdown-item w-100" type="submit"><i class="me-50" data-feather="power"></i> <span
+                           class="menu-item text-truncate">Logout</span></button>
                   </form>
                </li>
             </ul>
@@ -107,11 +108,11 @@
                          $custom_classes = $menu->classlist;
                      }
                   @endphp
-                  <li class="nav-item {{ $custom_classes }} {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }}">
+                  <li class="nav-item {{ $custom_classes }} {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }}" style="margin: 5px 0">
                      <a href="{{ isset($menu->url) ? url($menu->url) : 'javascript:void(0)' }}" class="d-flex align-items-center"
                         target="{{ isset($menu->newTab) ? '_blank' : '_self' }}">
                         <i data-feather="{{ $menu->icon }}"></i>
-                        <span class="menu-title text-truncate">{{ __('locale.' . $menu->name) }}</span>
+                        <span class="menu-title text-truncate">{{ __($menu->name) }}</span>
                         @if (isset($menu->badge))
                            <?php $badgeClasses = 'badge rounded-pill badge-light-primary ms-auto me-1'; ?>
                            <span class="{{ isset($menu->badgeClass) ? $menu->badgeClass : $badgeClasses }}">{{ $menu->badge }}</span>

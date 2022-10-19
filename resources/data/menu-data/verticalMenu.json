@@ -1,49 +1,54 @@
 {
-  "menu": [
-    {
-      "url": "home",
-      "name": "Home",
-      "icon": "home",
-      "slug": "home"
-    },
-    {
-      "name": "Page Layouts",
-      "icon": "mail",
-      "slug": "",
-      "badge": "5",
-      "badgeClass": "badge rounded-pill badge-light-danger ms-auto me-1",
-      "submenu": [
-        {
-          "url": "layouts/collapsed-menu",
-          "name": "Collapsed Menu",
-          "icon": "circle",
-          "slug": "collapsed-menu"
-        },
-        {
-          "url": "layouts/full",
-          "name": "Layout Full",
-          "icon": "circle",
-          "slug": "layout-full"
-        },
-        {
-          "url": "layouts/without-menu",
-          "name": "Without Menu",
-          "icon": "circle",
-          "slug": "without-menu"
-        },
-        {
-          "url": "layouts/empty",
-          "name": "Layout Empty",
-          "icon": "circle",
-          "slug": "layout-empty"
-        },
-        {
-          "url": "layouts/blank",
-          "name": "Layout Blank",
-          "icon": "circle",
-          "slug": "layout-blank"
-        }
-      ]
-    }
-  ]
+	"menu": [
+		{
+			"url": "welcome",
+			"name": "Dashboard",
+			"icon": "home",
+			"slug": "welcome"
+		},
+		{
+			"url": "applicant-list",
+			"name": "All Applicant's",
+			"icon": "user-check",
+			"slug": "applicants"
+		},
+		{
+			"name": "Users",
+			"icon": "user",
+			"slug": "users",
+			"submenu": [
+				{
+					"url": "authenticate/register",
+					"name": "Add User",
+					"icon": "circle",
+					"slug": "add-user"
+				},
+				{
+					"url": "user-list",
+					"name": "User List",
+					"icon": "circle",
+					"slug": "user-list"
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"icon": "user",
+			"slug": "users",
+			"submenu": [
+				{
+					"url": "meta",
+					"name": "Meta Settings",
+					"icon": "circle",
+					"slug": "meta-settings"
+				},
+				{
+					"url": "app-settings",
+					"name": "App Settings",
+					"icon": "circle",
+					"slug": "app-settings"
+				}
+			]
+		}
+	]
 }
