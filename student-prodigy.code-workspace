@@ -24,7 +24,7 @@
 			"*.json": "jsonc"
 		},
 		"terminal.integrated.cursorStyle": "line",
-		"editor.minimap.enabled": false,
+		"editor.minimap.enabled": true,
 		"files.exclude": {
 			"**/.git": false
 		},

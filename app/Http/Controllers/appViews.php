@@ -18,6 +18,12 @@ class appViews extends Controller
       return view('/content/dashboard/welcome');
    }
 
+   // welcome
+   public function applicantList()
+   {
+      return view('/content/dashboard/applicant-list');
+   }
+
    // form
    public function form()
    {

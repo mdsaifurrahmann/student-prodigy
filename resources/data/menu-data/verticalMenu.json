@@ -7,7 +7,7 @@
 			"slug": "welcome"
 		},
 		{
-			"url": "applicant-list",
+			"url": "authenticated/dash/applicant-list",
 			"name": "All Applicant's",
 			"icon": "user-check",
 			"slug": "applicants"

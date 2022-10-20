@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Models\formHandler;
 use App\Http\Requests\StoreformHandlerRequest;
@@ -16,7 +18,13 @@ class FormHandlerController extends Controller
     */
    public function index()
    {
-      //
+      if (!Auth::check()) {
+         return redirect()->route('login');
+      }
+
+      $formHandlers = formHandler::all();
+
+      return $formHandlers;
    }
 
    /**
