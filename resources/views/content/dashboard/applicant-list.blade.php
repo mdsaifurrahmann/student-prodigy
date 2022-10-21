@@ -37,39 +37,6 @@
       </div>
    </section>
    <!--/ Basic table -->
-   {{--
-   <!-- Complex Headers -->
-   <section id="complex-header-datatable">
-      <div class="row">
-         <div class="col-12">
-            <div class="card">
-               <div class="card-header border-bottom">
-                  <h4 class="card-title">Complex Headers</h4>
-               </div>
-               <div class="card-datatable">
-                  <table class="dt-complex-header table-bordered table-responsive table">
-                     <thead>
-                        <tr>
-                           <th rowspan="2">Name</th>
-                           <th colspan="2">Contact</th>
-                           <th colspan="3">HR Information</th>
-                           <th rowspan="2">Action</th>
-                        </tr>
-                        <tr>
-                           <th>E-mail</th>
-                           <th>City</th>
-                           <th>Position</th>
-                           <th>Salary</th>
-                           <th class="cell-fit">Status</th>
-                        </tr>
-                     </thead>
-                  </table>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <!--/ Complex Headers --> --}}
 
 @endsection
 
