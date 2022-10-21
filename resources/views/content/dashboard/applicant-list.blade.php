@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'DataTables')
+@section('title', 'Applicant List')
 
 @section('vendor-style')
    {{-- vendor css files --}}
@@ -17,12 +17,12 @@
       <div class="row">
          <div class="col-12">
             <div class="card">
-               <table class="datatables-basic table">
+               <table class="datatables-basic table-responsive table">
                   <thead>
                      <tr>
                         <th></th>
-                        <th></th>
                         <th>id</th>
+                        <th></th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Date</th>
@@ -92,5 +92,5 @@
 @endsection
 @section('page-script')
    {{-- Page js files --}}
-   <script src="{{ asset(mix('js/scripts/tables/table-datatables-basic.js')) }}"></script>
+   <script src="{{ asset(mix('js/core/applicant-list-table.js')) }}"></script>
 @endsection
