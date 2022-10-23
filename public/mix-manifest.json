@@ -3,6 +3,7 @@
     "/js/core/app.js": "/js/core/app.js",
     "/js/core/scripts.js": "/js/core/scripts.js",
     "/js/core/forms.js": "/js/core/forms.js",
+    "/js/core/applicant-list-table.js": "/js/core/applicant-list-table.js",
     "/css/base/plugins/extensions/ext-component-ratings.css": "/css/base/plugins/extensions/ext-component-ratings.css",
     "/css/base/plugins/extensions/ext-component-media-player.css": "/css/base/plugins/extensions/ext-component-media-player.css",
     "/css/base/plugins/extensions/ext-component-drag-drop.css": "/css/base/plugins/extensions/ext-component-drag-drop.css",
