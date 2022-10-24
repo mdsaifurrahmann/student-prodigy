@@ -368,6 +368,8 @@ $(function () {
 
    showFilter.addEventListener("click", function () {
       filterForm.classList.toggle("d-none");
+      document.getElementById("filter").classList.toggle('border-bottom');
+      document.getElementById("filter").classList.toggle('pb-0');
       if (filterForm.classList.contains("d-none")) {
          showFilter.innerHTML = "Show Filter";
       } else {

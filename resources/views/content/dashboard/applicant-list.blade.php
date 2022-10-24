@@ -17,8 +17,8 @@
       <div class="row">
          <div class="col-12">
             <div class="card p-2 pt-0">
-               <div class="card-header border-bottom p-1 px-0">
-                  <div class="head-label">
+               <div class="card-header border-bottom p-2 px-0" id="filter">
+                  <div class="head-labelx">
                      <h6 class="mb-0">Filter</h6>
                   </div>
                   <div class="dt-action-buttons text-end">
@@ -36,7 +36,7 @@
                      </div>
                   </div>
                </div>
-               <form class="dt_adv_search mt-1" method="POST" id="filterForm">
+               <form class="dt_adv_search mt-1 pb-1" method="POST" id="filterForm">
                   <div class="row g-1 mb-md-1">
                      <div class="col-md-4">
                         <label class="form-label">Name:</label>
