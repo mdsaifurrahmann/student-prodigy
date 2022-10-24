@@ -25,11 +25,6 @@
                      <div class="dt-buttons d-inline-flex">
                         <button class="dt-button create-new btn btn-primary" type="button" id="showFilter">
                            <span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus me-50 font-small-4">
-                                 <line x1="12" y1="5" x2="12" y2="19"></line>
-                                 <line x1="5" y1="12" x2="19" y2="12"></line>
-                              </svg>
                               Hide Filter
                            </span>
                         </button>
@@ -111,7 +106,7 @@
    <script src="{{ asset(mix('vendors/js/tables/datatable/vfs_fonts.js')) }}"></script>
    <script src="{{ asset(mix('vendors/js/tables/datatable/buttons.html5.min.js')) }}"></script>
    <script src="{{ asset(mix('vendors/js/tables/datatable/buttons.print.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.rowGroup.min.js')) }}"></script>
+   {{-- <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.rowGroup.min.js')) }}"></script> --}}
    <script src="{{ asset(mix('vendors/js/pickers/flatpickr/flatpickr.min.js')) }}"></script>
 @endsection
 @section('page-script')
