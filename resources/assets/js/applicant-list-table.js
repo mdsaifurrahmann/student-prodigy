@@ -9,7 +9,8 @@ $(function () {
    var dt_basic_table = $(".datatables-basic"),
       assetPath = "../../../app-assets/";
 
-   var columns = new Array();
+   var columns = new Array().sort();
+
 
    let select_column = document.getElementsByClassName('export_col');
 
@@ -363,7 +364,13 @@ $(function () {
    function getCheckedValues() {
       for (let i = 0; i < select_column.length; i++) {
          if (select_column[i].checked) {
-            columns.push(select_column[i].value);
+            if (!columns.includes(parseInt(select_column[i].value))) {
+               columns.push(parseInt(select_column[i].value));
+            }
+         } else {
+            if (columns.includes(parseInt(select_column[i].value))) {
+               columns.splice(columns.indexOf(parseInt(select_column[i].value)), 1);
+            }
          }
       }
    }
