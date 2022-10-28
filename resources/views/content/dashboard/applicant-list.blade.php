@@ -16,6 +16,8 @@
    <section id="basic-datatable">
       <div class="row">
          <div class="col-12">
+
+            {{-- Filter Being --}}
             <div class="card p-2 pt-0">
                <div class="card-header border-bottom p-2 px-0" id="filter">
                   <div class="head-labelx">
@@ -68,6 +70,56 @@
                   </div>
                </form>
             </div>
+            {{-- Filter Closed --}}
+
+            {{-- Export Option Being --}}
+            <div class="card p-2 pt-0">
+               <div class="card-header p-2 px-0 pb-0" id="exportOption">
+                  <div class="head-labelx">
+                     <h6 class="mb-0">Export Option</h6>
+                  </div>
+                  <div class="dt-action-buttons text-end">
+                     <div class="dt-buttons d-inline-flex">
+                        <button class="dt-button create-new btn btn-primary" type="button" id="showExOp">
+                           <span>
+                              Show Export Option
+                           </span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <form class="dt_adv_search d-none mt-1 pb-1" method="POST" id="exportForm">
+                  <div class="row g-1 mb-md-1">
+                     <div class="col-12">
+                        <div class="demo-inline-spacing">
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox1" value="3">
+                              <label class="form-check-label" for="inlineCheckbox1">Name</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox2" value="4">
+                              <label class="form-check-label" for="inlineCheckbox2">Email</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox3" value="5">
+                              <label class="form-check-label" for="inlineCheckbox3">Date</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox4" value="6">
+                              <label class="form-check-label" for="inlineCheckbox4">Salary</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox4" value="7">
+                              <label class="form-check-label" for="inlineCheckbox4">Status</label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </form>
+            </div>
+            {{-- Export Option Closed --}}
+
+
             <div class="card">
                <table class="datatables-basic table-responsive table">
                   <thead>

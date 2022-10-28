@@ -2,11 +2,16 @@
  * DataTables Basic
  */
 
+
 $(function () {
    "use strict";
 
    var dt_basic_table = $(".datatables-basic"),
       assetPath = "../../../app-assets/";
+
+   var columns = new Array();
+
+   let select_column = document.getElementsByClassName('export_col');
 
    if ($("body").attr("data-framework") === "laravel") {
       assetPath = $("body").attr("data-asset-path");
@@ -220,7 +225,7 @@ $(function () {
          order: [[2, "desc"]],
          dom: '<"card-header border-bottom p-1"<"head-label"><"dt-action-buttons text-end"B>><"d-flex justify-content-between align-items-center mx-0 row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>t<"d-flex justify-content-between mx-0 row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
          displayLength: 10,
-         lengthMenu: [10, 25, 50, 75, 100],
+         lengthMenu: [10, 25, 50, 75, 100, 200, 1000],
          buttons: [
             {
                extend: "collection",
@@ -237,7 +242,7 @@ $(function () {
                            class: "font-small-4 me-50",
                         }) + "Print",
                      className: "dropdown-item",
-                     exportOptions: { columns: [3, 4, 5, 6, 7] },
+                     exportOptions: { columns },
                   },
                   {
                      extend: "csv",
@@ -246,7 +251,7 @@ $(function () {
                            class: "font-small-4 me-50",
                         }) + "Csv",
                      className: "dropdown-item",
-                     exportOptions: { columns: [3, 4, 5, 6, 7] },
+                     exportOptions: { columns },
                   },
                   {
                      extend: "excel",
@@ -255,7 +260,7 @@ $(function () {
                            class: "font-small-4 me-50",
                         }) + "Excel",
                      className: "dropdown-item",
-                     exportOptions: { columns: [3, 4, 5, 6, 7] },
+                     exportOptions: { columns },
                   },
                   {
                      extend: "pdf",
@@ -264,7 +269,7 @@ $(function () {
                            class: "font-small-4 me-50",
                         }) + "Pdf",
                      className: "dropdown-item",
-                     exportOptions: { columns: [3, 4, 5, 6, 7] },
+                     exportOptions: { columns },
                   },
                   {
                      extend: "copy",
@@ -273,7 +278,7 @@ $(function () {
                            class: "font-small-4 me-50",
                         }) + "Copy",
                      className: "dropdown-item",
-                     exportOptions: { columns: [3, 4, 5, 6, 7] },
+                     exportOptions: { columns },
                   },
                ],
                init: function (api, node, config) {
@@ -355,14 +360,25 @@ $(function () {
       filterColumn($(this).attr('data-column'), $(this).val());
    });
 
-   // To append actions dropdown before add new button
-   let addNew = document.getElementById("addNew");
 
+   // filter datatable column for Export / Expoer Options value
+   function getCheckedValues() {
+      for (let i = 0; i < select_column.length; i++) {
+         if (select_column[i].checked) {
+            columns.push(select_column[i].value);
+         }
+      }
+   }
+   document.getElementsByClassName('dt-button')[2].addEventListener('click', getCheckedValues);
+
+
+   // append actions dropdown before add new button
+   let addNew = document.getElementById("addNew");
    addNew.addEventListener("click", function () {
-      // location.href = "//localhost:8000/student-form";
       window.open("//localhost:8000/student-form", "_blank");
    });
 
+   // Toggle Filter Options
    let showFilter = document.getElementById("showFilter");
    let filterForm = document.getElementById("filterForm");
 
@@ -376,4 +392,21 @@ $(function () {
          showFilter.innerHTML = "Hide Filter";
       }
    });
+
+
+   // Toggle Export Options
+   let showExOp = document.getElementById("showExOp");
+   let exOpForm = document.getElementById("exportForm");
+
+   showExOp.addEventListener("click", function () {
+      exOpForm.classList.toggle("d-none");
+      document.getElementById("exportOption").classList.toggle('border-bottom');
+      document.getElementById("exportOption").classList.toggle('pb-0');
+      if (exOpForm.classList.contains("d-none")) {
+         showExOp.innerHTML = "Show Export Options";
+      } else {
+         showExOp.innerHTML = "Hide Export Options";
+      }
+   });
+
 });
