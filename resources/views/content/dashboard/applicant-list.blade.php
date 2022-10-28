@@ -19,7 +19,7 @@
 
             {{-- Filter Being --}}
             <div class="card p-2 pt-0">
-               <div class="card-header border-bottom p-2 px-0" id="filter">
+               <div class="card-header p-2 px-0 pb-0" id="filter">
                   <div class="head-labelx">
                      <h6 class="mb-0">Filter</h6>
                   </div>
@@ -33,7 +33,7 @@
                      </div>
                   </div>
                </div>
-               <form class="dt_adv_search mt-1 pb-1" method="POST" id="filterForm">
+               <form class="dt_adv_search d-none mt-1 pb-1" method="POST" id="filterForm">
                   <div class="row g-1 mb-md-1">
                      <div class="col-md-4">
                         <label class="form-label">Name:</label>
@@ -82,13 +82,13 @@
                      <div class="dt-buttons d-inline-flex">
                         <button class="dt-button create-new btn btn-primary" type="button" id="showExOp">
                            <span>
-                              Show Export Option
+                              Show Option
                            </span>
                         </button>
                      </div>
                   </div>
                </div>
-               <form class="dt_adv_search d-none mt-1 pb-1" method="POST" id="exportForm">
+               <form class="d-none mt-1 pb-1" id="exportForm">
                   <div class="row g-1 mb-md-1">
                      <div class="col-12">
                         <div class="demo-inline-spacing">
@@ -109,8 +109,8 @@
                               <label class="form-check-label" for="inlineCheckbox4">Salary</label>
                            </div>
                            <div class="form-check form-check-inline">
-                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox4" value="7">
-                              <label class="form-check-label" for="inlineCheckbox4">Status</label>
+                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox5" value="7">
+                              <label class="form-check-label" for="inlineCheckbox5">Status</label>
                            </div>
                         </div>
                      </div>

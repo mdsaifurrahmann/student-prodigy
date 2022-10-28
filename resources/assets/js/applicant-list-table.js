@@ -298,8 +298,6 @@ $(function () {
                   "Add New",
                className: "create-new btn btn-primary",
                attr: {
-                  "data-bs-toggle": "modal",
-                  "data-bs-target": "#modals-slide-in",
                   id: "addNew",
                },
                init: function (api, node, config) {
@@ -371,13 +369,6 @@ $(function () {
    }
    document.getElementsByClassName('dt-button')[2].addEventListener('click', getCheckedValues);
 
-
-   // append actions dropdown before add new button
-   let addNew = document.getElementById("addNew");
-   addNew.addEventListener("click", function () {
-      window.open("//localhost:8000/student-form", "_blank");
-   });
-
    // Toggle Filter Options
    let showFilter = document.getElementById("showFilter");
    let filterForm = document.getElementById("filterForm");
@@ -403,10 +394,16 @@ $(function () {
       document.getElementById("exportOption").classList.toggle('border-bottom');
       document.getElementById("exportOption").classList.toggle('pb-0');
       if (exOpForm.classList.contains("d-none")) {
-         showExOp.innerHTML = "Show Export Options";
+         showExOp.innerHTML = "Show Options";
       } else {
-         showExOp.innerHTML = "Hide Export Options";
+         showExOp.innerHTML = "Hide Options";
       }
+   });
+
+   // append actions dropdown before add new button
+   let addNew = document.getElementById("addNew");
+   addNew.addEventListener("click", () => {
+      window.open("http://localhost:8000/student-form", "_blank");
    });
 
 });
