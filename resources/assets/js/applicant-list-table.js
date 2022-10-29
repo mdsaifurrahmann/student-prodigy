@@ -240,11 +240,7 @@ $(function () {
                         class: "font-small-4 me-50",
                      }) +
                      "Details</a>" +
-                     '<a href="{{route("register"}}" class="dropdown-item">' +
-                     feather.icons["archive"].toSvg({
-                        class: "font-small-4 me-50",
-                     }) +
-                     "Archive</a>" +
+
                      '<a href="javascript:;" class="dropdown-item delete-record">' +
                      feather.icons["trash-2"].toSvg({
                         class: "font-small-4 me-50",
