@@ -52,7 +52,7 @@
                      <div class="col-md-4">
                         <label class="form-label">Semester:</label>
                         <select class="form-select dt-input" data-column="8" data-column-index="3">
-                           <option selected>Select Semester</option>
+                           <option selected value="">Select Semester</option>
                            <option value="1st">1st</option>
                            <option value="2nd">2nd</option>
                            <option value="3rd">3rd</option>
@@ -98,6 +98,16 @@
                   </div>
                   <div class="dt-action-buttons text-end">
                      <div class="dt-buttons d-inline-flex">
+                        <button class="dt-button create-new btn btn-primary me-1" type="button" id="selectAll">
+                           <span>
+                              Select All
+                           </span>
+                        </button>
+                        <button class="dt-button create-new btn btn-primary me-1" type="button" id="unSelectAll">
+                           <span>
+                              Unselect All
+                           </span>
+                        </button>
                         <button class="dt-button create-new btn btn-primary" type="button" id="showExOp">
                            <span>
                               Show Option

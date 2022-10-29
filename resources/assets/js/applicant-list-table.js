@@ -448,8 +448,6 @@ $(function () {
             }
          }
       }
-
-      console.log(columns);
    }
    document.getElementsByClassName('dt-button')[2].addEventListener('click', getCheckedValues);
 
@@ -484,6 +482,24 @@ $(function () {
          showExOp.innerHTML = "Hide Options";
       }
    });
+
+   // toggle all checkboxes
+   function selects() {
+      for (var i = 0; i < select_column.length; i++) {
+         if (select_column[i].type == 'checkbox')
+            select_column[i].checked = true;
+      }
+   }
+   function unselects() {
+      for (var i = 0; i < select_column.length; i++) {
+         if (select_column[i].type == 'checkbox')
+            select_column[i].checked = false;
+      }
+   }
+
+   document.getElementById('selectAll').addEventListener('click', selects);
+   document.getElementById('unSelectAll').addEventListener('click', unselects);
+
 
    // append actions dropdown before add new button
    let addNew = document.getElementById("addNew");
