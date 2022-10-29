@@ -69,17 +69,84 @@ $(function () {
    // --------------------------------------------------------------------
 
    if (dt_basic_table.length) {
-      var dt_basic = dt_basic_table.DataTable({
-         ajax: assetPath + "data/table-datatable.json",
+      dt_basic_table.DataTable({
+         ajax: window.location.origin + "/authenticated/dash/api/applicant-list",
          columns: [
             { data: "responsive_id" },
             { data: "id" },
             { data: "id" }, // used for sorting so will hide this column
-            { data: "full_name" },
-            { data: "email" },
-            { data: "start_date" },
-            { data: "salary" },
-            { data: "" },
+            { data: "student-name-english" },
+            { data: "father-name-english" },
+            { data: "mother-name-english" },
+            { data: "ce-roll" },
+            { data: "ce-reg" },
+            { data: "ce-semester" },
+            { data: "ce-technology-trade" },
+            { data: "student-name-bangla" },
+            { data: "birth-certificate-number" },
+            { data: "birth-date" },
+            { data: "student-mobile" },
+            { data: "blood-group" },
+            { data: "gender" },
+            { data: "marital-status" },
+            { data: "father-name-bangla" },
+            { data: "mother-name-bangla" },
+            { data: "father-mobile" },
+            { data: "mother-mobile" },
+            { data: "father-nid" },
+            { data: "mother-nid" },
+            { data: "father-birth-date" },
+            { data: "mother-birth-date" },
+            { data: "pres_division" },
+            { data: "pres_district" },
+            { data: "pres_upozilla" },
+            { data: "pres-city-corp" },
+            { data: "pres-post-code" },
+            { data: "pres-address" },
+            { data: "perm_division" },
+            { data: "perm_district" },
+            { data: "perm_upozilla" },
+            { data: "perm-city-corp" },
+            { data: "perm-post-code" },
+            { data: "perm-address" },
+            { data: "pe_division" },
+            { data: "pe_district" },
+            { data: "pe_upozilla" },
+            { data: "pe-board" },
+            { data: "pe-passing-year" },
+            { data: "pe-roll" },
+            { data: "pe-institute" },
+            { data: "pe-gpa" },
+            { data: "pe-exam-name" },
+            { data: "pe-technology-trade" },
+            { data: "pe-att-rate" },
+            { data: "ce_division" },
+            { data: "ce_district" },
+            { data: "ce_upozilla" },
+            { data: "ce-institute-name" },
+            { data: "ce-semester" },
+            { data: "ce-shift" },
+            { data: "ce-group" },
+            { data: "guardian-name-bangla" },
+            { data: "guardian-name-english" },
+            { data: "guardian-mobile" },
+            { data: "guardian-nid" },
+            { data: "guardian-birth-date" },
+            { data: "relationship" },
+            { data: "cost-borne" },
+            { data: "disabilities" },
+            { data: "ethnic" },
+            { data: "ffq" },
+            { data: "scholarship" },
+            { data: "payment-method" },
+            { data: "mobile-bank-provider" },
+            { data: "mobile-bank-account" },
+            { data: "bank-name" },
+            { data: "bank-branch" },
+            { data: "bank-acc-number" },
+            { data: "bank-acc-name" },
+            { data: "bank-acc-type" },
+            { data: "bank-routing" },
             { data: "" },
          ],
          columnDefs: [
@@ -99,20 +166,20 @@ $(function () {
                targets: 3,
                responsivePriority: 4,
                render: function (data, type, full, meta) {
-                  var $user_img = full["avatar"],
-                     $name = full["full_name"],
+                  var $user_img = full["formal_image_path"],
+                     $name = full["student-name-english"],
                      $post = full["post"];
                   if ($user_img) {
                      // For Avatar image
                      var $output =
                         '<img src="' +
                         assetPath +
-                        "images/avatars/" +
+                        "student-images/formal-images/" +
                         $user_img +
                         '" alt="Avatar" width="32" height="32">';
                   } else {
                      // For Avatar badge
-                     var stateNum = full["status"];
+                     var stateNum = Math.floor(Math.random() * 7) + 1;
                      var states = [
                         "success",
                         "danger",
@@ -123,7 +190,7 @@ $(function () {
                         "secondary",
                      ];
                      var $state = states[stateNum],
-                        $name = full["full_name"],
+                        $name = full["student-name-english"],
                         $initials = $name.match(/\b\w/g) || [];
                      $initials = (
                         ($initials.shift() || "") + ($initials.pop() || "")
@@ -146,43 +213,12 @@ $(function () {
                      '<span class="emp_name text-truncate fw-bold">' +
                      $name +
                      "</span>" +
-                     '<small class="emp_post text-truncate text-muted">' +
-                     $post +
-                     "</small>" +
+                     // '<small class="emp_post text-truncate text-muted">' +
+                     // $post +
+                     // "</small>" +
                      "</div>" +
                      "</div>";
                   return $row_output;
-               },
-            },
-            {
-               responsivePriority: 1,
-               targets: 4,
-            },
-            {
-               // Label
-               targets: -2,
-               render: function (data, type, full, meta) {
-                  var $status_number = full["status"];
-                  var $status = {
-                     1: { title: "Current", class: "badge-light-primary" },
-                     2: {
-                        title: "Professional",
-                        class: " badge-light-success",
-                     },
-                     3: { title: "Rejected", class: " badge-light-danger" },
-                     4: { title: "Resigned", class: " badge-light-warning" },
-                     5: { title: "Applied", class: " badge-light-info" },
-                  };
-                  if (typeof $status[$status_number] === "undefined") {
-                     return data;
-                  }
-                  return (
-                     '<span class="badge rounded-pill ' +
-                     $status[$status_number].class +
-                     '">' +
-                     $status[$status_number].title +
-                     "</span>"
-                  );
                },
             },
             {
@@ -311,27 +347,67 @@ $(function () {
                display: $.fn.dataTable.Responsive.display.modal({
                   header: function (row) {
                      var data = row.data();
-                     return "Details of " + data["full_name"];
+                     return "Details of " + data["student-name-english"];
                   },
                }),
                type: "column",
                renderer: function (api, rowIdx, columns) {
                   var data = $.map(columns, function (col, i) {
-                     return col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
-                        ? '<tr data-dt-row="' +
-                        col.rowIdx +
-                        '" data-dt-column="' +
-                        col.columnIndex +
-                        '">' +
-                        "<td>" +
-                        col.title +
-                        ":" +
-                        "</td> " +
-                        "<td>" +
-                        col.data +
-                        "</td>" +
-                        "</tr>"
-                        : "";
+
+                     while (i <= 8) {
+                        return col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+                           ? '<tr data-dt-row="' +
+                           col.rowIdx +
+                           '" data-dt-column="' +
+                           col.columnIndex +
+                           '">' +
+                           "<td>" +
+                           col.title +
+                           ":" +
+                           "</td> " +
+                           "<td>" +
+                           col.data +
+                           "</td>" +
+                           "</tr>"
+                           : "";
+                     }
+
+                     if (col.columnIndex == 75) {
+                        return col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+                           ? '<tr data-dt-row="' +
+                           col.rowIdx +
+                           '" data-dt-column="' +
+                           col.columnIndex +
+                           '">' +
+                           "<td>" +
+                           col.title +
+                           ":" +
+                           "</td> " +
+                           "<td>" +
+                           col.data +
+                           "</td>" +
+                           "</tr>"
+                           : "";
+                     }
+                     if (col.columnIndex == 14) {
+                        return col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+                           ? '<tr data-dt-row="' +
+                           col.rowIdx +
+                           '" data-dt-column="' +
+                           col.columnIndex +
+                           '">' +
+                           "<td>" +
+                           col.title +
+                           ":" +
+                           "</td> " +
+                           "<td>" +
+                           col.data +
+                           "</td>" +
+                           "</tr>"
+                           : "";
+                     }
+
+
                   }).join("");
 
                   return data
@@ -373,8 +449,23 @@ $(function () {
             }
          }
       }
+
+      for (let i = 3; i <= 74; i++) {
+         if (!columns.includes(i)) {
+            columns.push(i);
+         }
+      }
+      console.log(columns);
    }
    document.getElementsByClassName('dt-button')[2].addEventListener('click', getCheckedValues);
+
+
+   // for (let i = 0; i <= 74; i++) {
+   //    document.querySelectorAll(".export_col").forEach((item) => {
+   //       item.setAttribute("value", item[i]);
+   //    });
+   // }
+
 
    // Toggle Filter Options
    let showFilter = document.getElementById("showFilter");

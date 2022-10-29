@@ -109,6 +109,9 @@ return new class extends Migration
          // other info
          $table->text('formal_image_path')->required();
          $table->text('signature_image_path')->required();
+
+         // responsive ID
+         $table->char('responsive_id')->nullable();
       });
    }
 

@@ -22,7 +22,7 @@ class FormHandlerController extends Controller
          return redirect()->route('login');
       }
 
-      $formHandlers = formHandler::all();
+      $formHandlers = json_encode(['data' => formHandler::all()]);
 
       return $formHandlers;
    }
