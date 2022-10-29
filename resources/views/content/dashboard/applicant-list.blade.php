@@ -41,31 +41,49 @@
                      </div>
                      <div class="col-md-4">
                         <label class="form-label">Roll No:</label>
-                        <input type="text" class="form-control dt-input" data-column="6" placeholder="demo@example.com" data-column-index="1" />
+                        <input type="text" class="form-control dt-input" data-column="6" placeholder="181467" data-column-index="1" />
                      </div>
                      <div class="col-md-4">
                         <label class="form-label">Reg No:</label>
-                        <input type="text" class="form-control dt-input" data-column="7" placeholder="Web designer" data-column-index="2" />
+                        <input type="text" class="form-control dt-input" data-column="7" placeholder="1500943651542" data-column-index="2" />
                      </div>
                   </div>
                   <div class="row g-1">
                      <div class="col-md-4">
                         <label class="form-label">Semester:</label>
-                        <input type="text" class="form-control dt-input" data-column="8" placeholder="Balky" data-column-index="3" />
+                        <select class="form-select dt-input" data-column="8" data-column-index="3">
+                           <option selected>Select Semester</option>
+                           <option value="1st">1st</option>
+                           <option value="2nd">2nd</option>
+                           <option value="3rd">3rd</option>
+                           <option value="4th">4th</option>
+                           <option value="5th">5th</option>
+                           <option value="6th">6th</option>
+                           <option value="7th">7th</option>
+                           <option value="8th">8th</option>
+                        </select>
                      </div>
                      <div class="col-md-4">
-                        <label class="form-label">Date:</label>
-                        <div class="mb-0">
-                           <input type="text" class="form-control dt-date flatpickr-range dt-input" data-column="5" placeholder="StartDate to EndDate"
-                              data-column-index="4" name="dt_date" />
-                           <input type="hidden" class="form-control dt-date start_date dt-input" data-column="5" data-column-index="4"
-                              name="value_from_start_date" />
-                           <input type="hidden" class="form-control dt-date end_date dt-input" name="value_from_end_date" data-column="5" data-column-index="4" />
-                        </div>
+                        <label class="form-label">Technology:</label>
+                        <select class="form-select dt-input" data-column="9" data-column-index="3">
+                           <option selected value=""> Select Technology/Trade</option>
+                           <option value="textile">Textile</option>
+                           <option value="CSE">CSE</option>
+                        </select>
                      </div>
                      <div class="col-md-4">
-                        <label class="form-label">Salary:</label>
-                        <input type="text" class="form-control dt-input" data-column="6" placeholder="10000" data-column-index="5" />
+                        <label class="form-label">Blood Group</label>
+                        <select class="form-select dt-input" data-column="14" data-column-index="3">
+                           <option selected value="">Please Select Blood Group</option>
+                           <option value="A Positive (A+)">A Positive (A+)</option>
+                           <option value="A Megative (A-)">A Megative (A-)</option>
+                           <option value="B Positive (B+)">B Positive (B+)</option>
+                           <option value="B Negative (B-)">B Negative (B-)</option>
+                           <option value="O Positive (O+)">O Positive (O+)</option>
+                           <option value="O Negative (O-)">O Negative (O-)</option>
+                           <option value="AB Positive (AB+)">AB Positive (AB+)</option>
+                           <option value="AB Negative (AB-)">AB Negative (AB-)</option>
+                        </select>
                      </div>
                   </div>
                </form>
@@ -92,7 +110,6 @@
                   <div class="row g-1 mb-md-1">
                      <div class="col-12">
                         <div class="grid-cols-3">
-
                            @foreach ($titles as $key => $title)
                               <div class="form-check form-check-inline">
                                  <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox{{ str_replace([' ', '\''], '', $title) }}"
@@ -102,7 +119,6 @@
                                  </label>
                               </div>
                            @endforeach
-
                         </div>
                      </div>
                   </div>
