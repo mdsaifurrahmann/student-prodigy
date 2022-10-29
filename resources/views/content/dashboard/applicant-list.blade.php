@@ -91,7 +91,7 @@
                <form class="d-none mt-1 pb-1" id="exportForm">
                   <div class="row g-1 mb-md-1">
                      <div class="col-12">
-                        <div class="demo-inline-spacing">
+                        <div class="grid-cols-3">
 
                            @foreach ($titles as $key => $title)
                               <div class="form-check form-check-inline">
