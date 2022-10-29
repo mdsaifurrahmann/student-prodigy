@@ -98,12 +98,12 @@
                   </div>
                   <div class="dt-action-buttons text-end">
                      <div class="dt-buttons d-inline-flex">
-                        <button class="dt-button create-new btn btn-primary me-1" type="button" id="selectAll">
+                        <button class="create-new btn btn-primary me-1" type="button" id="selectAll">
                            <span>
                               Select All
                            </span>
                         </button>
-                        <button class="dt-button create-new btn btn-primary me-1" type="button" id="unSelectAll">
+                        <button class="create-new btn btn-primary me-1" type="button" id="unSelectAll">
                            <span>
                               Unselect All
                            </span>
