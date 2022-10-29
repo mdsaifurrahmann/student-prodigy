@@ -93,49 +93,16 @@
                      <div class="col-12">
                         <div class="demo-inline-spacing">
 
-                           @foreach ($titles as $title)
+                           @foreach ($titles as $key => $title)
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox{{ str_replace([' ', '\''], '', $title) }}">
+                                 <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox{{ str_replace([' ', '\''], '', $title) }}"
+                                    value="{{ $key + 3 }}">
                                  <label class="form-check-label" for="inlineCheckbox{{ str_replace([' ', '\''], '', $title) }}">
                                     {{ $title }}
                                  </label>
                               </div>
                            @endforeach
 
-
-
-                           {{-- <div class="form-check form-check-inline">
-                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox1" value="3">
-                              <label class="form-check-label" for="inlineCheckbox1">Name</label>
-                           </div> --}}
-                           {{-- <div class="form-check form-check-inline">
-                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox2" value="4">
-                              <label class="form-check-label" for="inlineCheckbox2">Father's Name</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox3" value="5">
-                              <label class="form-check-label" for="inlineCheckbox3">Mother's Name</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox4" value="6">
-                              <label class="form-check-label" for="inlineCheckbox4">Roll</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox5" value="7">
-                              <label class="form-check-label" for="inlineCheckbox5">Reg</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox6" value="8">
-                              <label class="form-check-label" for="inlineCheckbox6">Semester</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox7" value="9">
-                              <label class="form-check-label" for="inlineCheckbox7">Technology</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input export_col" type="checkbox" id="inlineCheckbox7" value="9">
-                              <label class="form-check-label" for="inlineCheckbox7">Technology</label>
-                           </div> --}}
                         </div>
                      </div>
                   </div>
@@ -151,85 +118,9 @@
                         <th></th>
                         <th>id</th>
                         <th></th>
-
-
                         @foreach ($titles as $title)
                            <th>{{ $title }}</th>
                         @endforeach
-
-
-                        {{-- <th>Name</th>
-                        <th>Father's Name</th>
-                        <th>Mother's Name</th>
-                        <th>Roll</th>
-                        <th>Reg</th>
-                        <th>Semester</th>
-                        <th>Technology</th>
-                        <th>Student Name (Bengali)</th>
-                        <th>Birth Certificate Number</th>
-                        <th>Birth Date</th>
-                        <th>Student's Mobile No.</th>
-                        <th>Blood Group</th>
-                        <th>Gender</th>
-                        <th>Marital Status</th>
-                        <th>Father's Name (Bengali)</th>
-                        <th>Mother's Name (Bengali)</th>
-                        <th>Father's Mobile No.</th>
-                        <th>Mother's Mobile No.</th>
-                        <th>Father's NID</th>
-                        <th>Mother's NID</th>
-                        <th>Father's Birth Date</th>
-                        <th>Mother's Birth Date</th>
-                        <th>Present Division</th>
-                        <th>Present District</th>
-                        <th>Present Upozilla</th>
-                        <th>Present City Corp/Municipality</th>
-                        <th>Present Post Code</th>
-                        <th>Present Address</th>
-                        <th>Permanent Division</th>
-                        <th>Permanent District</th>
-                        <th>Permanent Upozilla</th>
-                        <th>Permanent City Corp/Municipality</th>
-                        <th>Permanent Post Code</th>
-                        <th>Permanent Address</th>
-                        <th>Previous Education Board Division</th>
-                        <th>Previous Education Board District</th>
-                        <th>Previous Education Board Upozilla</th>
-                        <th>Previous Education Board</th>
-                        <th>Previous Exam Passing Year</th>
-                        <th>Previous Exam Roll</th>
-                        <th>Previous Institute Name</th>
-                        <th>Previous Exam GPA</th>
-                        <th>Previous Exam Name</th>
-                        <th>Previous Technology/Trade</th>
-                        <th>Previous Attendance Rate</th>
-                        <th>Current Education Board Division</th>
-                        <th>Current Education Board District</th>
-                        <th>Current Education Board Upozilla</th>
-                        <th>Current Institute Name</th>
-                        <th>Semester</th>
-                        <th>Shift</th>
-                        <th>Group</th>
-                        <th>Guardian Name (Bengali)</th>
-                        <th>Guardian Name (English)</th>
-                        <th>Guardian Mobile No.</th>
-                        <th>Guardian NID No.</th>
-                        <th>Guardian's Birth Date</th>
-                        <th>Relationship with Guardian</th>
-                        <th>Cost Borne</th>
-                        <th>Disabilities</th>
-                        <th>Ethnicity</th>
-                        <th>Freedom Fighter Quota</th>
-                        <th>Scholarship</th>
-                        <th>Payment Method</th>
-                        <th>Mobile Banking Service Provider</th>
-                        <th>Mobile Banking Account Number</th>
-                        <th>Bank Name</th>
-                        <th>Branch</th>
-                        <th>Bank Account Number</th>
-                        <th>Bank Account Name</th>
-                        <th>Bank Account Type</th>
-                        <th>Bank Routing Number</th> --}}
                         <th>Actions</th>
                      </tr>
                   </thead>

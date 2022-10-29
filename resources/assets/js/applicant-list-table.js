@@ -450,21 +450,9 @@ $(function () {
          }
       }
 
-      for (let i = 3; i <= 74; i++) {
-         if (!columns.includes(i)) {
-            columns.push(i);
-         }
-      }
       console.log(columns);
    }
    document.getElementsByClassName('dt-button')[2].addEventListener('click', getCheckedValues);
-
-
-   // for (let i = 0; i <= 74; i++) {
-   //    document.querySelectorAll(".export_col").forEach((item) => {
-   //       item.setAttribute("value", item[i]);
-   //    });
-   // }
 
 
    // Toggle Filter Options
