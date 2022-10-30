@@ -22,7 +22,7 @@ class appViews extends Controller
    {
 
       $titles = [
-         "Name",
+         "Student Name",
          "Father's Name",
          "Mother's Name",
          "Roll",

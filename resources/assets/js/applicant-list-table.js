@@ -176,7 +176,7 @@ $(function () {
                         assetPath +
                         "student-images/formal-images/" +
                         $user_img +
-                        '" alt="Avatar" width="32" height="32">';
+                        '" alt="" width="32" height="32">';
                   } else {
                      // For Avatar badge
                      var stateNum = Math.floor(Math.random() * 7) + 1;
@@ -210,9 +210,9 @@ $(function () {
                      $output +
                      "</div>" +
                      '<div class="d-flex flex-column">' +
-                     '<span class="emp_name text-truncate fw-bold">' +
+                     '<a href="' + window.location.origin + '/authenticated/dash/applicant-detail/' + full["ce_reg"] + '"><span class="emp_name text-truncate fw-bold">' +
                      $name +
-                     "</span>" +
+                     "</span></a>" +
                      // '<small class="emp_post text-truncate text-muted">' +
                      // $post +
                      // "</small>" +
@@ -245,14 +245,6 @@ $(function () {
                         class: "font-small-4 me-50",
                      }) +
                      "Delete</a>"
-                     // +
-
-                     // '<a href="javascript:;" class="item-edit">' +
-                     // feather.icons["edit"].toSvg({ class: "font-small-4" }) +
-                     // "</a>" +
-                     // '<a href="javascript:;" class="item-edit">' +
-                     // feather.icons["edit"].toSvg({ class: "font-small-4" }) +
-                     // "</a>"
                   );
                },
             },

@@ -130,7 +130,6 @@ class FormHandlerController extends Controller
 
       // Insert data to database
       formHandler::create($request->all() + ['formal_image_path' => $formal_image_name_handler] + ['signature_image_path' => $signature_image_name_handler]);
-      // return redirect()->route('form')->with('success', 'Data saved successfully!');
 
       // redirect to confirmation page
       return redirect()->route('confirm', ['id' => $request->input('ce_reg')])->with('success', 'Data saved successfully!')->withInput();
@@ -146,8 +145,6 @@ class FormHandlerController extends Controller
    {
       // show single applicant data
       $applicant = formHandler::findOrFail($ce_reg);
-      // dd($applicant);
-      // return $applicant;
 
       return view('content.dashboard.applicants.single-applicant', ['applicant' => $applicant]);
    }
@@ -190,10 +187,22 @@ class FormHandlerController extends Controller
             $applicant = formHandler::where('id', $id)->first();
             $formal_image_path = $applicant->formal_image_path;
             $signature_image_path = $applicant->signature_image_path;
-            File::delete(public_path('student-images/formal-images/') . $formal_image_path);
-            File::delete(public_path('student-images/signature-images/') . $signature_image_path);
-            // File::delete('/public/student-images/formal-images/' . $formal_image_path);
-            // File::delete('/public/student-images/signature-images/' . $signature_image_path);
+
+
+            if (File::exists(public_path('student-images/formal-images/') . $formal_image_path)) {
+               File::delete(public_path('student-images/formal-images/') . $formal_image_path);
+            } else {
+               return redirect()->back()->with('destroy-error', 'Formal Image File not found associated with this Applicant! So, We can not delete this applicant record at this time. Please Contact with the developer as soon as possible.');
+            }
+
+            if (File::exists(public_path('student-images/signature-images/') . $signature_image_path)) {
+               File::delete(public_path('student-images/signature-images/') . $signature_image_path);
+            } else {
+               return redirect()->back()->with('destroy-error', 'Signature Image File not found associated with this Applicant! So, We can not delete this applicant record at this time. Please Contact with the developer as soon as possible.');
+            }
+
+
+
 
             formHandler::where('id', $id)->delete();
             return redirect()->route('applicant-list')->with('destroy-success', 'Applicant deleted successfully!');

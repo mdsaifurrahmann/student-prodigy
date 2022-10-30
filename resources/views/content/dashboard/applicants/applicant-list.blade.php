@@ -50,7 +50,7 @@
                <form class="dt_adv_search d-none mt-1 pb-1" method="POST" id="filterForm">
                   <div class="row g-1 mb-md-1">
                      <div class="col-md-4">
-                        <label class="form-label">Name:</label>
+                        <label class="form-label">Student Name:</label>
                         <input type="text" class="form-control dt-input dt-full-name" data-column="3" placeholder="Alaric Beslier" data-column-index="0" />
                      </div>
                      <div class="col-md-4">
