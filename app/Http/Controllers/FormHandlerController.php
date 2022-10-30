@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Models\formHandler;
@@ -141,14 +142,14 @@ class FormHandlerController extends Controller
     * @param  \App\Models\formHandler  $formHandler
     * @return \Illuminate\Http\Response
     */
-   public function show(formHandler $formHandler, $id)
+   public function show(formHandler $formHandler, $ce_reg)
    {
       // show single applicant data
-      $formHandler = formHandler::findOrFail($id);
-      // dd($formHandler);
-      // return $formHandler;
+      $applicant = formHandler::findOrFail($ce_reg);
+      // dd($applicant);
+      // return $applicant;
 
-      return view('content.dashboard.applicants.single-applicant', ['formHandler' => $formHandler]);
+      return view('content.dashboard.applicants.single-applicant', ['applicant' => $applicant]);
    }
 
    /**
@@ -180,8 +181,27 @@ class FormHandlerController extends Controller
     * @param  \App\Models\formHandler  $formHandler
     * @return \Illuminate\Http\Response
     */
-   public function destroy(formHandler $formHandler)
+   public function destroy(formHandler $formHandler, $id)
    {
-      //
+      // delete the applicant
+      if (Auth::check()) {
+         if (formHandler::where('id', $id)->exists()) {
+            // remove file from storage
+            $applicant = formHandler::where('id', $id)->first();
+            $formal_image_path = $applicant->formal_image_path;
+            $signature_image_path = $applicant->signature_image_path;
+            File::delete(public_path('student-images/formal-images/') . $formal_image_path);
+            File::delete(public_path('student-images/signature-images/') . $signature_image_path);
+            // File::delete('/public/student-images/formal-images/' . $formal_image_path);
+            // File::delete('/public/student-images/signature-images/' . $signature_image_path);
+
+            formHandler::where('id', $id)->delete();
+            return redirect()->route('applicant-list')->with('destroy-success', 'Applicant deleted successfully!');
+         } else {
+            return redirect()->route('applicant-list')->with('destroy-error', 'Applicant does not exist! So can not delete!');
+         }
+      } else {
+         return redirect()->route('root')->with('destroy-error', 'You are not authorized to delete this applicant!');
+      }
    }
 }

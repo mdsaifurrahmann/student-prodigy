@@ -17,6 +17,20 @@
       <div class="row">
          <div class="col-12">
 
+            {{-- Notice --}}
+            @if (session('destroy-success'))
+               <div class="alert alert-success alert-dismissible fade show p-2" role="alert">
+                  <strong> {{ session('destroy-success') }}</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            @endif
+            @if (session('destroy-error'))
+               <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
+                  <strong> {{ session('destroy-error') }}</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            @endif
+
             {{-- Filter Being --}}
             <div class="card p-2 pt-0">
                <div class="card-header p-2 px-0 pb-0" id="filter">

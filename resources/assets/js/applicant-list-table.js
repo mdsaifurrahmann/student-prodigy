@@ -228,29 +228,31 @@ $(function () {
                orderable: false,
                render: function (data, type, full, meta) {
                   return (
-                     '<div class="d-inline-flex">' +
-                     '<a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">' +
-                     feather.icons["more-vertical"].toSvg({
-                        class: "font-small-4",
-                     }) +
-                     "</a>" +
-                     '<div class="dropdown-menu dropdown-menu-end">' +
-                     '<a href="javascript:;" class="dropdown-item">' +
+
+                     '<a href="' + window.location.origin + '/authenticated/dash/applicant-detail/' + full["ce_reg"] + '"class=" my-1 d-block btn btn-primary waves-effect waves-float waves-light">' +
                      feather.icons["file-text"].toSvg({
                         class: "font-small-4 me-50",
                      }) +
-                     "Details</a>" +
+                     "View Detail</a>" +
 
-                     '<a href="javascript:;" class="dropdown-item delete-record">' +
+                     '<a href="" class=" my-1 d-block btn btn-warning waves-effect waves-float waves-light">' +
+                     feather.icons["edit"].toSvg({
+                        class: "font-small-4 me-50",
+                     }) +
+                     "Update</a>" +
+                     '<a href="' + window.location.origin + '/authenticated/dash/applicant-destroy/' + full["id"] + '" class=" my-1 d-block btn btn-danger waves-effect waves-float waves-light" id="applicant-destroy">' +
                      feather.icons["trash-2"].toSvg({
                         class: "font-small-4 me-50",
                      }) +
-                     "Delete</a>" +
-                     "</div>" +
-                     "</div>" +
-                     '<a href="javascript:;" class="item-edit">' +
-                     feather.icons["edit"].toSvg({ class: "font-small-4" }) +
-                     "</a>"
+                     "Delete</a>"
+                     // +
+
+                     // '<a href="javascript:;" class="item-edit">' +
+                     // feather.icons["edit"].toSvg({ class: "font-small-4" }) +
+                     // "</a>" +
+                     // '<a href="javascript:;" class="item-edit">' +
+                     // feather.icons["edit"].toSvg({ class: "font-small-4" }) +
+                     // "</a>"
                   );
                },
             },

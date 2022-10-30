@@ -10,7 +10,7 @@
 @section('content')
    <!-- Basic table -->
 
-   {{ $formHandler->student_name_bangla }}
+   {{ $applicant->student_name_bangla }}
 
 @endsection
 
