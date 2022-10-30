@@ -15,7 +15,7 @@
             <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-bottom: 0">
                <div class="alert-body">
                   <h2 class="text-success text-center">{{ session('success') }}</h2>
-                  <p class="text-success text-center">Your registration with the registration number {{ old('ce-reg') }} is successful.</p>
+                  <p class="text-success text-center">Your registration with the registration number {{ old('ce_reg') }} is successful.</p>
                   <p class="text-warning text-center">Here is your submitted Data. If you find any mistake, Please Contact with your responsible Teacher.</p>
                </div>
 
@@ -53,63 +53,63 @@
                      <tbody>
                         <tr>
                            <th class="w-25">Student's Name (Bengali):</th>
-                           <td colspan="3">{{ old('student-name-bangla') }}</td>
+                           <td colspan="3">{{ old('student_name_bangla') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Student's Name (English):</th>
-                           <td colspan="3">{{ old('student-name-english') }}</td>
+                           <td colspan="3">{{ old('student_name_english') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Birth Certificate Number:</th>
-                           <td colspan="3">{{ old('birth-certificate-number') }}</td>
+                           <td colspan="3">{{ old('birth_certificate_number') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Birth Date:</th>
-                           <td colspan="3">{{ old('birth-date') }}</td>
+                           <td colspan="3">{{ old('birth_date') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Blood Group:</th>
-                           <td colspan="3">{{ old('blood-group') }}</td>
+                           <td colspan="3">{{ old('blood_group') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Mobile Number:</th>
-                           <td colspan="3">{{ old('student-mobile') }}</td>
+                           <td colspan="3">{{ old('student_mobile') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Gender:</th>
                            <td>{{ old('gender') }}</td>
                            <th class="w-25">Marital Status:</th>
-                           <td>{{ old('marital-status') }}</td>
+                           <td>{{ old('marital_status') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Father's Name (Bengali):</th>
-                           <td>{{ old('father-name-bangla') }}</td>
+                           <td>{{ old('father_name_bangla') }}</td>
                            <th class="w-25">Mother's Name (Bengali):</th>
-                           <td>{{ old('mother-name-bangla') }}</td>
+                           <td>{{ old('mother_name_bangla') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Father's Name (English):</th>
-                           <td>{{ old('father-name-english') }}</td>
+                           <td>{{ old('father_name_english') }}</td>
                            <th class="w-25">Mother's Name (English):</th>
-                           <td>{{ old('mother-name-english') }}</td>
+                           <td>{{ old('mother_name_english') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Father's NID:</th>
-                           <td>{{ old('father-nid') }}</td>
+                           <td>{{ old('father_nid') }}</td>
                            <th class="w-25">Mother's NID:</th>
-                           <td>{{ old('mother-nid') }}</td>
+                           <td>{{ old('mother_nid') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Father's Birth Date:</th>
-                           <td>{{ old('father-birth-date') }}</td>
+                           <td>{{ old('father_birth_date') }}</td>
                            <th class="w-25">Mother's Birth Date:</th>
-                           <td>{{ old('mother-birth-date') }}</td>
+                           <td>{{ old('mother_birth_date') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Father's Mobile Number:</th>
-                           <td>{{ old('father-mobile') }}</td>
+                           <td>{{ old('father_mobile') }}</td>
                            <th class="w-25">Mother's Mobile Number:</th>
-                           <td>{{ old('mother-mobile') }}</td>
+                           <td>{{ old('mother_mobile') }}</td>
                         </tr>
                      </tbody>
                      <thead>
@@ -139,21 +139,21 @@
                         </tr>
                         <tr>
                            <th class="w-25">Municipality/Union/City Corp.:</th>
-                           <td>{{ old('perm-city-corp') }} </td>
+                           <td>{{ old('perm_city_corp') }} </td>
                            <th class="w-25">Municipality/Union/City Corp.:</th>
-                           <td>{{ old('pres-city-corp') }} </td>
+                           <td>{{ old('pres_city_corp') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Post Code:</th>
-                           <td>{{ old('perm-post-code') }} </td>
+                           <td>{{ old('perm_post_code') }} </td>
                            <th class="w-25">Post Code:</th>
-                           <td>{{ old('pres-post-code') }} </td>
+                           <td>{{ old('pres_post_code') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Address/Village:</th>
-                           <td>{{ old('perm-address') }} </td>
+                           <td>{{ old('perm_address') }} </td>
                            <th class="w-25">Address/Village:</th>
-                           <td>{{ old('pres-address') }} </td>
+                           <td>{{ old('pres_address') }} </td>
                         </tr>
                      </tbody>
                      <thead>
@@ -183,9 +183,9 @@
                         </tr>
                         <tr>
                            <th class="w-25">Institute Name:</th>
-                           <td>{{ old('pe-institute') }} </td>
+                           <td>{{ old('pe_institute') }} </td>
                            <th class="w-25">Institute Name:</th>
-                           <td>{{ old('ce-institute-name') }} </td>
+                           <td>{{ old('ce_institute_name') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Passing Year:</th>
@@ -195,37 +195,37 @@
                         </tr>
                         <tr>
                            <th class="w-25">Board:</th>
-                           <td>{{ old('pe-board') }} </td>
+                           <td>{{ old('pe_board') }} </td>
                            <th class="w-25">Technology/Trade:</th>
-                           <td>{{ old('ce-technology-trade') }} </td>
+                           <td>{{ old('ce_technology_trade') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Technology/Trade:</th>
-                           <td>{{ old('pe-technology-trade') }} </td>
+                           <td>{{ old('pe_technology_trade') }} </td>
                            <th class="w-25">Shift:</th>
-                           <td>{{ old('ce-shift') }} </td>
+                           <td>{{ old('ce_shift') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Previous Exam Name:</th>
-                           <td>{{ old('pe-exam-name') }} </td>
+                           <td>{{ old('pe_exam_name') }} </td>
                            <th class="w-25">Roll:</th>
-                           <td>{{ old('ce-roll') }} </td>
+                           <td>{{ old('ce_roll') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Roll:</th>
-                           <td>{{ old('pe-roll') }} </td>
+                           <td>{{ old('pe_roll') }} </td>
                            <th class="w-25">Shift:</th>
-                           <td>{{ old('ce-shift') }} </td>
+                           <td>{{ old('ce_shift') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Result (GPA):</th>
-                           <td>{{ old('pe-gpa') }} </td>
+                           <td>{{ old('pe_gpa') }} </td>
                            <th class="w-25"></th>
                            <td></td>
                         </tr>
                         <tr>
                            <th class="w-25">Attendance Rate:</th>
-                           <td>{{ old('pe-att-rate') }} </td>
+                           <td>{{ old('pe_att_rate') }} </td>
                            <th class="w-25"></th>
                            <td></td>
                         </tr>
@@ -241,35 +241,35 @@
                            <th class="w-25">Relation:</th>
                            <td>{{ old('relationship') }} </td>
                            <th class="w-25">Cost Borne By:</th>
-                           <td>{{ old('cost-borne') }} </td>
+                           <td>{{ old('cost_borne') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Name (Bengali):</th>
-                           <td>{{ old('guardian-name-bangla') }} </td>
+                           <td>{{ old('guardian_name_bangla') }} </td>
                            <th class="w-25">Belongs to minority/ethnic groups:</th>
                            <td>{{ old('ethnic') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Name (English):</th>
-                           <td>{{ old('guardian-name-english') }} </td>
+                           <td>{{ old('guardian_name_english') }} </td>
                            <th class="w-25">Freefom Fighter Quota:</th>
                            <td>{{ old('ffq') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Guardian's NID:</th>
-                           <td>{{ old('guardian-nid') }} </td>
+                           <td>{{ old('guardian_nid') }} </td>
                            <th class="w-25">Any Other Scholarships:</th>
                            <td>{{ old('scholarship') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Guardian's Birth Date:</th>
-                           <td>{{ old('guardian-birth-date') }} </td>
+                           <td>{{ old('guardian_birth_date') }} </td>
                            <th class="w-25">Any Disabilities:</th>
                            <td>{{ old('disabilities') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Guardian's Mobile:</th>
-                           <td>{{ old('guardian-mobile') }} </td>
+                           <td>{{ old('guardian_mobile') }} </td>
                            <th class="w-25"></th>
                            <td></td>
                         </tr>
@@ -282,7 +282,7 @@
                      <tbody>
                         <tr>
                            <th colspan="2" class="w-25">Payment Method:</th>
-                           <td colspan="2">{{ old('payment-method') }}</td>
+                           <td colspan="2">{{ old('payment_method') }}</td>
                         </tr>
                         <tr>
                            <th colspan="2" class="w-50 text-center">Banking</th>
@@ -291,37 +291,37 @@
 
                         <tr>
                            <th class="w-25">Bank Name:</th>
-                           <td>{{ old('bank-name') }}</td>
+                           <td>{{ old('bank_name') }}</td>
                            <th class="w-25">Mobile Banking Service Provider:</th>
-                           <td>{{ old('mobile-bank-provider') }}</td>
+                           <td>{{ old('mobile_bank_provider') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Branch Name:</th>
-                           <td>{{ old('bank-branch') }}</td>
+                           <td>{{ old('bank_branch') }}</td>
                            <th class="w-25">Mobile Banking Account Number:</th>
-                           <td>{{ old('mobile-bank-account') }}</td>
+                           <td>{{ old('mobile_bank_account') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Bank Routing Number:</th>
-                           <td>{{ old('bank-routing') }}</td>
+                           <td>{{ old('bank_routing') }}</td>
                            <th class="w-25"></th>
                            <td></td>
                         </tr>
                         <tr>
                            <th class="w-25">Account Type:</th>
-                           <td>{{ old('bank-acc-type') }}</td>
+                           <td>{{ old('bank_acc_type') }}</td>
                            <th class="w-25"></th>
                            <td></td>
                         </tr>
                         <tr>
                            <th class="w-25">Account Holder Name:</th>
-                           <td>{{ old('bank-acc-name') }}</td>
+                           <td>{{ old('bank_acc_name') }}</td>
                            <th class="w-25"></th>
                            <td></td>
                         </tr>
                         <tr>
                            <th class="w-25">Account Number:</th>
-                           <td>{{ old('bank-acc-number') }}</td>
+                           <td>{{ old('bank_acc_number') }}</td>
                            <th class="w-25"></th>
                            <td></td>
                         </tr>

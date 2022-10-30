@@ -37,48 +37,48 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="student-name-bangla-column">Student Name (In Bengali)</label>
-                           <input type="text" id="student-name-bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="student-name-bangla" required
-                              pattern="[\s\u0980-\u09FF]+$" value="{{ old('student-name-bangla') }}">
+                           <label class="form-label" for="student_name_bangla-column">Student Name (In Bengali)</label>
+                           <input type="text" id="student_name_bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="student_name_bangla" required
+                              pattern="[\s\u0980-\u09FF]+$" value="{{ old('student_name_bangla') }}">
 
                            <div class="invalid-feedback">Please enter your name in Bengali.</div>
-                           @error('student-name-bangla')
+                           @error('student_name_bangla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="student-name-english-column">Student Name (In English)</label>
-                           <input type="text" id="student-name-english-column" class="form-control" placeholder="Shakil Ahmed" name="student-name-english"
-                              required value="{{ old('student-name-english') }}">
+                           <label class="form-label" for="student_name_english-column">Student Name (In English)</label>
+                           <input type="text" id="student_name_english-column" class="form-control" placeholder="Shakil Ahmed" name="student_name_english"
+                              required value="{{ old('student_name_english') }}">
 
                            <div class="invalid-feedback">Please enter your name in English.</div>
-                           @error('student-name-english')
+                           @error('student_name_english')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="birth-certificate-number">Birth Certificate Number</label>
-                           <input type="text" id="birth-certificate-number" class="form-control" placeholder="20072722000000008" name="birth-certificate-number"
-                              pattern="[0-9]{15,17}" required value="{{ old('birth-certificate-number') }}">
+                           <label class="form-label" for="birth_certificate_number">Birth Certificate Number</label>
+                           <input type="text" id="birth_certificate_number" class="form-control" placeholder="20072722000000008" name="birth_certificate_number"
+                              pattern="[0-9]{15,17}" required value="{{ old('birth_certificate_number') }}">
 
                            <div class="invalid-feedback">Please enter your birth certificate number.</div>
-                           @error('birth-certificate-number')
+                           @error('birth_certificate_number')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="birth-date">Date of Birth</label>
-                           <input type="text" id="birth-date" name="birth-date" class="form-control picker flatpickr-basic flatpickr-input active"
-                              placeholder="YYYY-MM-DD" readonly="readonly" required value="{{ old('birth-date') }}">
+                           <label class="form-label" for="birth_date">Date of Birth</label>
+                           <input type="text" id="birth_date" name="birth_date" class="form-control picker flatpickr-basic flatpickr-input active"
+                              placeholder="YYYY-MM-DD" readonly="readonly" required value="{{ old('birth_date') }}">
 
                            <div class="invalid-feedback">Please enter your date of birth.</div>
-                           @error('birth-date')
+                           @error('birth_date')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -86,12 +86,12 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="student-mobile">Student's Mobile Number</label>
-                           <input type="text" id="student-mobile" class="form-control" placeholder="017xxxxxxxx" name="student-mobile"
-                              pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('student-mobile') }}">
+                           <label class="form-label" for="student_mobile">Student's Mobile Number</label>
+                           <input type="text" id="student_mobile" class="form-control" placeholder="017xxxxxxxx" name="student_mobile"
+                              pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('student_mobile') }}">
 
                            <div class="invalid-feedback">Please enter your mobile number.</div>
-                           @error('student-mobile')
+                           @error('student_mobile')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -99,10 +99,10 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="blood-group">Blood Group</label>
-                           <select name="blood-group" id="blood-group" class="form-select" required>
-                              <option selected="" value="{{ old('blood-group') ? old('blood-group') : '' }}" {{ old('blood-group') ? '' : 'disabled' }}>
-                                 {{ old('blood-group') ? old('blood-group') : 'Select your Blood group' }} </option>
+                           <label class="form-label" for="blood_group">Blood Group</label>
+                           <select name="blood_group" id="blood_group" class="form-select" required>
+                              <option selected="" value="{{ old('blood_group') ? old('blood_group') : '' }}" {{ old('blood_group') ? '' : 'disabled' }}>
+                                 {{ old('blood_group') ? old('blood_group') : 'Select your Blood group' }} </option>
                               <option value="A Positive (A+)">A Positive (A+)</option>
                               <option value="A Megative (A-)">A Megative (A-)</option>
                               <option value="B Positive (B+)">B Positive (B+)</option>
@@ -114,7 +114,7 @@
                            </select>
 
                            <div class="invalid-feedback">Please select your blood group.</div>
-                           @error('blood-group')
+                           @error('blood_group')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -147,18 +147,18 @@
                            <label class="form-label">Marital Status</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="married" class="form-check-input" type="radio" name="marital-status" value="married" required
-                                    {{ old('marital-status') == 'married' ? 'checked' : '' }}>
+                                 <input id="married" class="form-check-input" type="radio" name="marital_status" value="married" required
+                                    {{ old('marital_status') == 'married' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="married">Married</label>
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="unmarried" class="form-check-input" type="radio" name="marital-status" value="unmarried" required
-                                    {{ old('marital-status') == 'unmarried' ? 'checked' : '' }}>
+                                 <input id="unmarried" class="form-check-input" type="radio" name="marital_status" value="unmarried" required
+                                    {{ old('marital_status') == 'unmarried' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="unmarried">Unmarried</label>
                               </div>
 
                            </div>
-                           @error('marital-status')
+                           @error('marital_status')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -172,34 +172,34 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father-name-bangla-column">Father's Name (In Bengali)</label>
-                           <input type="text" id="father-name-bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="father-name-bangla"
-                              pattern="[\s\u0980-\u09FF]+$" required value="{{ old('father-name-bangla') }}">
+                           <label class="form-label" for="father_name_bangla-column">Father's Name (In Bengali)</label>
+                           <input type="text" id="father_name_bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="father_name_bangla"
+                              pattern="[\s\u0980-\u09FF]+$" required value="{{ old('father_name_bangla') }}">
 
                            <div class="invalid-feedback">Please enter your father's name in Bengali.</div>
-                           @error('father-name-bangla')
+                           @error('father_name_bangla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father-name-english-column">Father's Name (In English)</label>
-                           <input type="text" id="father-name-english-column" class="form-control" placeholder="Shakil Ahmed" name="father-name-english"
-                              required value="{{ old('father-name-english') }}">
+                           <label class="form-label" for="father_name_english-column">Father's Name (In English)</label>
+                           <input type="text" id="father_name_english-column" class="form-control" placeholder="Shakil Ahmed" name="father_name_english"
+                              required value="{{ old('father_name_english') }}">
                            <div class="invalid-feedback">Please enter your father's name in English.</div>
-                           @error('father-name-english')
+                           @error('father_name_english')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother-name-bangla-column">Mother's Name (In Bengali)</label>
-                           <input type="text" id="mother-name-bangla-column" class="form-control" placeholder="শাকিলা আহমেদ" name="mother-name-bangla"
-                              required pattern="[\s\u0980-\u09FF]+$" value="{{ old('mother-name-bangla') }}">
+                           <label class="form-label" for="mother_name_bangla-column">Mother's Name (In Bengali)</label>
+                           <input type="text" id="mother_name_bangla-column" class="form-control" placeholder="শাকিলা আহমেদ" name="mother_name_bangla"
+                              required pattern="[\s\u0980-\u09FF]+$" value="{{ old('mother_name_bangla') }}">
                            <div class="invalid-feedback">Please enter your mother's name in Bengali.</div>
-                           @error('mother-name-bangla')
+                           @error('mother_name_bangla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -207,11 +207,11 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother-name-english-column">Mother's Name (In English)</label>
-                           <input type="text" id="mother-name-english-column" class="form-control" placeholder="Shakila Ahmed" name="mother-name-english"
-                              required value="{{ old('mother-name-english') }}">
+                           <label class="form-label" for="mother_name_english-column">Mother's Name (In English)</label>
+                           <input type="text" id="mother_name_english-column" class="form-control" placeholder="Shakila Ahmed" name="mother_name_english"
+                              required value="{{ old('mother_name_english') }}">
                            <div class="invalid-feedback">Please enter your mother's name in English.</div>
-                           @error('mother-name-english')
+                           @error('mother_name_english')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -220,11 +220,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father-nid">Father's NID Number</label>
-                           <input type="text" id="father-nid" class="form-control" placeholder="132 456 6789" name="father-nid" required
-                              pattern="[0-9]{10,18}" value="{{ old('father-nid') }}">
+                           <label class="form-label" for="father_nid">Father's NID Number</label>
+                           <input type="text" id="father_nid" class="form-control" placeholder="132 456 6789" name="father_nid" required
+                              pattern="[0-9]{10,18}" value="{{ old('father_nid') }}">
                            <div class="invalid-feedback">Please enter your father's NID no.</div>
-                           @error('father-nid')
+                           @error('father_nid')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -232,23 +232,23 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother-nid">Mother's NID Number</label>
-                           <input type="text" id="mother-nid" class="form-control" placeholder="132 456 6789" name="mother-nid" required
-                              pattern="[0-9]{10,18}" value="{{ old('mother-nid') }}">
+                           <label class="form-label" for="mother_nid">Mother's NID Number</label>
+                           <input type="text" id="mother_nid" class="form-control" placeholder="132 456 6789" name="mother_nid" required
+                              pattern="[0-9]{10,18}" value="{{ old('mother_nid') }}">
                            <div class="invalid-feedback">Please enter your mother's NID no.</div>
-                           @error('mother-nid')
+                           @error('mother_nid')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father-birth-date">Father's Date of Birth</label>
-                           <input type="text" id="father-birth-date" name="father-birth-date"
+                           <label class="form-label" for="father_birth_date">Father's Date of Birth</label>
+                           <input type="text" id="father_birth_date" name="father_birth_date"
                               class="form-control picker flatpickr-basic flatpickr-input active" placeholder="YYYY-MM-DD" readonly="readonly" required
-                              value="{{ old('father-birth-date') }}">
+                              value="{{ old('father_birth_date') }}">
                            <div class="invalid-feedback">Please select your father's date of birth.</div>
-                           @error('father-birth-date')
+                           @error('father_birth_date')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -256,12 +256,12 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother-birth-date">Mother's Date of Birth</label>
-                           <input type="text" id="mother-birth-date" name="mother-birth-date"
+                           <label class="form-label" for="mother_birth_date">Mother's Date of Birth</label>
+                           <input type="text" id="mother_birth_date" name="mother_birth_date"
                               class="form-control picker flatpickr-basic flatpickr-input active" placeholder="YYYY-MM-DD" readonly="readonly" required
-                              value="{{ old('mother-birth-date') }}">
+                              value="{{ old('mother_birth_date') }}">
                            <div class="invalid-feedback">Please select your mother's date of birth.</div>
-                           @error('mother-birth-date')
+                           @error('mother_birth_date')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -269,11 +269,11 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father-mobile">Father's Mobile Number</label>
-                           <input type="text" id="father-mobile" class="form-control" placeholder="017xxxxxxxx" name="father-mobile"
-                              pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('father-mobile') }}">
+                           <label class="form-label" for="father_mobile">Father's Mobile Number</label>
+                           <input type="text" id="father_mobile" class="form-control" placeholder="017xxxxxxxx" name="father_mobile"
+                              pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('father_mobile') }}">
                            <div class="invalid-feedback">Please enter your father's mobile number.</div>
-                           @error('father-mobile')
+                           @error('father_mobile')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -282,11 +282,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother-mobile">Mother's Mobile Number</label>
-                           <input type="text" id="mother-mobile" class="form-control" placeholder="017xxxxxxxx" name="mother-mobile"
-                              pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('mother-mobile') }}">
+                           <label class="form-label" for="mother_mobile">Mother's Mobile Number</label>
+                           <input type="text" id="mother_mobile" class="form-control" placeholder="017xxxxxxxx" name="mother_mobile"
+                              pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('mother_mobile') }}">
                            <div class="invalid-feedback">Please enter your mother's mobile number.</div>
-                           @error('mother-mobile')
+                           @error('mother_mobile')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -348,12 +348,12 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="pres-city-corp" class="form-label">Municipality/Union/City Corporation </label>
-                           <input type="text" name="pres-city-corp" id="pres-city-corp" class="form-control" placeholder="Dinajpur" required
-                              value="{{ old('pres-city-corp') }}">
+                           <label for="pres_city_corp" class="form-label">Municipality/Union/City Corporation </label>
+                           <input type="text" name="pres_city_corp" id="pres_city_corp" class="form-control" placeholder="Dinajpur" required
+                              value="{{ old('pres_city_corp') }}">
 
                            <div class="invalid-feedback">Please enter Municipality/Union/City Corporation.</div>
-                           @error('pres-city-corp')
+                           @error('pres_city_corp')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -362,12 +362,12 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="pres-post-code" class="form-label">Post Code</label>
-                           <input type="text" name="pres-post-code" id="pres-post-code" class="form-control" placeholder="5200" required
-                              pattern="[0-9]{4}" value="{{ old('pres-post-code') }}">
+                           <label for="pres_post_code" class="form-label">Post Code</label>
+                           <input type="text" name="pres_post_code" id="pres_post_code" class="form-control" placeholder="5200" required
+                              pattern="[0-9]{4}" value="{{ old('pres_post_code') }}">
 
                            <div class="invalid-feedback">Please enter zip/post code.</div>
-                           @error('pres-post-code')
+                           @error('pres_post_code')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -376,11 +376,11 @@
 
                      <div class="col-12">
                         <div class="mb-1">
-                           <label for="pres-address" class="form-label">Address (Village, House, Road Etc.)</label>
-                           <textarea name="pres-address" id="pres-address" class="form-control" rows="2" required>{{ old('pres-address') }}</textarea>
+                           <label for="pres_address" class="form-label">Address (Village, House, Road Etc.)</label>
+                           <textarea name="pres_address" id="pres_address" class="form-control" rows="2" required>{{ old('pres_address') }}</textarea>
 
                            <div class="invalid-feedback">Please enter your address.</div>
-                           @error('pres-address')
+                           @error('pres_address')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -442,12 +442,12 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="perm-city-corp" class="form-label">Municipality/Union/City Corporation </label>
-                           <input type="text" name="perm-city-corp" id="perm-city-corp" class="form-control" placeholder="Dinajpur" required
-                              value="{{ old('perm-city-corp') }}">
+                           <label for="perm_city_corp" class="form-label">Municipality/Union/City Corporation </label>
+                           <input type="text" name="perm_city_corp" id="perm_city_corp" class="form-control" placeholder="Dinajpur" required
+                              value="{{ old('perm_city_corp') }}">
 
                            <div class="invalid-feedback">Please enter Municipality/Union/City Corporation.</div>
-                           @error('perm-city-corp')
+                           @error('perm_city_corp')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -455,12 +455,12 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="perm-post-code" class="form-label">Post Code</label>
-                           <input type="text" name="perm-post-code" id="perm-post-code" class="form-control" placeholder="5200" required
-                              pattern="[0-9]{4}" value="{{ old('perm-post-code') }}">
+                           <label for="perm_post_code" class="form-label">Post Code</label>
+                           <input type="text" name="perm_post_code" id="perm_post_code" class="form-control" placeholder="5200" required
+                              pattern="[0-9]{4}" value="{{ old('perm_post_code') }}">
 
                            <div class="invalid-feedback">Please enter zip/post code.</div>
-                           @error('perm-post-code')
+                           @error('perm_post_code')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -468,11 +468,11 @@
 
                      <div class="col-12">
                         <div class="mb-1">
-                           <label for="perm-address" class="form-label">Address (Village, House, Road Etc.)</label>
-                           <textarea name="perm-address" id="perm-address" class="form-control" rows="2" required>{{ old('perm-address') }}</textarea>
+                           <label for="perm_address" class="form-label">Address (Village, House, Road Etc.)</label>
+                           <textarea name="perm_address" id="perm_address" class="form-control" rows="2" required>{{ old('perm_address') }}</textarea>
 
                            <div class="invalid-feedback">Please enter address.</div>
-                           @error('perm-address')
+                           @error('perm_address')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -533,9 +533,9 @@
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
                            <label for="pe_board" class="form-label">Board</label>
-                           <select name="pe-board" id="pe_board" class="form-select" required>
-                              <option {{ old('pe-board') ? '' : 'disabled' }} selected value="{{ old('pe-board') }}">
-                                 {{ old('pe-board') ? old('pe-board') : 'Select Board' }}
+                           <select name="pe_board" id="pe_board" class="form-select" required>
+                              <option {{ old('pe_board') ? '' : 'disabled' }} selected value="{{ old('pe_board') }}">
+                                 {{ old('pe_board') ? old('pe_board') : 'Select Board' }}
                               </option>
                               <option value="Barisal" class="text-uppercase">Barisal</option>
                               <option value="Chittagong" class="text-uppercase">Chittagong</option>
@@ -551,7 +551,7 @@
                            </select>
 
                            <div class="invalid-feedback">Please select education board.</div>
-                           @error('pe-board')
+                           @error('pe_board')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -560,12 +560,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe-institute" class="form-label">Institute Name</label>
-                           <input type="text" name="pe-institute" id="pe-institute" class="form-control" placeholder="Dinajpur Govt. College" required
-                              value="{{ old('pe-institute') }}">
+                           <label for="pe_institute" class="form-label">Institute Name</label>
+                           <input type="text" name="pe_institute" id="pe_institute" class="form-control" placeholder="Dinajpur Govt. College" required
+                              value="{{ old('pe_institute') }}">
 
                            <div class="invalid-feedback">Please enter institute name.</div>
-                           @error('pe-institute')
+                           @error('pe_institute')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -573,10 +573,10 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe-passing-year" class="form-label">Passing Year</label>
-                           <select type="number" name="pe-passing-year" id="pe-passing-year" class="form-select" required>
-                              <option {{ old('pe-passing-year') ? '' : 'disabled' }} selected value="{{ old('pe-passing-year') }}">
-                                 {{ old('pe-passing-year') ? old('pe-passing-year') : 'Select Passing Year' }}
+                           <label for="pe_passing_year" class="form-label">Passing Year</label>
+                           <select type="number" name="pe_passing_year" id="pe_passing_year" class="form-select" required>
+                              <option {{ old('pe_passing_year') ? '' : 'disabled' }} selected value="{{ old('pe_passing_year') }}">
+                                 {{ old('pe_passing_year') ? old('pe_passing_year') : 'Select Passing Year' }}
                               </option>
                               @for ($i = 2001; $i <= date('Y'); $i++)
                                  <option value="{{ $i }}">{{ $i }}</option>
@@ -584,7 +584,7 @@
                            </select>
 
                            <div class="invalid-feedback">Please enter passing year.</div>
-                           @error('pe-passing-year')
+                           @error('pe_passing_year')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -593,12 +593,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe-gpa" class="form-label">GPA</label>
-                           <input type="number" name="pe-gpa" id="pe-gpa" class="form-control" placeholder="4.00" required
-                              value="{{ old('pe-gpa') }}">
+                           <label for="pe_gpa" class="form-label">GPA</label>
+                           <input type="number" name="pe_gpa" id="pe_gpa" class="form-control" placeholder="4.00" required
+                              value="{{ old('pe_gpa') }}">
 
                            <div class="invalid-feedback">Please enter your CGPA.</div>
-                           @error('pe-gpa')
+                           @error('pe_gpa')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -607,12 +607,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe-exam-name" class="form-label">Name of previous Exam:</label>
-                           <input type="text" name="pe-exam-name" id="pe-exam-name" class="form-control" placeholder="SSC" required
-                              value="{{ old('pe-exam-name') }}">
+                           <label for="pe_exam_name" class="form-label">Name of previous Exam:</label>
+                           <input type="text" name="pe_exam_name" id="pe_exam_name" class="form-control" placeholder="SSC" required
+                              value="{{ old('pe_exam_name') }}">
 
                            <div class="invalid-feedback">Please enter previous exam name.</div>
-                           @error('pe-exam-name')
+                           @error('pe_exam_name')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -621,12 +621,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe-technology-trade" class="form-label">Technology/Trade</label>
-                           <input type="text" name="pe-technology-trade" id="pe-technology-trade" class="form-control" placeholder="Computer Science"
-                              required value="{{ old('pe-technology-trade') }}">
+                           <label for="pe_technology_trade" class="form-label">Technology/Trade</label>
+                           <input type="text" name="pe_technology_trade" id="pe_technology_trade" class="form-control" placeholder="Computer Science"
+                              required value="{{ old('pe_technology_trade') }}">
 
                            <div class="invalid-feedback">Please select technology/trade.</div>
-                           @error('pe-technology-trade')
+                           @error('pe_technology_trade')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -634,12 +634,12 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="pe-roll" class="form-label">Roll</label>
-                           <input type="number" name="pe-roll" id="pe-roll" class="form-control" placeholder="181457" required
-                              value="{{ old('pe-roll') }}">
+                           <label for="pe_roll" class="form-label">Roll</label>
+                           <input type="number" name="pe_roll" id="pe_roll" class="form-control" placeholder="181457" required
+                              value="{{ old('pe_roll') }}">
 
                            <div class="invalid-feedback">Please enter your roll no.</div>
-                           @error('pe-roll')
+                           @error('pe_roll')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -647,12 +647,12 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="pe-att-rate" class="form-label">Attendance rate:</label>
-                           <input type="text" name="pe-att-rate" id="pe-att-rate" class="form-control disabled" value="75%" readonly="readonly"
-                              required value="{{ old('pe-att-rate') }}">
+                           <label for="pe_att_rate" class="form-label">Attendance rate:</label>
+                           <input type="text" name="pe_att_rate" id="pe_att_rate" class="form-control disabled" value="75%" readonly="readonly"
+                              required value="{{ old('pe_att_rate') }}">
 
                            <div class="invalid-feedback">Please enter attendance rate.</div>
-                           @error('pe-att-rate')
+                           @error('pe_att_rate')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -713,12 +713,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="ce-institute-name" class="form-label">Institute Name</label>
-                           <input type="text" name="ce-institute-name" id="ce-institute-name" class="form-control" placeholder="Textile Institute Dinajpur"
-                              required value="{{ old('ce-institute-name') }}">
+                           <label for="ce_institute_name" class="form-label">Institute Name</label>
+                           <input type="text" name="ce_institute_name" id="ce_institute_name" class="form-control" placeholder="Textile Institute Dinajpur"
+                              required value="{{ old('ce_institute_name') }}">
 
                            <div class="invalid-feedback">Please enter institute name.</div>
-                           @error('ce-institute-name')
+                           @error('ce_institute_name')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -727,10 +727,10 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="ce-semester" class="form-label">Semester</label>
-                           <select name="ce-semester" id="ce-semester" class="form-select" required>
-                              <option selected {{ old('ce-semester') ? '' : 'disabled' }} value="{{ old('ce-semester') }}">
-                                 {{ old('ce-semester') ? old('ce-semester') : 'Select Semester' }}
+                           <label for="ce_semester" class="form-label">Semester</label>
+                           <select name="ce_semester" id="ce_semester" class="form-select" required>
+                              <option selected {{ old('ce_semester') ? '' : 'disabled' }} value="{{ old('ce_semester') }}">
+                                 {{ old('ce_semester') ? old('ce_semester') : 'Select Semester' }}
                               </option>
                               <option value="1st">1st</option>
                               <option value="2nd">2nd</option>
@@ -744,7 +744,7 @@
 
                            <div class="invalid-feedback">Please select your semester.</div>
 
-                           @error('ce-semester')
+                           @error('ce_semester')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -752,16 +752,16 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="ce-technology-trade" class="form-label">Technology/Trade</label>
-                           <select name="ce-technology-trade" id="ce-technology-trade" class="form-select" required>
-                              <option selected {{ old('ce-technology-trade') ? '' : 'disabled' }} value="{{ old('ce-technology-trade') }}">
-                                 {{ old('ce-technology-trade') ? old('ce-technology-trade') : 'Select Technology/Trade' }}
+                           <label for="ce_technology_trade" class="form-label">Technology/Trade</label>
+                           <select name="ce_technology_trade" id="ce_technology_trade" class="form-select" required>
+                              <option selected {{ old('ce_technology_trade') ? '' : 'disabled' }} value="{{ old('ce_technology_trade') }}">
+                                 {{ old('ce_technology_trade') ? old('ce_technology_trade') : 'Select Technology/Trade' }}
                               </option>
                               <option value="textile">Textile</option>
                            </select>
 
                            <div class="invalid-feedback">Please select technology/trade.</div>
-                           @error('ce-technology-trade')
+                           @error('ce_technology_trade')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -769,17 +769,17 @@
 
                      <div class="col-md-3 col-12">
                         <div class="mb-1">
-                           <label for="ce-shift" class="form-label">Shift</label>
-                           <select name="ce-shift" id="ce-shift" class="form-select" required>
-                              <option selected {{ old('ce-shift') ? '' : 'disabled' }} value="{{ old('ce-shift') }}">
-                                 {{ old('ce-shift') ? old('ce-shift') : 'Select Shift' }}
+                           <label for="ce_shift" class="form-label">Shift</label>
+                           <select name="ce_shift" id="ce_shift" class="form-select" required>
+                              <option selected {{ old('ce_shift') ? '' : 'disabled' }} value="{{ old('ce_shift') }}">
+                                 {{ old('ce_shift') ? old('ce_shift') : 'Select Shift' }}
                               </option>
                               <option value="morning">Morning</option>
                               <option value="day">Day</option>
                            </select>
 
                            <div class="invalid-feedback">Please select shift.</div>
-                           @error('ce-shift')
+                           @error('ce_shift')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -787,11 +787,11 @@
 
                      <div class="col-md-3 col-12">
                         <div class="mb-1">
-                           <label for="ce-group" class="form-label">Group</label>
-                           <input type="text" id="ce-group" name="ce-group" class="form-control" required value="{{ old('ce-group') }}">
+                           <label for="ce_group" class="form-label">Group</label>
+                           <input type="text" id="ce_group" name="ce_group" class="form-control" required value="{{ old('ce_group') }}">
 
                            <div class="invalid-feedback">Please enter group.</div>
-                           @error('ce-group')
+                           @error('ce_group')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -799,12 +799,12 @@
 
                      <div class="col-md-3 col-12">
                         <div class="mb-1">
-                           <label for="ce-roll" class="form-label">Roll</label>
-                           <input type="number" id="ce-roll" name="ce-roll" class="form-control" placeholder="174213" required
-                              value="{{ old('ce-roll') }}">
+                           <label for="ce_roll" class="form-label">Roll</label>
+                           <input type="number" id="ce_roll" name="ce_roll" class="form-control" placeholder="174213" required
+                              value="{{ old('ce_roll') }}">
 
                            <div class="invalid-feedback">Please enter roll.</div>
-                           @error('ce-roll')
+                           @error('ce_roll')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -813,12 +813,12 @@
 
                      <div class="col-md-3 col-12">
                         <div class="mb-1">
-                           <label for="ce-reg" class="form-label">Registration</label>
-                           <input type="number" id="ce-reg" name="ce-reg" class="form-control" placeholder="1500943651542" required
-                              value="{{ old('ce-reg') }}">
+                           <label for="ce_reg" class="form-label">Registration</label>
+                           <input type="number" id="ce_reg" name="ce_reg" class="form-control" placeholder="1500943651542" required
+                              value="{{ old('ce_reg') }}">
 
                            <div class="invalid-feedback">Please enter your reg no.</div>
-                           @error('ce-reg')
+                           @error('ce_reg')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -851,12 +851,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="guardian-name-bangla" class="form-label">Guardian's Name (in Bengali)</label>
-                           <input type="text" id="guardian-name-bangla" name="guardian-name-bangla" class="form-control" placeholder="ফজলে রাব্বি" required
-                              pattern="[\s\u0980-\u09FF]+$" value="{{ old('guardian-name-bangla') }}">
+                           <label for="guardian_name_bangla" class="form-label">Guardian's Name (in Bengali)</label>
+                           <input type="text" id="guardian_name_bangla" name="guardian_name_bangla" class="form-control" placeholder="ফজলে রাব্বি" required
+                              pattern="[\s\u0980-\u09FF]+$" value="{{ old('guardian_name_bangla') }}">
 
                            <div class="invalid-feedback">Please enter guardian's name in Bengali.</div>
-                           @error('guardian-name-bangla')
+                           @error('guardian_name_bangla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -864,12 +864,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="guardian-name-english" class="form-label">Guardian's Name (in English)</label>
-                           <input type="text" id="guardian-name-english" name="guardian-name-english" class="form-control" placeholder="Fazlay Rabbbi"
-                              required value="{{ old('guardian-name-english') }}">
+                           <label for="guardian_name_english" class="form-label">Guardian's Name (in English)</label>
+                           <input type="text" id="guardian_name_english" name="guardian_name_english" class="form-control" placeholder="Fazlay Rabbbi"
+                              required value="{{ old('guardian_name_english') }}">
 
                            <div class="invalid-feedback">Please enter guardian's name in English.</div>
-                           @error('guardian-name-english')
+                           @error('guardian_name_english')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -877,12 +877,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="guardian-nid" class="form-label">Guardian's NID</label>
-                           <input type="text" id="guardian-nid" name="guardian-nid" class="form-control" placeholder="123 456 6789" required
-                              pattern="[0-9]{10,18}" value="{{ old('guardian-nid') }}">
+                           <label for="guardian_nid" class="form-label">Guardian's NID</label>
+                           <input type="text" id="guardian_nid" name="guardian_nid" class="form-control" placeholder="123 456 6789" required
+                              pattern="[0-9]{10,18}" value="{{ old('guardian_nid') }}">
 
                            <div class="invalid-feedback">Please enter guardian's NID.</div>
-                           @error('guardian-nid')
+                           @error('guardian_nid')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -890,13 +890,13 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="guardian-birth-date">Date of Birth</label>
-                           <input type="text" id="guardian-birth-date" name="guardian-birth-date"
+                           <label class="form-label" for="guardian_birth_date">Date of Birth</label>
+                           <input type="text" id="guardian_birth_date" name="guardian_birth_date"
                               class="form-control picker flatpickr-basic flatpickr-input active" placeholder="YYYY-MM-DD" readonly="readonly" required
-                              value="{{ old('guardian-birth-date') }}">
+                              value="{{ old('guardian_birth_date') }}">
 
                            <div class="invalid-feedback">Please select guardian's date of birth.</div>
-                           @error('guardian-birth-date')
+                           @error('guardian_birth_date')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -904,12 +904,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="guardian-mobile">Guardian's Mobile Number</label>
-                           <input type="text" id="guardian-mobile" class="form-control" placeholder="017xxxxxxxx" name="guardian-mobile"
-                              pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('guardian-mobile') }}">
+                           <label class="form-label" for="guardian_mobile">Guardian's Mobile Number</label>
+                           <input type="text" id="guardian_mobile" class="form-control" placeholder="017xxxxxxxx" name="guardian_mobile"
+                              pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('guardian_mobile') }}">
 
                            <div class="invalid-feedback">Please enter guardian's mobile number.</div>
-                           @error('guardian-mobile')
+                           @error('guardian_mobile')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -925,26 +925,26 @@
                            <label class="form-label">The cost of education will be borne by</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="cost-father" class="form-check-input" type="radio" name="cost-borne" value="Father" required
-                                    {{ old('cost-borne') == 'Father' ? 'checked' : '' }}>
+                                 <input id="cost-father" class="form-check-input" type="radio" name="cost_borne" value="Father" required
+                                    {{ old('cost_borne') == 'Father' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="cost-father">Father</label>
 
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="cost-mother" class="form-check-input" type="radio" name="cost-borne" value="Mother" required
-                                    {{ old('cost-borne') == 'Mother' ? 'checked' : '' }}>
+                                 <input id="cost-mother" class="form-check-input" type="radio" name="cost_borne" value="Mother" required
+                                    {{ old('cost_borne') == 'Mother' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="cost-mother">Mother</label>
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="cost-guardian" class="form-check-input" type="radio" name="cost-borne" value="Guardian" required
-                                    {{ old('cost-borne') == 'Guardian' ? 'checked' : '' }}>
+                                 <input id="cost-guardian" class="form-check-input" type="radio" name="cost_borne" value="Guardian" required
+                                    {{ old('cost_borne') == 'Guardian' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="cost-guardian">Guardian</label>
 
 
                               </div>
 
                            </div>
-                           @error('cost-borne')
+                           @error('cost_borne')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
 
@@ -1045,18 +1045,18 @@
                            <label class="form-label">Select payment method:</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="payment-mobile" class="form-check-input" type="radio" name="payment-method" value="mobile banking" required
-                                    checked {{ old('payment-method') == 'mobile-banking' ? 'checked' : '' }}>
+                                 <input id="payment-mobile" class="form-check-input" type="radio" name="payment_method" value="mobile banking" required
+                                    checked {{ old('payment_method') == 'mobile-banking' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="payment-mobile">Mobile Banking</label>
 
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="payment-bank" class="form-check-input" type="radio" name="payment-method" value="banking" required
-                                    {{ old('payment-method') == 'banking' ? 'checked' : '' }}>
+                                 <input id="payment-bank" class="form-check-input" type="radio" name="payment_method" value="banking" required
+                                    {{ old('payment_method') == 'banking' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="payment-bank">Banking</label>
                               </div>
                            </div>
-                           @error('payment-method')
+                           @error('payment_method')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -1065,10 +1065,10 @@
                      <div id="payment-mobile-info" class="row">
                         <div class="col-md-6 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="mobile-bank-provider">Mobile banking service providers</label>
-                              <select name="mobile-bank-provider" id="mobile-bank-provider" class="form-select mobile-unchecked">
-                                 <option selected {{ old('mobile-bank-provider') ? '' : 'disabled' }} value="{{ old('mobile-bank-provider') }}">
-                                    {{ old('mobile-bank-provider') ? old('mobile-bank-provider') : 'Select mobile banking service provider' }}
+                              <label class="form-label" for="mobile_bank_provider">Mobile banking service providers</label>
+                              <select name="mobile_bank_provider" id="mobile_bank_provider" class="form-select mobile-unchecked">
+                                 <option selected {{ old('mobile_bank_provider') ? '' : 'disabled' }} value="{{ old('mobile_bank_provider') }}">
+                                    {{ old('mobile_bank_provider') ? old('mobile_bank_provider') : 'Select mobile banking service provider' }}
                                  </option>
                                  @foreach ($mobile_banks as $mobile_bank)
                                     <option value="{{ $mobile_bank }}" class="text-uppercase">{{ $mobile_bank }}</option>
@@ -1076,7 +1076,7 @@
                               </select>
 
                               <div class="invalid-feedback">Please select mobile banking service provider.</div>
-                              @error('mobile-bank-provider')
+                              @error('mobile_bank_provider')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
 
@@ -1084,12 +1084,12 @@
                         </div>
                         <div class="col-md-6 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="mobile-bank-account">Mobile banking account number</label>
-                              <input type="text" id="mobile-bank-account" class="form-control mobile-unchecked" name="mobile-bank-account"
-                                 placeholder="017xxxxxxxx" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" value="{{ old('mobile-bank-account') }}">
+                              <label class="form-label" for="mobile_bank_account">Mobile banking account number</label>
+                              <input type="text" id="mobile_bank_account" class="form-control mobile-unchecked" name="mobile_bank_account"
+                                 placeholder="017xxxxxxxx" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" value="{{ old('mobile_bank_account') }}">
 
                               <div class="invalid-feedback">Please enter mobile banking account number.</div>
-                              @error('mobile-bank-account')
+                              @error('mobile_bank_account')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
                            </div>
@@ -1101,10 +1101,10 @@
                      <div id="payment-bank-info" class="row" style="display: none">
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank-name">Bank Name</label>
-                              <select name="bank-name" id="bank-name" class="form-select banking-unchecked" required>
-                                 <option selected {{ old('bank-name') ? '' : 'disabled' }} value="{{ old('bank-name') }}">
-                                    {{ old('bank-name') ? old('bank-name') : 'Select Bank' }}
+                              <label class="form-label" for="bank_name">Bank Name</label>
+                              <select name="bank_name" id="bank_name" class="form-select banking-unchecked" required>
+                                 <option selected {{ old('bank_name') ? '' : 'disabled' }} value="{{ old('bank_name') }}">
+                                    {{ old('bank_name') ? old('bank_name') : 'Select Bank' }}
                                  </option>
                                  @foreach ($banks as $bank)
                                     <option value="{{ $bank }}" class="text-uppercase">{{ $bank }}</option>
@@ -1112,72 +1112,72 @@
                               </select>
 
                               <div class="invalid-feedback">Please select bank name.</div>
-                              @error('bank-name')
+                              @error('bank_name')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
                            </div>
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank-branch">Branch</label>
-                              <input type="text" id="bank-branch" class="form-control banking-unchecked" name="bank-branch" placeholder="Dinajpur" required
-                                 value="{{ old('bank-branch') }}">
+                              <label class="form-label" for="bank_branch">Branch</label>
+                              <input type="text" id="bank_branch" class="form-control banking-unchecked" name="bank_branch" placeholder="Dinajpur" required
+                                 value="{{ old('bank_branch') }}">
 
                               <div class="invalid-feedback">Please enter branch.</div>
-                              @error('bank-branch')
+                              @error('bank_branch')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
                            </div>
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank-routing">Routing No.</label>
-                              <input type="text" id="bank-routing" class="form-control banking-unchecked" name="bank-routing" placeholder="070280676"
-                                 required value="{{ old('bank-routing') }}">
+                              <label class="form-label" for="bank_routing">Routing No.</label>
+                              <input type="text" id="bank_routing" class="form-control banking-unchecked" name="bank_routing" placeholder="070280676"
+                                 required value="{{ old('bank_routing') }}">
 
                               <div class="invalid-feedback">Please enter bank routing number.</div>
-                              @error('bank-routing')
+                              @error('bank_routing')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
                            </div>
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank-acc-type">Account Type</label>
-                              <select name="bank-acc-type" id="bank-acc-type" class="form-select banking-unchecked" required>
-                                 <option selected {{ old('bank-acc-type') ? '' : 'disabled' }} value="{{ old('bank-acc-type') }}">
-                                    {{ old('bank-acc-type') ? old('bank-acc-type') : 'Select Account Type' }}
+                              <label class="form-label" for="bank_acc_type">Account Type</label>
+                              <select name="bank_acc_type" id="bank_acc_type" class="form-select banking-unchecked" required>
+                                 <option selected {{ old('bank_acc_type') ? '' : 'disabled' }} value="{{ old('bank_acc_type') }}">
+                                    {{ old('bank_acc_type') ? old('bank_acc_type') : 'Select Account Type' }}
                                  </option>
                                  <option value="savings">Savings</option>
                                  <option value="current">Current</option>
                               </select>
 
                               <div class="invalid-feedback">Please select account type.</div>
-                              @error('bank-acc-type')
+                              @error('bank_acc_type')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
                            </div>
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank-acc-name">Account Holder Name</label>
-                              <input type="text" id="bank-acc-name" class="form-control banking-unchecked" name="bank-acc-name" placeholder="Shakil Ahmed"
-                                 required value="{{ old('bank-acc-name') }}">
+                              <label class="form-label" for="bank_acc_name">Account Holder Name</label>
+                              <input type="text" id="bank_acc_name" class="form-control banking-unchecked" name="bank_acc_name" placeholder="Shakil Ahmed"
+                                 required value="{{ old('bank_acc_name') }}">
 
                               <div class="invalid-feedback">Please enter bank account holder name.</div>
-                              @error('bank-acc-name')
+                              @error('bank_acc_name')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
                            </div>
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank-acc-number">Account Number</label>
-                              <input type="number" id="bank-acc-number" class="form-control banking-unchecked" name="bank-acc-number"
-                                 placeholder="200154655xxxxx" required value="{{ old('bank-acc-number') }}">
+                              <label class="form-label" for="bank_acc_number">Account Number</label>
+                              <input type="number" id="bank_acc_number" class="form-control banking-unchecked" name="bank_acc_number"
+                                 placeholder="200154655xxxxx" required value="{{ old('bank_acc_number') }}">
 
                               <div class="invalid-feedback">Please enter bank account number.</div>
-                              @error('bank-acc-number')
+                              @error('bank_acc_number')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
                            </div>

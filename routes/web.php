@@ -26,6 +26,7 @@ Route::group(['prefix' => 'authenticated/dash'], function () {
    Route::get('welcome', [appViews::class, 'welcome'])->name('welcome')->middleware('verified');
    Route::get('applicant-list', [appViews::class, 'applicantList'])->name('applicant-list')->middleware('verified');
    Route::get('api/applicant-list', [FormHandlerController::class, 'index'])->name('applicant-list')->middleware('verified');
+   Route::get('/applicant-detail/{id}', [FormHandlerController::class, 'show'])->name('applicant-detail')->middleware('verified');
    Route::get('profile', [appViews::class, 'profile'])->name('profile')->middleware('verified');
    Route::get('settings', [appViews::class, 'settings'])->name('settings')->middleware('verified');
 });

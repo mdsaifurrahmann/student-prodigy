@@ -116,13 +116,13 @@ class FormHandlerController extends Controller
       $request->validated();
 
       // Hanfle the file name for Database
-      $formal_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student-name-english')) . '-' . $request->input('ce-roll') . '.' .  $request->formal_image->extension();
+      $formal_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_roll') . '.' .  $request->formal_image->extension();
       // move the file
       $request->formal_image->move(public_path('/student-images/formal-images/'), $formal_image_name_handler);
 
 
       // Handle the file name for Database
-      $signature_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student-name-english')) . '-' . $request->input('ce-reg') . '.' .  $request->signature_image->extension();
+      $signature_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_reg') . '.' .  $request->signature_image->extension();
       // move the file
       $request->signature_image->move(public_path('student-images/signature-images/'), $signature_image_name_handler);
 
@@ -132,7 +132,7 @@ class FormHandlerController extends Controller
       // return redirect()->route('form')->with('success', 'Data saved successfully!');
 
       // redirect to confirmation page
-      return redirect()->route('confirm', ['id' => $request->input('ce-reg')])->with('success', 'Data saved successfully!')->withInput();
+      return redirect()->route('confirm', ['id' => $request->input('ce_reg')])->with('success', 'Data saved successfully!')->withInput();
    }
 
    /**
@@ -141,9 +141,14 @@ class FormHandlerController extends Controller
     * @param  \App\Models\formHandler  $formHandler
     * @return \Illuminate\Http\Response
     */
-   public function show(formHandler $formHandler)
+   public function show(formHandler $formHandler, $id)
    {
-      //
+      // show single applicant data
+      $formHandler = formHandler::findOrFail($id);
+      // dd($formHandler);
+      // return $formHandler;
+
+      return view('content.dashboard.applicants.single-applicant', ['formHandler' => $formHandler]);
    }
 
    /**

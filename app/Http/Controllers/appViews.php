@@ -96,7 +96,7 @@ class appViews extends Controller
          "Bank Routing Number",
       ];
 
-      return view('/content/dashboard/applicant-list', compact('titles'));
+      return view('/content/dashboard/applicants/applicant-list', compact('titles'));
    }
 
    // form
