@@ -67,13 +67,11 @@ table.dataTable.dtr-column>tbody>tr>th.control:before {
    }
 }
 
-// .modal-body {
-//    .table {
-//       .dropdown-item {
-//          color: #b4b7bd !important;
-//       }
-//    }
-// }
+.menu-content {
+   .dropdown-item {
+      margin: 5px 0px;
+   }
+}
 
 td {
    text-transform: uppercase;

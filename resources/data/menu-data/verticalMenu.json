@@ -7,10 +7,23 @@
          "slug": "welcome"
       },
       {
-         "url": "authenticated/dash/applicant-list",
-         "name": "Applicant",
+         "name": "Applicants",
          "icon": "user-check",
-         "slug": "applicant-list"
+         "slug": "applicant",
+         "submenu": [
+            {
+               "url": "authenticated/dash/applicant-list",
+               "name": "Applicant List",
+               "icon": "list",
+               "slug": "applicant-list"
+            },
+            {
+               "url": "student-form",
+               "name": "Add Applicant",
+               "icon": "plus",
+               "slug": "add-applicant"
+            }
+         ]
       },
       {
          "name": "Users",
