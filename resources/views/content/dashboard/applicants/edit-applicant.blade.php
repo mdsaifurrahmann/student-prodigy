@@ -16,7 +16,6 @@
       <div class="col-12 d-flex align-items-md-center justify-content-center">
          <div class="card">
             <div class="card-body">
-               {{-- <h2 class="card-title text-uppercase text-center">Student Database - Textile Institute Dinajpur</h2> --}}
                <p class="text-warning text-center">Fill the form with correct information. Each field of the form must be filled.</p>
                <p class="fw-bold text-danger text-center">All the fields are <strong><em>required</em></strong> and will be validate from the server!!!</p>
                @if ($errors->any())

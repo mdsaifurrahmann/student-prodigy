@@ -18,6 +18,16 @@
                   <h2 class="card-title text-uppercase mb-0 text-center">Student Database - Textile Institute Dinajpur</h2>
                </div>
             </div>
+
+
+            @if (session('success'))
+               <div class="alert alert-success alert-dismissible fade show p-2" role="alert">
+                  <strong> {{ session('success') }}</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            @endif
+
+
             <div class="table-responsive">
                <table class="table-bordered table">
                   <thead>
