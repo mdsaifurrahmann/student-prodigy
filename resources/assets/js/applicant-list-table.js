@@ -210,7 +210,7 @@ $(function () {
                      $output +
                      "</div>" +
                      '<div class="d-flex flex-column">' +
-                     '<a href="' + window.location.origin + '/authenticated/dash/applicant-detail/' + full["ce_reg"] + '"><span class="emp_name text-truncate fw-bold">' +
+                     '<a href="' + window.location.origin + '/authenticated/dash/applicant-detail/' + full["id"] + '"><span class="emp_name text-truncate fw-bold">' +
                      $name +
                      "</span></a>" +
                      // '<small class="emp_post text-truncate text-muted">' +
@@ -229,13 +229,13 @@ $(function () {
                render: function (data, type, full, meta) {
                   return (
 
-                     '<a href="' + window.location.origin + '/authenticated/dash/applicant-detail/' + full["ce_reg"] + '"class=" my-1 d-block btn btn-primary waves-effect waves-float waves-light">' +
+                     '<a href="' + window.location.origin + '/authenticated/dash/applicant-detail/' + full["id"] + '"class=" my-1 d-block btn btn-primary waves-effect waves-float waves-light">' +
                      feather.icons["file-text"].toSvg({
                         class: "font-small-4 me-50",
                      }) +
                      "View Detail</a>" +
 
-                     '<a href="" class=" my-1 d-block btn btn-warning waves-effect waves-float waves-light">' +
+                     '<a href="' + window.location.origin + '/authenticated/dash/applicant-modify/' + full["id"] + '" class=" my-1 d-block btn btn-warning waves-effect waves-float waves-light">' +
                      feather.icons["edit"].toSvg({
                         class: "font-small-4 me-50",
                      }) +

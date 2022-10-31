@@ -87,5 +87,5 @@ class formHandler extends Model
 
    protected $table = "form_handlers";
 
-   protected $primaryKey = "ce_reg";
+   // protected $primaryKey = "ce_reg";
 }

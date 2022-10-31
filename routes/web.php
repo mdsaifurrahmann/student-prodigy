@@ -24,14 +24,17 @@ Route::post('/student-form', [FormHandlerController::class, 'store'])->name('for
 
 Route::group(['prefix' => 'authenticated/dash'], function () {
    Route::get('welcome', [appViews::class, 'welcome'])->name('welcome')->middleware('verified');
-   Route::get('applicant-list', [appViews::class, 'applicantList'])->name('applicant-list')->middleware('verified');
-   Route::get('api/applicant-list', [FormHandlerController::class, 'index'])->middleware('verified');
-   Route::get('applicant-detail/{ce_reg}', [FormHandlerController::class, 'show'])->name('applicant-list')->middleware('verified');
+
    Route::get('profile', [appViews::class, 'profile'])->name('profile')->middleware('verified');
    Route::get('settings', [appViews::class, 'settings'])->name('settings')->middleware('verified');
 
-   // delete applicant
+   //applicant
+   Route::get('applicant-list', [appViews::class, 'applicantList'])->name('applicant-list')->middleware('verified');
+   Route::get('api/applicant-list', [FormHandlerController::class, 'index'])->middleware('verified');
+   Route::get('applicant-detail/{id}', [FormHandlerController::class, 'show'])->name('applicant-details')->middleware('verified');
    Route::get('applicant-destroy/{id}', [FormHandlerController::class, 'destroy'])->name('applicant-destroy')->middleware('verified');
+   Route::get('applicant-modify/{id}', [FormHandlerController::class, 'edit'])->name('applicant-modify')->middleware('verified');
+   Route::patch('applicant-modifier/{id}', [FormHandlerController::class, 'update'])->name('applicant-modifier')->middleware('verified');
 });
 
 Route::group(['prefix' => 'authenticate'], function () {
