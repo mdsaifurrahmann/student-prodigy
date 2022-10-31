@@ -104,7 +104,7 @@
                               <option selected="" value="{{ old('blood_group') ? old('blood_group') : '' }}" {{ old('blood_group') ? '' : 'disabled' }}>
                                  {{ old('blood_group') ? old('blood_group') : 'Select your Blood group' }} </option>
                               <option value="A Positive (A+)">A Positive (A+)</option>
-                              <option value="A Megative (A-)">A Megative (A-)</option>
+                              <option value="A Negative (A-)">A Negative (A-)</option>
                               <option value="B Positive (B+)">B Positive (B+)</option>
                               <option value="B Negative (B-)">B Negative (B-)</option>
                               <option value="O Positive (O+)">O Positive (O+)</option>

@@ -8,9 +8,9 @@
       },
       {
          "url": "authenticated/dash/applicant-list",
-         "name": "All Applicant's",
+         "name": "Applicant",
          "icon": "user-check",
-         "slug": "applicants"
+         "slug": "applicant-list"
       },
       {
          "name": "Users",
