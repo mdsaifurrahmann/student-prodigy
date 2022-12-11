@@ -89,12 +89,13 @@ jobs:
               port: ${{ SECRETS.SERVER_PORT }}
               username: ${{ SECRETS.SERVER_USERNAME }}
               password: ${{ SECRETS.SERVER_PASSWORD }}
-              envs: GITHUB_SHA,BASE_PATH,PROJECT_ENV,CONF_CACHE,ROUTE_CACHE,VIEW_CACHE
+              key: ${{ SECRETS.KEY_GEN }}
+              envs: GITHUB_SHA,BASE_PATH,PROJECT_ENV,CONF_CACHE,ROUTE_CACHE,VIEW_CACHE,KEY
               script: |
                  echo ${GITHUB_SHA}
                  printf "%s" "$PROJECT_ENV" > "${BASE_PATH}/.env"
                  printf "%s" "${GITHUB_SHA}" > "${BASE_PATH}/${GITHUB_SHA}.txt"
-                 cd ${BASE_PATH} && ${CONF_CACHE} && ${ROUTE_CACHE} && ${VIEW_CACHE}
+                 cd ${BASE_PATH} && ${CONF_CACHE} && ${ROUTE_CACHE} && ${VIEW_CACHE} && ${KEY}
 
    migrating-db:
       name: Migrating Database
