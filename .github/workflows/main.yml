@@ -84,12 +84,12 @@ jobs:
               CONF_CACHE: ${{ SECRETS.CONF_CACHE }}
               ROUTE_CACHE: ${{ SECRETS.ROUTE_CACHE }}
               VIEW_CACHE: ${{ SECRETS.VIEW_CACHE }}
+              KEY: ${{ SECRETS.KEY_GEN }}
            with:
               host: ${{ SECRETS.SERVER_HOST }}
               port: ${{ SECRETS.SERVER_PORT }}
               username: ${{ SECRETS.SERVER_USERNAME }}
               password: ${{ SECRETS.SERVER_PASSWORD }}
-              key: ${{ SECRETS.KEY_GEN }}
               envs: GITHUB_SHA,BASE_PATH,PROJECT_ENV,CONF_CACHE,ROUTE_CACHE,VIEW_CACHE,KEY
               script: |
                  echo ${GITHUB_SHA}
