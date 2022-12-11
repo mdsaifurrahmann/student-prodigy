@@ -92,7 +92,6 @@ jobs:
                  echo ${GITHUB_SHA}
                  printf "%s" "$PROJECT_ENV" > "${BASE_PATH}/.env"
                  printf "%s" "${GITHUB_SHA}" > "${BASE_PATH}/${GITHUB_SHA}.txt"
-                 cd ${BASE_PATH} && ${CONF_CACHE} && ${ROUTE_CACHE} && ${VIEW_CACHE}
                  cd ${BASE_PATH} && ${KEY}
 
    migrating-db:
