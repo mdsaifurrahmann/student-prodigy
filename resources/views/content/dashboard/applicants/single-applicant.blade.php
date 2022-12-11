@@ -10,9 +10,59 @@
 @section('content')
    {{-- content --}}
 
+
    <div class="container-lg">
       <div class="row" id="table-responsive" style="margin: 0 auto">
          <div class="col-12">
+
+            <div class="card p-2 pt-0">
+               <div class="card-header p-2 px-0 pb-0" id="hideOption">
+                  <div class="head-labelx">
+                     <h6 class="mb-0">Hide Data</h6>
+                  </div>
+                  <div class="dt-action-buttons text-end">
+                     <div class="dt-buttons d-inline-flex">
+                        <button class="create-new btn btn-primary me-1" type="button" id="selectAll">
+                           <span>
+                              Select All
+                           </span>
+                        </button>
+                        <button class="create-new btn btn-primary me-1" type="button" id="unSelectAll">
+                           <span>
+                              Unselect All
+                           </span>
+                        </button>
+                        <button class="dt-button create-new btn btn-primary" type="button" id="showOp">
+                           <span>
+                              Show Option
+                           </span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <form class="d-none mt-1 pb-1" id="hideItem" method="GET" action="{{ route('applicant-details', $applicant->id) }}">
+                  @csrf
+                  <div class="row g-1 mb-md-1">
+                     <div class="col-12">
+                        <div class="grid-cols-3">
+                           @foreach ($titles as $key => $title)
+                              <div class="form-check form-check-inline">
+                                 <input class="form-check-input hide_col" type="checkbox" id="inlineCheckbox{{ str_replace([' ', '\''], '', $title) }}"
+                                    name="{{ str_replace([' ', '\'', '.', '(', ')'], '', $title) }}"
+                                    {{ Request::get(str_replace([' ', '\'', '.', '(', ')'], '', $title)) ? 'checked' : '' }}>
+                                 <label class="form-check-label" for="inlineCheckbox{{ str_replace([' ', '\''], '', $title) }}">
+                                    {{ $title }}
+                                 </label>
+                              </div>
+                           @endforeach
+                        </div>
+                     </div>
+                  </div>
+
+                  <input type="submit" class="dt-button create-new btn btn-primary" value="Go">
+               </form>
+            </div>
+
             <div class="card">
                <div class="card-body">
                   <h2 class="card-title text-uppercase mb-0 text-center">Student Database - Textile Institute Dinajpur</h2>
@@ -38,7 +88,7 @@
                   <tbody>
                      <tr>
                         <th class="w-25">Student's Name (Bengali):</th>
-                        <td colspan="2">{{ $applicant->student_name_bangla }}</td>
+                        <td colspan="2">{{ !Request::get('StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
                         <td rowspan="5">
                            <img src="{{ '/student-images/formal-images/' . $applicant->formal_image_path }}" alt="Formal Image" class="w-100"
                               style="object-fit: cover;">
@@ -47,63 +97,63 @@
                      </tr>
                      <tr>
                         <th class="w-25">Student's Name (English):</th>
-                        <td colspan="2">{{ $applicant->student_name_english }}</td>
+                        <td colspan="2">{{ !Request::get('StudentName') ? $applicant->student_name_english : '' }}</td>
 
                      </tr>
                      <tr>
                         <th class="w-25">Birth Certificate Number:</th>
-                        <td colspan="2">{{ $applicant->birth_certificate_number }}</td>
+                        <td colspan="2">{{ !Request::get('BirthCertificateNumber') ? $applicant->birth_certificate_number : '' }}</td>
 
                      </tr>
                      <tr>
                         <th class="w-25">Birth Date:</th>
-                        <td colspan="2">{{ $applicant->birth_date }}</td>
+                        <td colspan="2">{{ !Request::get('BirthDate') ? $applicant->birth_date : '' }}</td>
 
                      </tr>
                      <tr>
                         <th class="w-25">Blood Group:</th>
-                        <td colspan="2">{{ $applicant->blood_group }}</td>
+                        <td colspan="2">{{ !Request::get('BloodGroup') ? $applicant->blood_group : '' }}</td>
 
                      </tr>
                      <tr>
                         <th class="w-25">Mobile Number:</th>
-                        <td colspan="3">{{ $applicant->student_mobile }}</td>
+                        <td colspan="3">{{ !Request::get('StudentsMobileNo') ? $applicant->student_mobile : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Gender:</th>
-                        <td>{{ $applicant->gender }}</td>
+                        <td>{{ !Request::get('Gender') ? $applicant->gender : '' }}</td>
                         <th class="w-25">Marital Status:</th>
-                        <td>{{ $applicant->marital_status }}</td>
+                        <td>{{ !Request::get('MaritalStatus') ? $applicant->marital_status : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Father's Name (Bengali):</th>
-                        <td>{{ $applicant->father_name_bangla }}</td>
+                        <td>{{ !Request::get('FathersNameBengali') ? $applicant->father_name_bangla : '' }}</td>
                         <th class="w-25">Mother's Name (Bengali):</th>
-                        <td>{{ $applicant->mother_name_bangla }}</td>
+                        <td>{{ !Request::get('MothersNameBengali') ? $applicant->mother_name_bangla : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Father's Name (English):</th>
-                        <td>{{ $applicant->father_name_english }}</td>
+                        <td>{{ !Request::get('FathersName') ? $applicant->father_name_english : '' }}</td>
                         <th class="w-25">Mother's Name (English):</th>
-                        <td>{{ $applicant->mother_name_english }}</td>
+                        <td>{{ !Request::get('MothersName') ? $applicant->mother_name_english : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Father's NID:</th>
-                        <td>{{ $applicant->father_nid }}</td>
+                        <td>{{ !Request::get('FathersNID') ? $applicant->father_nid : '' }}</td>
                         <th class="w-25">Mother's NID:</th>
-                        <td>{{ $applicant->mother_nid }}</td>
+                        <td>{{ !Request::get('MothersNID') ? $applicant->mother_nid : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Father's Birth Date:</th>
-                        <td>{{ $applicant->father_birth_date }}</td>
+                        <td>{{ !Request::get('FathersBirthDate') ? $applicant->father_birth_date : '' }}</td>
                         <th class="w-25">Mother's Birth Date:</th>
-                        <td>{{ $applicant->mother_birth_date }}</td>
+                        <td>{{ !Request::get('MothersBirthDate') ? $applicant->mother_birth_date : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Father's Mobile Number:</th>
-                        <td>{{ $applicant->father_mobile }}</td>
+                        <td>{{ !Request::get('FathersMobileNo') ? $applicant->father_mobile : '' }}</td>
                         <th class="w-25">Mother's Mobile Number:</th>
-                        <td>{{ $applicant->mother_mobile }}</td>
+                        <td>{{ !Request::get('MothersMobileNo') ? $applicant->mother_mobile : '' }}</td>
                      </tr>
                   </tbody>
                   <thead>
@@ -115,39 +165,39 @@
                   <tbody>
                      <tr>
                         <th class="w-25">Division:</th>
-                        <td>{{ $applicant->perm_division }} </td>
+                        <td>{{ !Request::get('PermanentDivision') ? $applicant->perm_division : '' }} </td>
                         <th class="w-25">Division:</th>
-                        <td>{{ $applicant->pres_division }} </td>
+                        <td>{{ !Request::get('PresentDivision') ? $applicant->pres_division : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">District:</th>
-                        <td>{{ $applicant->perm_district }} </td>
+                        <td>{{ !Request::get('PermanentDistrict') ? $applicant->perm_district : '' }} </td>
                         <th class="w-25">District:</th>
-                        <td>{{ $applicant->pres_district }} </td>
+                        <td>{{ !Request::get('PresentDistrict') ? $applicant->pres_district : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Sub District/Upozilla:</th>
-                        <td>{{ $applicant->perm_upozilla }} </td>
+                        <td>{{ !Request::get('PermanentUpozilla') ? $applicant->perm_upozilla : '' }} </td>
                         <th class="w-25">Sub District/Upozilla:</th>
-                        <td>{{ $applicant->pres_upozilla }} </td>
+                        <td>{{ !Request::get('PresentUpozilla') ? $applicant->pres_upozilla : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Municipality/Union/City Corp.:</th>
-                        <td>{{ $applicant->perm_city_corp }} </td>
+                        <td>{{ !Request::get('PermanentCityCorp/Municipality') ? $applicant->perm_city_corp : '' }} </td>
                         <th class="w-25">Municipality/Union/City Corp.:</th>
-                        <td>{{ $applicant->pres_city_corp }} </td>
+                        <td>{{ !Request::get('PresentCityCorp/Municipality') ? $applicant->pres_city_corp : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Post Code:</th>
-                        <td>{{ $applicant->perm_post_code }} </td>
+                        <td>{{ !Request::get('PermanentPostCode') ? $applicant->perm_post_code : '' }} </td>
                         <th class="w-25">Post Code:</th>
-                        <td>{{ $applicant->pres_post_code }} </td>
+                        <td>{{ !Request::get('PresentPostCode') ? $applicant->pres_post_code : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Address/Village:</th>
-                        <td>{{ $applicant->perm_address }} </td>
+                        <td>{{ !Request::get('PermanentAddress') ? $applicant->perm_address : '' }} </td>
                         <th class="w-25">Address/Village:</th>
-                        <td>{{ $applicant->pres_address }} </td>
+                        <td>{{ !Request::get('PresentAddress') ? $applicant->pres_address : '' }} </td>
                      </tr>
                   </tbody>
                   <thead>
@@ -159,67 +209,67 @@
                   <tbody>
                      <tr>
                         <th class="w-25">Division:</th>
-                        <td>{{ $applicant->pe_division }} </td>
+                        <td>{{ !Request::get('PreviousEducationBoardDivision') ? $applicant->pe_division : '' }} </td>
                         <th class="w-25">Division:</th>
-                        <td>{{ $applicant->ce_division }} </td>
+                        <td>{{ !Request::get('CurrentEducationBoardDivision') ? $applicant->ce_division : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">District:</th>
-                        <td>{{ $applicant->pe_district }} </td>
+                        <td>{{ !Request::get('PreviousEducationBoardDistrict') ? $applicant->pe_district : '' }} </td>
                         <th class="w-25">District:</th>
-                        <td>{{ $applicant->ce_district }} </td>
+                        <td>{{ !Request::get('CurrentEducationBoardDistrict') ? $applicant->ce_district : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Sub District/Upozilla:</th>
-                        <td>{{ $applicant->pe_upozilla }} </td>
+                        <td>{{ !Request::get('PreviousEducationBoardUpozilla') ? $applicant->pe_upozilla : '' }} </td>
                         <th class="w-25">Sub District/Upozilla:</th>
-                        <td>{{ $applicant->ce_upozilla }} </td>
+                        <td>{{ !Request::get('CurrentEducationBoardUpozilla') ? $applicant->ce_upozilla : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Institute Name:</th>
-                        <td>{{ $applicant->pe_institute }} </td>
+                        <td>{{ !Request::get('PreviousInstituteName') ? $applicant->pe_institute : '' }} </td>
                         <th class="w-25">Institute Name:</th>
-                        <td>{{ $applicant->ce_institute_name }} </td>
+                        <td>{{ !Request::get('CurrentInstituteName') ? $applicant->ce_institute_name : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Passing Year:</th>
-                        <td>{{ $applicant->perm_division }} </td>
+                        <td>{{ !Request::get('PreviousExamPassingYear') ? $applicant->pe_passing_year : '' }} </td>
                         <th class="w-25">Semester:</th>
-                        <td>{{ $applicant->perm_division }} </td>
+                        <td>{{ !Request::get('Semester') ? $applicant->ce_semester : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Board:</th>
-                        <td>{{ $applicant->pe_board }} </td>
+                        <td>{{ !Request::get('PreviousEducationBoard') ? $applicant->pe_board : '' }} </td>
                         <th class="w-25">Technology/Trade:</th>
-                        <td>{{ $applicant->ce_technology_trade }} </td>
+                        <td>{{ !Request::get('Technology') ? $applicant->ce_technology_trade : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Technology/Trade:</th>
-                        <td>{{ $applicant->pe_technology_trade }} </td>
+                        <td>{{ !Request::get('PreviousTechnology/Trade') ? $applicant->pe_technology_trade : '' }} </td>
                         <th class="w-25">Shift:</th>
-                        <td>{{ $applicant->ce_shift }} </td>
+                        <td>{{ !Request::get('Shift') ? $applicant->ce_shift : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Previous Exam Name:</th>
-                        <td>{{ $applicant->pe_exam_name }} </td>
+                        <td>{{ !Request::get('PreviousExamName') ? $applicant->pe_exam_name : '' }} </td>
                         <th class="w-25">Roll:</th>
-                        <td>{{ $applicant->ce_roll }} </td>
+                        <td>{{ !Request::get('Roll') ? $applicant->ce_roll : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Roll:</th>
-                        <td>{{ $applicant->pe_roll }} </td>
-                        <th class="w-25">Shift:</th>
-                        <td>{{ $applicant->ce_shift }} </td>
+                        <td>{{ !Request::get('PreviousExamRoll') ? $applicant->pe_roll : '' }} </td>
+                        <th class="w-25">Reg:</th>
+                        <td>{{ !Request::get('Reg') ? $applicant->ce_reg : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Result (GPA):</th>
-                        <td>{{ $applicant->pe_gpa }} </td>
-                        <th class="w-25"></th>
-                        <td></td>
+                        <td>{{ !Request::get('PreviousExamGPA') ? $applicant->pe_gpa : '' }} </td>
+                        <th class="w-25">Group:</th>
+                        <td>{{ !Request::get('Group') ? $applicant->ce_group : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Attendance Rate:</th>
-                        <td>{{ $applicant->pe_att_rate }} </td>
+                        <td>{{ !Request::get('PreviousAttendanceRate') ? $applicant->pe_att_rate : '' }} </td>
                         <th class="w-25"></th>
                         <td></td>
                      </tr>
@@ -233,37 +283,37 @@
                   <tbody>
                      <tr>
                         <th class="w-25">Relation:</th>
-                        <td>{{ $applicant->relationship }} </td>
+                        <td>{{ !Request::get('RelationshipwithGuardian') ? $applicant->relationship : '' }} </td>
                         <th class="w-25">Cost Borne By:</th>
-                        <td>{{ $applicant->cost_borne }} </td>
+                        <td>{{ !Request::get('CostBorne') ? $applicant->cost_borne : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Name (Bengali):</th>
-                        <td>{{ $applicant->guardian_name_bangla }} </td>
+                        <td>{{ !Request::get('GuardianNameBengali') ? $applicant->guardian_name_bangla : '' }} </td>
                         <th class="w-25">Belongs to minority/ethnic groups:</th>
-                        <td>{{ $applicant->ethnic }} </td>
+                        <td>{{ !Request::get('Ethnicity') ? $applicant->ethnic : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Name (English):</th>
-                        <td>{{ $applicant->guardian_name_english }} </td>
+                        <td>{{ !Request::get('GuardianNameEnglish') ? $applicant->guardian_name_english : '' }} </td>
                         <th class="w-25">Freefom Fighter Quota:</th>
-                        <td>{{ $applicant->ffq }} </td>
+                        <td>{{ !Request::get('FreedomFighterQuota') ? $applicant->ffq : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Guardian's NID:</th>
-                        <td>{{ $applicant->guardian_nid }} </td>
+                        <td>{{ !Request::get('GuardianNIDNo') ? $applicant->guardian_nid : '' }} </td>
                         <th class="w-25">Any Other Scholarships:</th>
-                        <td>{{ $applicant->scholarship }} </td>
+                        <td>{{ !Request::get('Scholarship') ? $applicant->scholarship : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Guardian's Birth Date:</th>
-                        <td>{{ $applicant->guardian_birth_date }} </td>
+                        <td>{{ !Request::get('GuardiansBirthDate') ? $applicant->guardian_birth_date : '' }} </td>
                         <th class="w-25">Any Disabilities:</th>
-                        <td>{{ $applicant->disabilities }} </td>
+                        <td>{{ !Request::get('Disabilities') ? $applicant->disabilities : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Guardian's Mobile:</th>
-                        <td>{{ $applicant->guardian_mobile }} </td>
+                        <td>{{ !Request::get('GuardianMobileNo') ? $applicant->guardian_mobile : '' }} </td>
                         <th class="w-25"></th>
                         <td></td>
                      </tr>
@@ -276,7 +326,7 @@
                   <tbody>
                      <tr>
                         <th colspan="2" class="w-25">Payment Method:</th>
-                        <td colspan="2">{{ $applicant->payment_method }}</td>
+                        <td colspan="2">{{ !Request::get('PaymentMethod') ? $applicant->payment_method : '' }}</td>
                      </tr>
                      <tr>
                         <th colspan="2" class="w-50 text-center">Banking</th>
@@ -285,37 +335,37 @@
 
                      <tr>
                         <th class="w-25">Bank Name:</th>
-                        <td>{{ $applicant->bank_name }}</td>
+                        <td>{{ !Request::get('BankName') ? $applicant->bank_name : '' }}</td>
                         <th class="w-25">Mobile Banking Service Provider:</th>
-                        <td>{{ $applicant->mobile_bank_provider }}</td>
+                        <td>{{ !Request::get('MobileBankingServiceProvider') ? $applicant->mobile_bank_provider : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Branch Name:</th>
-                        <td>{{ $applicant->bank_branch }}</td>
+                        <td>{{ !Request::get('Branch') ? $applicant->bank_branch : '' }}</td>
                         <th class="w-25">Mobile Banking Account Number:</th>
-                        <td>{{ $applicant->mobile_bank_account }}</td>
+                        <td>{{ !Request::get('MobileBankingAccountNumber') ? $applicant->mobile_bank_account : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Bank Routing Number:</th>
-                        <td>{{ $applicant->bank_routing }}</td>
+                        <td>{{ !Request::get('BankRoutingNumber') ? $applicant->bank_routing : '' }}</td>
                         <th class="w-25"></th>
                         <td></td>
                      </tr>
                      <tr>
                         <th class="w-25">Account Type:</th>
-                        <td>{{ $applicant->bank_acc_type }}</td>
+                        <td>{{ !Request::get('BankAccountType') ? $applicant->bank_acc_type : '' }}</td>
                         <th class="w-25"></th>
                         <td></td>
                      </tr>
                      <tr>
                         <th class="w-25">Account Holder Name:</th>
-                        <td>{{ $applicant->bank_acc_name }}</td>
+                        <td>{{ !Request::get('BankAccountName') ? $applicant->bank_acc_name : '' }}</td>
                         <th class="w-25"></th>
                         <td></td>
                      </tr>
                      <tr>
                         <th class="w-25">Account Number:</th>
-                        <td>{{ $applicant->bank_acc_number }}</td>
+                        <td>{{ !Request::get('BankAccountNumber') ? $applicant->bank_acc_number : '' }}</td>
                         <th class="w-25"></th>
                         <td></td>
                      </tr>
@@ -352,5 +402,7 @@
 @endsection
 @section('page-script')
    {{-- Page js files --}}
+
+   <script src="{{ asset(mix('js/core/hide-option.js')) }}"></script>
 
 @endsection

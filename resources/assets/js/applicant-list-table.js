@@ -498,7 +498,7 @@ $(function () {
    // append actions dropdown before add new button
    let addNew = document.getElementById("addNew");
    addNew.addEventListener("click", () => {
-      window.open("http://localhost:8000/student-form", "_blank");
+      window.open(window.location.origin + "/student-form", "_blank");
    });
 
 });

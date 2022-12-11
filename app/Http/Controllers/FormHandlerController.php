@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Models\formHandler;
 use App\Http\Requests\StoreformHandlerRequest;
 use App\Http\Requests\UpdateformHandlerRequest;
+use PhpParser\Node\Stmt\Foreach_;
 
 class FormHandlerController extends Controller
 {
@@ -146,7 +146,89 @@ class FormHandlerController extends Controller
       // show single applicant data
       $applicant = formHandler::findOrFail($id);
 
-      return view('content.dashboard.applicants.single-applicant', ['applicant' => $applicant]);
+      $titles = [
+         "Student Name",
+         "Father's Name",
+         "Mother's Name",
+         "Roll",
+         "Reg",
+         "Technology",
+         "Student Name (Bengali)",
+         "Birth Certificate Number",
+         "Birth Date",
+         "Student's Mobile No.",
+         "Blood Group",
+         "Gender",
+         "Marital Status",
+         "Father's Name (Bengali)",
+         "Mother's Name (Bengali)",
+         "Father's Mobile No.",
+         "Mother's Mobile No.",
+         "Father's NID",
+         "Mother's NID",
+         "Father's Birth Date",
+         "Mother's Birth Date",
+         "Present Division",
+         "Present District",
+         "Present Upozilla",
+         "Present City Corp/Municipality",
+         "Present Post Code",
+         "Present Address",
+         "Permanent Division",
+         "Permanent District",
+         "Permanent Upozilla",
+         "Permanent City Corp/Municipality",
+         "Permanent Post Code",
+         "Permanent Address",
+         "Previous Education Board Division",
+         "Previous Education Board District",
+         "Previous Education Board Upozilla",
+         "Previous Education Board",
+         "Previous Exam Passing Year",
+         "Previous Exam Roll",
+         "Previous Institute Name",
+         "Previous Exam GPA",
+         "Previous Exam Name",
+         "Previous Technology/Trade",
+         "Previous Attendance Rate",
+         "Current Education Board Division",
+         "Current Education Board District",
+         "Current Education Board Upozilla",
+         "Current Institute Name",
+         "Semester",
+         "Shift",
+         "Group",
+         "Guardian Name (Bengali)",
+         "Guardian Name (English)",
+         "Guardian Mobile No.",
+         "Guardian NID No.",
+         "Guardian's Birth Date",
+         "Relationship with Guardian",
+         "Cost Borne",
+         "Disabilities",
+         "Ethnicity",
+         "Freedom Fighter Quota",
+         "Scholarship",
+         "Payment Method",
+         "Mobile Banking Service Provider",
+         "Mobile Banking Account Number",
+         "Bank Name",
+         "Branch",
+         "Bank Account Number",
+         "Bank Account Name",
+         "Bank Account Type",
+         "Bank Routing Number",
+      ];
+
+      // foreach ($titles as $key => $value) {
+      //    $key = Str::replace(' ', '\'', $value);
+
+      //    if (isset($request->$key)) {
+      //       dd($request->$key);
+      //    }
+      // }
+
+      return view('content.dashboard.applicants.single-applicant', compact('applicant', 'titles'));
    }
 
    /**
