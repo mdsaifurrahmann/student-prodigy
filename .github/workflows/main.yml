@@ -81,21 +81,19 @@ jobs:
               GITHUB_SHA: ${{github.sha}}
               BASE_PATH: public_html/prodigy
               PROJECT_ENV: ${{ SECRETS.PROJECT_ENV }}
-              CONF_CACHE: ${{ SECRETS.CONF_CACHE }}
-              ROUTE_CACHE: ${{ SECRETS.ROUTE_CACHE }}
-              VIEW_CACHE: ${{ SECRETS.VIEW_CACHE }}
               KEY: ${{ SECRETS.KEY_GEN }}
            with:
               host: ${{ SECRETS.SERVER_HOST }}
               port: ${{ SECRETS.SERVER_PORT }}
               username: ${{ SECRETS.SERVER_USERNAME }}
               password: ${{ SECRETS.SERVER_PASSWORD }}
-              envs: GITHUB_SHA,BASE_PATH,PROJECT_ENV,CONF_CACHE,ROUTE_CACHE,VIEW_CACHE,KEY
+              envs: GITHUB_SHA,BASE_PATH,PROJECT_ENV,KEY
               script: |
                  echo ${GITHUB_SHA}
                  printf "%s" "$PROJECT_ENV" > "${BASE_PATH}/.env"
                  printf "%s" "${GITHUB_SHA}" > "${BASE_PATH}/${GITHUB_SHA}.txt"
-                 cd ${BASE_PATH} && ${CONF_CACHE} && ${ROUTE_CACHE} && ${VIEW_CACHE} && ${KEY}
+                 cd ${BASE_PATH} && ${CONF_CACHE} && ${ROUTE_CACHE} && ${VIEW_CACHE}
+                 cd ${BASE_PATH} && ${KEY}
 
    migrating-db:
       name: Migrating Database
@@ -112,14 +110,17 @@ jobs:
            env:
               BASE_PATH: domains/codebumble.net/public_html/prodigy
               ARTISAN_MIGRATE: ${{ SECRETS.ARTISAN_MIGRATE }}
+              ROUTE_CACHE: ${{ SECRETS.ROUTE_CACHE }}
+              VIEW_CACHE: ${{ SECRETS.VIEW_CACHE }}
+              CACHE_CONF: ${{ SECRETS.CONF_CACHE }}
            with:
-              envs: BASE_PATH,ARTISAN_MIGRATE,
+              envs: BASE_PATH,ARTISAN_MIGRATE,ROUTE_CACHE,VIEW_CACHE,CACHE_CONF,
               host: ${{ SECRETS.SERVER_HOST }}
               port: ${{ SECRETS.SERVER_PORT }}
               username: ${{ SECRETS.SERVER_USERNAME }}
               password: ${{ SECRETS.SERVER_PASSWORD }}
               script: |
-                 cd ${BASE_PATH} && ${ARTISAN_MIGRATE}
+                 cd ${BASE_PATH} && ${ARTISAN_MIGRATE} && ${ROUTE_CACHE} && ${VIEW_CACHE} && ${CACHE_CONF}
 
    clean-up:
       name: Cleaning Up Artifacts
@@ -141,4 +142,3 @@ jobs:
               password: ${{ SECRETS.SERVER_PASSWORD }}
               script: |
                  rm -rf domains/codebumble.net/public_html/prodigy/${{github.sha}}.tar.gz
-                 cd domains/codebumble.net/public_html/prodigy
