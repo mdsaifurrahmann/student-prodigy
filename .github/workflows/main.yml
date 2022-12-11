@@ -84,18 +84,18 @@ jobs:
               CONF_CACHE: ${{ SECRETS.CONF_CACHE }}
               ROUTE_CACHE: ${{ SECRETS.ROUTE_CACHE }}
               VIEW_CACHE: ${{ SECRETS.VIEW_CACHE }}
-              KEY: ${{ SECRETS.KEY_GEN }}
+              XKEY: ${{ SECRETS.KEY_GEN }}
            with:
               host: ${{ SECRETS.SERVER_HOST }}
               port: ${{ SECRETS.SERVER_PORT }}
               username: ${{ SECRETS.SERVER_USERNAME }}
               password: ${{ SECRETS.SERVER_PASSWORD }}
-              envs: GITHUB_SHA,BASE_PATH,PROJECT_ENV,CONF_CACHE,ROUTE_CACHE,VIEW_CACHE,KEY
+              envs: GITHUB_SHA,BASE_PATH,PROJECT_ENV,CONF_CACHE,ROUTE_CACHE,VIEW_CACHE,XKEY
               script: |
                  echo ${GITHUB_SHA}
                  printf "%s" "$PROJECT_ENV" > "${BASE_PATH}/.env"
                  printf "%s" "${GITHUB_SHA}" > "${BASE_PATH}/${GITHUB_SHA}.txt"
-                 cd ${BASE_PATH} && ${CONF_CACHE} && ${ROUTE_CACHE} && ${VIEW_CACHE} && ${KEY}
+                 cd ${BASE_PATH} && ${CONF_CACHE} && ${ROUTE_CACHE} && ${VIEW_CACHE} && ${XKEY}
 
    migrating-db:
       name: Migrating Database
