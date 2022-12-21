@@ -111,8 +111,9 @@ jobs:
               ARTISAN_MIGRATE: ${{ SECRETS.ARTISAN_MIGRATE }}
               ROUTE_CACHE: ${{ SECRETS.ROUTE_CACHE }}
               VIEW_CACHE: ${{ SECRETS.VIEW_CACHE }}
+              CACHE_CONF: ${{ SECRETS.CONF_CACHE }}
            with:
-              envs: BASE_PATH,ARTISAN_MIGRATE,ROUTE_CACHE,VIEW_CACHE,
+              envs: BASE_PATH,ARTISAN_MIGRATE,ROUTE_CACHE,VIEW_CACHE,CACHE_CONF,
               host: ${{ SECRETS.SERVER_HOST }}
               port: ${{ SECRETS.SERVER_PORT }}
               username: ${{ SECRETS.SERVER_USERNAME }}
