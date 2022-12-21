@@ -37,6 +37,12 @@
                               Show Option
                            </span>
                         </button>
+                        <a class="dt-button create-new btn btn-primary" href="{{route
+                        ('download', $applicant->id)}}">
+                           <span>
+                              Download
+                           </span>
+                        </a>
                      </div>
                   </div>
                </div>
@@ -90,7 +96,10 @@
                         <th class="w-25">Student's Name (Bengali):</th>
                         <td colspan="2">{{ !Request::get('StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
                         <td rowspan="5">
-                           <img src="{{ '/student-images/formal-images/' . $applicant->formal_image_path }}" alt="Formal Image" class="w-100"
+                           <img src="{{ '/student-images/formal-images/' . $applicant->formal_image_path
+                           }}"
+                                alt="Formal Image"
+                                class="w-100"
                               style="object-fit: cover;">
                         </td>
 

@@ -35,6 +35,8 @@ Route::group(['prefix' => 'authenticated/dash'], function () {
    Route::get('applicant-destroy/{id}', [FormHandlerController::class, 'destroy'])->name('applicant-destroy')->middleware('verified');
    Route::get('applicant-modify/{id}', [FormHandlerController::class, 'edit'])->name('applicant-modify')->middleware('verified');
    Route::patch('applicant-modifier/{id}', [FormHandlerController::class, 'update'])->name('applicant-modifier')->middleware('verified');
+   Route::get('applicant/download/{id}', [FormHandlerController::class, 'download'])->name('download')
+      ->middleware('verified');
 });
 
 Route::group(['prefix' => 'authenticate'], function () {

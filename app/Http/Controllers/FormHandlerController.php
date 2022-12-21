@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Models\formHandler;
 use App\Http\Requests\StoreformHandlerRequest;
 use App\Http\Requests\UpdateformHandlerRequest;
+use PDF;
 use PhpParser\Node\Stmt\Foreach_;
 
 class FormHandlerController extends Controller
@@ -408,5 +412,33 @@ class FormHandlerController extends Controller
       } else {
          return redirect()->route('root')->with('destroy-error', 'You are not authorized to delete this applicant!');
       }
+   }
+
+
+   /**
+    * @param formHandler $formHandler
+    * @param $id
+    * @return Application|Factory|View
+    */
+   public function download(formHandler $formHandler, $id)
+   {
+      // show single applicant data
+      $applicant = formHandler::findOrFail($id);
+
+
+      $tmp = sys_get_temp_dir();
+      $pdf = PDF::loadView('pdf', compact('applicant'));
+      return $pdf->setPaper('a4')->setOption(
+         [
+            'dpi' => 150,
+            'defaultFont' => 'Tiro Bangla',
+            'logOutputFile' => '',
+            'isRemoteEnabled' => true,
+            'fontDir' => $tmp,
+            'fontCache' => $tmp,
+            'tempDir' => $tmp,
+            'chroot' => $tmp,
+            'isHtml5ParserEnabled' => true
+         ])->download('form.pdf');
    }
 }
