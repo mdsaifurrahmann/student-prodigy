@@ -111,15 +111,14 @@ jobs:
               ARTISAN_MIGRATE: ${{ SECRETS.ARTISAN_MIGRATE }}
               ROUTE_CACHE: ${{ SECRETS.ROUTE_CACHE }}
               VIEW_CACHE: ${{ SECRETS.VIEW_CACHE }}
-              CACHE_CONF: ${{ SECRETS.CONF_CACHE }}
            with:
-              envs: BASE_PATH,ARTISAN_MIGRATE,ROUTE_CACHE,VIEW_CACHE,CACHE_CONF,
+              envs: BASE_PATH,ARTISAN_MIGRATE,ROUTE_CACHE,VIEW_CACHE,
               host: ${{ SECRETS.SERVER_HOST }}
               port: ${{ SECRETS.SERVER_PORT }}
               username: ${{ SECRETS.SERVER_USERNAME }}
               password: ${{ SECRETS.SERVER_PASSWORD }}
               script: |
-                 cd ${BASE_PATH} && ${ARTISAN_MIGRATE} && ${ROUTE_CACHE} && ${VIEW_CACHE} && ${CACHE_CONF}
+                 cd ${BASE_PATH} && ${ARTISAN_MIGRATE} && ${ROUTE_CACHE} && ${VIEW_CACHE}
 
    clean-up:
       name: Cleaning Up Artifacts
