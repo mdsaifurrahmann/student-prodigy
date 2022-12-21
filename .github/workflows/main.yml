@@ -81,18 +81,18 @@ jobs:
               GITHUB_SHA: ${{github.sha}}
               BASE_PATH: public_html/prodigy
               PROJECT_ENV: ${{ SECRETS.PROJECT_ENV }}
-              KEY: ${{ SECRETS.KEY_GEN }}
+              XKEY: ${{ SECRETS.KEY_GEN }}
            with:
               host: ${{ SECRETS.SERVER_HOST }}
               port: ${{ SECRETS.SERVER_PORT }}
               username: ${{ SECRETS.SERVER_USERNAME }}
               password: ${{ SECRETS.SERVER_PASSWORD }}
-              envs: GITHUB_SHA,BASE_PATH,PROJECT_ENV,KEY
+              envs: GITHUB_SHA,BASE_PATH,PROJECT_ENV,XKEY
               script: |
                  echo ${GITHUB_SHA}
                  printf "%s" "$PROJECT_ENV" > "${BASE_PATH}/.env"
                  printf "%s" "${GITHUB_SHA}" > "${BASE_PATH}/${GITHUB_SHA}.txt"
-                 cd ${BASE_PATH} && ${KEY}
+                 cd ${BASE_PATH} && ${XKEY}
 
    migrating-db:
       name: Migrating Database
