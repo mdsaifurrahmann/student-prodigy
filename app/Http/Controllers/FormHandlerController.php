@@ -428,17 +428,13 @@ class FormHandlerController extends Controller
 
       $tmp = sys_get_temp_dir();
       $pdf = PDF::loadView('pdf', compact('applicant'));
-      return $pdf->setPaper('a4')->setOption(
-         [
-            'dpi' => 150,
+
+      return $pdf->setPaper('a4')->setOption(array(
             'defaultFont' => 'Tiro Bangla',
-            'logOutputFile' => '',
-            'isRemoteEnabled' => true,
             'fontDir' => $tmp,
             'fontCache' => $tmp,
             'tempDir' => $tmp,
             'chroot' => $tmp,
-            'isHtml5ParserEnabled' => true
-         ])->download('form.pdf');
+      ))->stream('form.pdf');
    }
 }

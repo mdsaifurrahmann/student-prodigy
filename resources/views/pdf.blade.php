@@ -37,11 +37,10 @@
                   <td
                      colspan="2">{{ !Request::get('StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
                   <td rowspan="5">
-                     <img src=" {{ public_path('/student-images/formal-images') . '/' . $applicant->formal_image_path
-                      }}"
+                     <img src=" {{ env('APP_URL') . '/student-images/formal-images/' . $applicant->formal_image_path}}"
                           alt="" class="w-100"
-                        style="object-fit: cover;">
-
+                        >
+                     {{ env('APP_URL') . '/student-images/formal-images/' . $applicant->formal_image_path}}
                   </td>
 
                </tr>

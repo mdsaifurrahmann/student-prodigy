@@ -96,8 +96,12 @@
                         <th class="w-25">Student's Name (Bengali):</th>
                         <td colspan="2">{{ !Request::get('StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
                         <td rowspan="5">
-                           <img src="{{ '/student-images/formal-images/' . $applicant->formal_image_path
-                           }}"
+{{--                           <img src="{{ '/student-images/formal-images/' . $applicant->formal_image_path--}}
+{{--                           }}"--}}
+{{--                                alt="Formal Image"--}}
+{{--                                class="w-100"--}}
+{{--                              style="object-fit: cover;">--}}
+                           <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/formal-images/'. $applicant->formal_image_path))) }}"
                                 alt="Formal Image"
                                 class="w-100"
                               style="object-fit: cover;">
