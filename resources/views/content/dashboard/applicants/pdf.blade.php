@@ -4,7 +4,9 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 
+
    <style>
+
       @font-face {
          font-family: 'Nikosh';
          src: url({{ storage_path('fonts\Nikosh.ttf') }}) format("truetype");
@@ -12,34 +14,32 @@
          font-weight: normal;
       }
 
-      @page :first{
-         margin-top: 0;
-         margin-bottom: 0;
-      }
-
       @page{
-         margin-left: 2rem;
-         margin-right: 2rem;
+         margin: 2rem;
       }
 
+      .bold{
+         font-weight: bold;
+      }
 
       table{
          border: 1px solid black;
          border-collapse: collapse;
+         font-size: 18px;
+         width: 70%;
       }
 
-      .text-center{
+      .text-center {
          text-align: center;
-      }
-
-      .w-25{
-         width: 26%;
       }
 
       th{
          border: 1px solid black;
          text-align: left;
-         padding: .2rem;
+         padding: .3rem;
+         width: 40%;
+         font-weight: normal;
+         text-transform: uppercase;
       }
 
 
@@ -50,14 +50,15 @@
 
       td{
          border: 1px solid black;
-         padding: 0.2rem;
+         padding: 0.3rem;
          text-transform: uppercase;
+         width: 60%;
       }
 
 
       .bn{
-         font-family: 'Nikosh', serif;
-         /*font-size: 16px;*/
+         font-family: solaimanlipi;
+         font-weight: normal;
       }
 
       .my-2{
@@ -83,6 +84,8 @@
       }
 
    </style>
+
+
 </head>
 <body>
 
@@ -100,19 +103,18 @@
          <div class="table-responsive">
             <table class="table-bordered table">
                <tr>
-                  <th colspan="4" class="text-center">Personal Information</th>
+                  <th colspan="4" class="text-center bold">Personal Information</th>
                </tr>
                <tr>
-                  <th class="bn w-25">শিক্ষার্থীর নাম (বাংলা)</th>
+                  <th class="w-25 bn">শিক্ষার্থীর নাম (বাংলা)</th>
                   <td
                      colspan="2" class="bn">{{ !Request::get('StudentNameBengali') ? $applicant->student_name_bangla :
                       ''
                      }}</td>
                   <td rowspan="5">
-                     <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/formal-images/'. $applicant->formal_image_path))) }}"
-                          alt="" class="w-100" style="width: 100%">
+                     <img src="{{public_path('/student-images/formal-images/'. $applicant->formal_image_path)}}"
+                          alt="" class="w-100" width="200" height="200" style="margin: 0 3rem">
                   </td>
-
                </tr>
                <tr>
                   <th class="w-25">Student's Name (English):</th>
@@ -176,8 +178,8 @@
                   <td>{{ !Request::get('MothersMobileNo') ? $applicant->mother_mobile : '' }}</td>
                </tr>
                <tr>
-                  <th colspan="2" class="text-center">Permanent Address</th>
-                  <th colspan="2" class="text-center">Present Address</th>
+                  <th colspan="2" class="text-center bold">Permanent Address</th>
+                  <th colspan="2" class="text-center bold">Present Address</th>
                </tr>
                <tr>
                   <th class="w-25">Division:</th>
@@ -216,8 +218,8 @@
                   <td>{{ !Request::get('PresentAddress') ? $applicant->pres_address : '' }} </td>
                </tr>
                <tr>
-                  <th colspan="2" class="text-center">Previous Educational Information</th>
-                  <th colspan="2" class="text-center">Present Educational Information</th>
+                  <th colspan="2" class="text-center bold">Previous Educational Information</th>
+                  <th colspan="2" class="text-center bold">Present Educational Information</th>
                </tr>
                <tr>
                   <th class="w-25">Division:</th>
@@ -286,8 +288,8 @@
                   <td></td>
                </tr>
                <tr>
-                  <th colspan="2" class="text-center">Guardian's Information</th>
-                  <th colspan="2" class="text-center">Eligibility Conditions and Attachment</th>
+                  <th colspan="2" class="text-center bold">Guardian's Information</th>
+                  <th colspan="2" class="text-center bold">Eligibility Conditions and Attachment</th>
                </tr>
                <tr>
                   <th class="w-25">Relation:</th>
@@ -326,15 +328,15 @@
                   <td></td>
                </tr>
                <tr>
-                  <th colspan="4" class="text-center">Payment Information</th>
+                  <th colspan="4" class="text-center bold">Payment Information</th>
                </tr>
                <tr>
                   <th colspan="2" class="w-25">Payment Method:</th>
                   <td colspan="2">{{ !Request::get('PaymentMethod') ? $applicant->payment_method : '' }}</td>
                </tr>
                <tr>
-                  <th colspan="2" class="w-50 text-center">Banking</th>
-                  <th colspan="2" class="w-50 text-center">Mobile Banking</th>
+                  <th colspan="2" class="w-50 text-center bold">Banking</th>
+                  <th colspan="2" class="w-50 text-center bold">Mobile Banking</th>
                </tr>
 
                <tr>
@@ -379,9 +381,8 @@
          <table class="table-borderless my-2 table">
             <tr class="mx-auto">
                <td class="text-center">
-                  <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/signature-images/'. $applicant->signature_image_path))) }}"
-                       alt="Applicant's Signature" class="mx-auto"
-                       style="width: 13rem; object-fit: cover; display: block;">
+                  <img src="{{public_path('/student-images/signature-images/'. $applicant->signature_image_path)}}"
+                       alt="" class="w-100" width="200" height="200" style="margin: 0 3rem">
                </td>
                <td></td>
                <td></td>

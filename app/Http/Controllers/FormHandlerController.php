@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 use App\Models\formHandler;
 use App\Http\Requests\StoreformHandlerRequest;
 use App\Http\Requests\UpdateformHandlerRequest;
-use PDF;
+use Mpdf\MpdfException;
 use PhpParser\Node\Stmt\Foreach_;
 
 class FormHandlerController extends Controller
@@ -419,22 +419,41 @@ class FormHandlerController extends Controller
     * @param formHandler $formHandler
     * @param $id
     * @return Application|Factory|View
+    * @throws MpdfException
     */
    public function download(formHandler $formHandler, $id)
    {
       // show single applicant data
       $applicant = formHandler::findOrFail($id);
 
+      $defaultConfig = (new \Mpdf\Config\ConfigVariables())->getDefaults();
+      $fontDirs = $defaultConfig['fontDir'];
 
-      $tmp = sys_get_temp_dir();
-      $pdf = PDF::loadView('pdf', compact('applicant'));
+      $defaultFontConfig = (new \Mpdf\Config\FontVariables())->getDefaults();
+      $fontData = $defaultFontConfig['fontdata'];
 
-      return $pdf->setPaper('a4')->setOption(array(
-            'defaultFont' => 'Tiro Bangla',
-            'fontDir' => $tmp,
-            'fontCache' => $tmp,
-            'tempDir' => $tmp,
-            'chroot' => $tmp,
-      ))->stream('form.pdf');
+
+      $pdf = new \Mpdf\Mpdf([
+         'fontDir' => array_merge($fontDirs, [
+            __DIR__ . '/fonts',
+         ]),
+         'fontdata' => $fontData + [ // lowercase letters only in font key
+               'solaimanlipi' => [
+                  'R' => 'SolaimanLipi.ttf',
+                  'useOTL' => 0xFF,
+               ]
+            ],
+
+
+         'mode' => 'utf-8',
+         'format' => 'A4',
+         'orientation' => 'P',
+         'default_font' => 'freeserif'
+
+      ]);
+
+      $content = view('content.dashboard.applicants.pdf', compact('applicant'))->render();
+      $pdf->WriteHTML($content);
+      $pdf->Output($applicant->student_name_english . '.pdf', 'D');
    }
 }
