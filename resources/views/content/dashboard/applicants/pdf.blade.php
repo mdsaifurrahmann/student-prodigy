@@ -1,14 +1,87 @@
-<html>
+<html lang="bn">
 <head>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&display=swap" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 
    <style>
-      body{
-         font-family: 'Tiro Bangla', serif;
+      @font-face {
+         font-family: 'Nikosh';
+         src: url({{ storage_path('fonts\Nikosh.ttf') }}) format("truetype");
+         font-style: normal;
+         font-weight: normal;
       }
+
+      @page :first{
+         margin-top: 0;
+         margin-bottom: 0;
+      }
+
+      @page{
+         margin-left: 2rem;
+         margin-right: 2rem;
+      }
+
+
+      table{
+         border: 1px solid black;
+         border-collapse: collapse;
+      }
+
+      .text-center{
+         text-align: center;
+      }
+
+      .w-25{
+         width: 26%;
+      }
+
+      th{
+         border: 1px solid black;
+         text-align: left;
+         padding: .2rem;
+      }
+
+
+
+      tr{
+
+      }
+
+      td{
+         border: 1px solid black;
+         padding: 0.2rem;
+         text-transform: uppercase;
+      }
+
+
+      .bn{
+         font-family: 'Nikosh', serif;
+         /*font-size: 16px;*/
+      }
+
+      .my-2{
+         margin: 2rem 0;
+      }
+
+      .table-borderless{
+         border: none;
+      }
+
+      .table-borderless td,
+      .table-borderless th,
+      .table-borderless tr{
+         border: none;
+      }
+
+      .page-break {
+         page-break-after: always;
+      }
+
+      #header{
+         margin: .2rem;
+      }
+
    </style>
 </head>
 <body>
@@ -26,21 +99,18 @@
          </div>
          <div class="table-responsive">
             <table class="table-bordered table">
-               <thead>
                <tr>
                   <th colspan="4" class="text-center">Personal Information</th>
                </tr>
-               </thead>
-               <tbody>
                <tr>
-                  <th class="w-25">Student's Name (Bengali):</th>
+                  <th class="bn w-25">শিক্ষার্থীর নাম (বাংলা)</th>
                   <td
-                     colspan="2">{{ !Request::get('StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
+                     colspan="2" class="bn">{{ !Request::get('StudentNameBengali') ? $applicant->student_name_bangla :
+                      ''
+                     }}</td>
                   <td rowspan="5">
-                     <img src=" {{ env('APP_URL') . '/student-images/formal-images/' . $applicant->formal_image_path}}"
-                          alt="" class="w-100"
-                        >
-                     {{ env('APP_URL') . '/student-images/formal-images/' . $applicant->formal_image_path}}
+                     <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/formal-images/'. $applicant->formal_image_path))) }}"
+                          alt="" class="w-100" style="width: 100%">
                   </td>
 
                </tr>
@@ -77,7 +147,7 @@
                </tr>
                <tr>
                   <th class="w-25">Father's Name (Bengali):</th>
-                  <td>{{ !Request::get('FathersNameBengali') ? $applicant->father_name_bangla : '' }}</td>
+                  <td class="bn">{{ !Request::get('FathersNameBengali') ? $applicant->father_name_bangla : '' }}</td>
                   <th class="w-25">Mother's Name (Bengali):</th>
                   <td>{{ !Request::get('MothersNameBengali') ? $applicant->mother_name_bangla : '' }}</td>
                </tr>
@@ -105,14 +175,10 @@
                   <th class="w-25">Mother's Mobile Number:</th>
                   <td>{{ !Request::get('MothersMobileNo') ? $applicant->mother_mobile : '' }}</td>
                </tr>
-               </tbody>
-               <thead>
                <tr>
                   <th colspan="2" class="text-center">Permanent Address</th>
                   <th colspan="2" class="text-center">Present Address</th>
                </tr>
-               </thead>
-               <tbody>
                <tr>
                   <th class="w-25">Division:</th>
                   <td>{{ !Request::get('PermanentDivision') ? $applicant->perm_division : '' }} </td>
@@ -149,14 +215,10 @@
                   <th class="w-25">Address/Village:</th>
                   <td>{{ !Request::get('PresentAddress') ? $applicant->pres_address : '' }} </td>
                </tr>
-               </tbody>
-               <thead>
                <tr>
                   <th colspan="2" class="text-center">Previous Educational Information</th>
                   <th colspan="2" class="text-center">Present Educational Information</th>
                </tr>
-               </thead>
-               <tbody>
                <tr>
                   <th class="w-25">Division:</th>
                   <td>{{ !Request::get('PreviousEducationBoardDivision') ? $applicant->pe_division : '' }} </td>
@@ -223,14 +285,10 @@
                   <th class="w-25"></th>
                   <td></td>
                </tr>
-               </tbody>
-               <thead>
                <tr>
                   <th colspan="2" class="text-center">Guardian's Information</th>
                   <th colspan="2" class="text-center">Eligibility Conditions and Attachment</th>
                </tr>
-               </thead>
-               <tbody>
                <tr>
                   <th class="w-25">Relation:</th>
                   <td>{{ !Request::get('RelationshipwithGuardian') ? $applicant->relationship : '' }} </td>
@@ -267,13 +325,9 @@
                   <th class="w-25"></th>
                   <td></td>
                </tr>
-               </tbody>
-               <thead>
                <tr>
                   <th colspan="4" class="text-center">Payment Information</th>
                </tr>
-               </thead>
-               <tbody>
                <tr>
                   <th colspan="2" class="w-25">Payment Method:</th>
                   <td colspan="2">{{ !Request::get('PaymentMethod') ? $applicant->payment_method : '' }}</td>
@@ -319,15 +373,13 @@
                   <th class="w-25"></th>
                   <td></td>
                </tr>
-               </tbody>
-            </table>
+               </table>
          </div>
 
          <table class="table-borderless my-2 table">
-            <tbody>
             <tr class="mx-auto">
                <td class="text-center">
-                  <img src="{{ '/student-images/signature-images/' . $applicant->signature_image_path }}"
+                  <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/signature-images/'. $applicant->signature_image_path))) }}"
                        alt="Applicant's Signature" class="mx-auto"
                        style="width: 13rem; object-fit: cover; display: block;">
                </td>
@@ -339,7 +391,6 @@
                <td class="font-small-2 text-center">Signature of acceptor</td>
                <td class="font-small-2 text-center">Signature and seal of the head of the institution</td>
             </tr>
-            </tbody>
          </table>
       </div>
    </div>
