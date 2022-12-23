@@ -239,12 +239,7 @@ $(function () {
                      feather.icons["edit"].toSvg({
                         class: "font-small-4 me-50",
                      }) +
-                     "Update</a>" +
-                     '<a href="' + window.location.origin + '/authenticated/dash/applicant-destroy/' + full["id"] + '" class=" my-1 d-block btn btn-danger waves-effect waves-float waves-light" id="applicant-destroy">' +
-                     feather.icons["trash-2"].toSvg({
-                        class: "font-small-4 me-50",
-                     }) +
-                     "Delete</a>"
+                     "Edit</a>"
                   );
                },
             },
@@ -262,15 +257,15 @@ $(function () {
                      class: "font-small-4 me-50",
                   }) + "Export",
                buttons: [
-                  {
-                     extend: "print",
-                     text:
-                        feather.icons["printer"].toSvg({
-                           class: "font-small-4 me-50",
-                        }) + "Print",
-                     className: "dropdown-item",
-                     exportOptions: { columns },
-                  },
+                  // {
+                  //    extend: "print",
+                  //    text:
+                  //       feather.icons["printer"].toSvg({
+                  //          class: "font-small-4 me-50",
+                  //       }) + "Print",
+                  //    className: "dropdown-item",
+                  //    exportOptions: { columns },
+                  // },
                   {
                      extend: "csv",
                      text:
@@ -289,15 +284,15 @@ $(function () {
                      className: "dropdown-item",
                      exportOptions: { columns },
                   },
-                  {
-                     extend: "pdf",
-                     text:
-                        feather.icons["clipboard"].toSvg({
-                           class: "font-small-4 me-50",
-                        }) + "Pdf",
-                     className: "dropdown-item",
-                     exportOptions: { columns },
-                  },
+                  // {
+                  //    extend: "pdf",
+                  //    text:
+                  //       feather.icons["clipboard"].toSvg({
+                  //          class: "font-small-4 me-50",
+                  //       }) + "Pdf",
+                  //    className: "dropdown-item",
+                  //    exportOptions: { columns },
+                  // },
                   {
                      extend: "copy",
                      text:

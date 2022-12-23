@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -19,7 +20,7 @@ class FormHandlerController extends Controller
    /**
     * Display a listing of the resource.
     *
-    * @return \Illuminate\Http\Response
+    * @return RedirectResponse
     */
    public function index()
    {
@@ -27,12 +28,10 @@ class FormHandlerController extends Controller
          return redirect()->route('login');
       }
 
-      $formHandlers = json_encode(['data' => formHandler::all()]);
-
-      return $formHandlers;
+      return json_encode(['data' => formHandler::all()]);
    }
 
-   /**
+    /**
     * Show the form for creating a new resource.
     *
     * @return \Illuminate\Http\Response
@@ -121,13 +120,13 @@ class FormHandlerController extends Controller
       $request->validated();
 
       // Hanfle the file name for Database
-      $formal_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_roll') . '.' .  $request->formal_image->extension();
+      $formal_image_name_handler = time() . Str::upper(Str::random(16)) . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_roll') . '.' .  $request->formal_image->extension();
       // move the file
       $request->formal_image->move(public_path('/student-images/formal-images/'), $formal_image_name_handler);
 
 
       // Handle the file name for Database
-      $signature_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_reg') . '.' .  $request->signature_image->extension();
+      $signature_image_name_handler = time() . Str::upper(Str::random(16)) . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_reg') . '.' .  $request->signature_image->extension();
       // move the file
       $request->signature_image->move(public_path('student-images/signature-images/'), $signature_image_name_handler);
 
@@ -343,7 +342,8 @@ class FormHandlerController extends Controller
          }
 
          // Handle the file name for Database
-         $formal_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_roll') . '.' .  $request->formal_image->extension();
+         $formal_image_name_handler = time() . Str::upper(Str::random(16)) . '_' . 'student-' . Str::replace(' ', '_',
+               $request->input('student_name_english')) . '-' . $request->input('ce_roll') . '.' .  $request->formal_image->extension();
          // move the file
          $request->formal_image->move(public_path('/student-images/formal-images/'), $formal_image_name_handler);
       } else {
@@ -357,7 +357,7 @@ class FormHandlerController extends Controller
          }
 
          // Handle the file name for Database
-         $signature_image_name_handler = time() . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_reg') . '.' .  $request->signature_image->extension();
+         $signature_image_name_handler = time() . Str::upper(Str::random(16)) . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_reg') . '.' .  $request->signature_image->extension();
          // move the file
          $request->signature_image->move(public_path('student-images/signature-images/'), $signature_image_name_handler);
       } else {
@@ -456,6 +456,6 @@ class FormHandlerController extends Controller
 
       $content = view('content.dashboard.applicants.pdf', compact('applicant', 'previousUrl'))->render();
       $pdf->WriteHTML($content);
-      $pdf->Output($applicant->student_name_english . '.pdf', 'D');
+      $pdf->Output($applicant->student_name_english . '-' . Str::upper(Str::random(16)) . '.pdf', 'D');
    }
 }

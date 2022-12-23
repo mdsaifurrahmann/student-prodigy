@@ -1,11 +1,14 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'Applicant Details')
+@section('title', 'Details of ' . $applicant->student_name_english)
 
 @section('vendor-style')
-   {{-- vendor css files --}}
-
-@endsection
+   <link rel="stylesheet" href="{{ asset(mix('vendors/css/animate/animate.min.css')) }}">
+   <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/sweetalert2.min.css')) }}">
+@stop
+@section('page-style')
+   <link rel="stylesheet" href="{{asset(mix('css/base/plugins/extensions/ext-component-sweet-alerts.css'))}}">
+@stop
 
 @section('content')
    {{-- content --}}
@@ -15,6 +18,56 @@
       <div class="row" id="table-responsive" style="margin: 0 auto">
          <div class="col-12">
 
+            @if (session('success'))
+               <div class="alert alert-success alert-dismissible fade show p-2" role="alert">
+                  <strong> {{ session('success') }}</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            @endif
+
+            <div class="card p-2 pt-0">
+                  <div class="card-header p-2 px-0 pb-0" id="">
+                     <div class="head-labelx">
+                        <h6 class="mb-0">Quick Action</h6>
+                     </div>
+                     <div class="dt-action-buttons text-end">
+                        <div class="dt-buttons d-inline-flex">
+                           <a class="dt-button create-new btn btn-primary me-1" href="{{route('applicant-list')
+                        }}">
+                           <span>
+                              Back to Applicant List
+                           </span>
+                           </a>
+
+                           <a class="dt-button create-new btn btn-primary me-1" href="{{route('download', $applicant->id)
+                        }}">
+                           <span>
+                              Download
+                           </span>
+                           </a>
+
+                           <a class="create-new btn btn-warning me-1" id="edit" href="{{route('applicant-modify',
+                        $applicant->id)}}">
+                           <span>
+                              Edit
+                           </span>
+                           </a>
+
+
+                           <form method="GET" action="{{route('applicant-destroy', $applicant->id)}}" id="destroy">
+                              @csrf
+                              <button class="create-new btn btn-danger" type="submit" id="confirm-destroy">
+                              <span>
+                                 Delete
+                              </span>
+                              </button>
+                           </form>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
             <div class="card p-2 pt-0">
                <div class="card-header p-2 px-0 pb-0" id="hideOption">
                   <div class="head-labelx">
@@ -22,31 +75,32 @@
                   </div>
                   <div class="dt-action-buttons text-end">
                      <div class="dt-buttons d-inline-flex">
-                        <button class="create-new btn btn-primary me-1" type="button" id="selectAll">
-                           <span>
-                              Select All
-                           </span>
-                        </button>
                         <button class="create-new btn btn-primary me-1" type="button" id="unSelectAll">
                            <span>
-                              Unselect All
+                              Show All
                            </span>
                         </button>
-                        <button class="dt-button create-new btn btn-primary" type="button" id="showOp">
+                        <button class="create-new btn btn-primary me-1" type="button" id="selectAll">
+                           <span>
+                              Hide All
+                           </span>
+                        </button>
+                        <button class="dt-button create-new btn btn-primary me-1" type="button" id="showOp">
                            <span>
                               Show Option
                            </span>
                         </button>
-                        <a class="dt-button create-new btn btn-primary" href="{{route
-                        ('download', $applicant->id)}}">
+                        <button class="dt-button create-new btn btn-primary" form="hideItem" type="submit" id="">
                            <span>
-                              Download
+                              Go
                            </span>
-                        </a>
+                        </button>
                      </div>
                   </div>
                </div>
-               <form class="d-none mt-1 pb-1" id="hideItem" method="GET" action="{{ route('applicant-details', $applicant->id) }}">
+               <form class="d-none mt-1 pb-1" id="hideItem" method="GET" action="{{ route
+               ('applicant-details',
+               $applicant->id) }}">
                   @csrf
                   <div class="row g-1 mb-md-1">
                      <div class="col-12">
@@ -65,24 +119,18 @@
                      </div>
                   </div>
 
-                  <input type="submit" class="dt-button create-new btn btn-primary" value="Go">
+                  <div class="border-top mb-1"></div>
+                  <input type="submit" class="dt-button create-new btn btn-primary float-end" value="Go">
                </form>
             </div>
+
+
 
             <div class="card">
                <div class="card-body">
                   <h2 class="card-title text-uppercase mb-0 text-center">Student Database - Textile Institute Dinajpur</h2>
                </div>
             </div>
-
-
-            @if (session('success'))
-               <div class="alert alert-success alert-dismissible fade show p-2" role="alert">
-                  <strong> {{ session('success') }}</strong>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-            @endif
-
 
             <div class="table-responsive">
                <table class="table-bordered table">
@@ -401,16 +449,16 @@
          </div>
       </div>
    </div>
-@endsection
+@stop
 
 
 @section('vendor-script')
    {{-- vendor files --}}
-
-@endsection
+   <script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
+   <script src="{{ asset(mix('vendors/js/extensions/polyfill.min.js')) }}"></script>
+@stop
 @section('page-script')
    {{-- Page js files --}}
-
    <script src="{{ asset(mix('js/core/hide-option.js')) }}"></script>
-
-@endsection
+   <script src="{{ asset(mix('js/core/delete-alert.js')) }}"></script>
+@stop

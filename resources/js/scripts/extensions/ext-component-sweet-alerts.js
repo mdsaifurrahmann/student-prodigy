@@ -1,5 +1,5 @@
 /*=========================================================================================
-	File Name: ext-component-sweet-alerts.js
+	File Name: delete-alert.js
 	Description: A beautiful replacement for javascript alerts
 	----------------------------------------------------------------------------------------
 	Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template

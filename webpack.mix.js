@@ -87,6 +87,7 @@ mix.js("resources/js/core/app-menu.js", "public/js/core")
    .js("resources/assets/js/forms.js", "public/js/core")
    .js("resources/assets/js/applicant-list-table.js", "public/js/core")
    .js("resources/assets/js/hide-option.js", "public/js/core")
+   .js("resources/assets/js/delete-alert.js", "public/js/core")
    .sass(
       "resources/scss/base/themes/dark-layout.scss",
       "public/css/base/themes",
