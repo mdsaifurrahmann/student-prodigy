@@ -389,17 +389,18 @@ class FormHandlerController extends Controller
             $signature_image_path = $applicant->signature_image_path;
 
 
-            if (File::exists(public_path('student-images/formal-images/') . $formal_image_path)) {
+            if (File::exists(public_path('student-images/formal-images/') . $formal_image_path) && File::exists(public_path('student-images/signature-images/') . $signature_image_path)) {
                File::delete(public_path('student-images/formal-images/') . $formal_image_path);
-            } else {
-               return redirect()->back()->with('destroy-error', 'Formal Image File not found associated with this Applicant! So, We can not delete this applicant record at this time. Please Contact with the developer as soon as possible.');
-            }
-
-            if (File::exists(public_path('student-images/signature-images/') . $signature_image_path)) {
                File::delete(public_path('student-images/signature-images/') . $signature_image_path);
             } else {
-               return redirect()->back()->with('destroy-error', 'Signature Image File not found associated with this Applicant! So, We can not delete this applicant record at this time. Please Contact with the developer as soon as possible.');
+               return redirect()->back()->with('destroy-error', 'Images are not found associated with this Applicant! We can not delete this applicant record at this time. Please update or Contact with the developer as soon as possible.');
             }
+
+//            if (File::exists(public_path('student-images/signature-images/') . $signature_image_path)) {
+//               File::delete(public_path('student-images/signature-images/') . $signature_image_path);
+//            } else {
+//               return redirect()->back()->with('destroy-error', 'Signature Image File not found associated with this Applicant! So, We can not delete this applicant record at this time. Please Contact with the developer as soon as possible.');
+//            }
 
 
 

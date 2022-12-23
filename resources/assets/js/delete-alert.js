@@ -28,9 +28,9 @@ $(function () {
          }).then(function (result) {
             if (result.value) {form.submit();
                Swal.fire({
-                  icon: 'success',
-                  title: 'Deleted!',
-                  text: 'Your application has been deleted.',
+                  icon: 'info',
+                  title: 'Deletion in Progress!',
+                  text: 'Your application will be deleted.',
                   customClass: {
                      confirmButton: 'btn btn-success'
                   }

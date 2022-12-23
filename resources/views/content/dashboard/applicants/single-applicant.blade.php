@@ -25,6 +25,29 @@
                </div>
             @endif
 
+{{--            @if(!file_exists(public_path('/student-images/formal-images/'. $applicant->formal_image_path)))--}}
+{{--                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">--}}
+{{--                     <strong>Formal Image associated with this application is not found on server. Please update this--}}
+{{--                        application or contact with developer for more assistance.</strong>--}}
+{{--                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--}}
+{{--                  </div>--}}
+{{--            @endif--}}
+
+{{--            @if(!file_exists(public_path('/student-images/signature-images/'. $applicant->signature_image_path)))--}}
+{{--                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">--}}
+{{--                     <strong>Signature Image associated with this application is not found on server. Please update--}}
+{{--                        this application or contact with developer for more assistance.</strong>--}}
+{{--                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--}}
+{{--                  </div>--}}
+{{--            @endif--}}
+
+               @if (session('destroy-error'))
+                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
+                     <strong> {{ session('destroy-error') }}</strong>
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+               @endif
+
             <div class="card p-2 pt-0">
                   <div class="card-header p-2 px-0 pb-0" id="">
                      <div class="head-labelx">
@@ -144,7 +167,11 @@
                         <th class="w-25">Student's Name (Bengali):</th>
                         <td colspan="2">{{ !Request::get('StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
                         <td rowspan="5">
-                           <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/formal-images/'. $applicant->formal_image_path))) }}"
+                           <img src="
+                           @if(file_exists(public_path('/student-images/formal-images/'. $applicant->formal_image_path)))
+                              data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/formal-images/'. $applicant->formal_image_path))) }}
+                           @endif
+                           "
                                 alt="Formal Image"
                                 class="w-100"
                               style="object-fit: cover;">
@@ -433,7 +460,11 @@
                <tbody>
                   <tr class="mx-auto">
                      <td class="text-center">
-                        <img src="{{ '/student-images/signature-images/' . $applicant->signature_image_path }}" alt="Applicant's Signature" class="mx-auto"
+                        <img src="
+                        @if(file_exists(public_path('/student-images/signature-images/'. $applicant->signature_image_path)))
+                           data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/signature-images/'. $applicant->signature_image_path))) }}
+                        @endif
+                        " alt="Applicant's Signature" class="mx-auto"
                            style="width: 13rem; object-fit: cover; display: block;">
                      </td>
                      <td></td>

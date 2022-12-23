@@ -30,12 +30,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                </div>
             @endif
-            @if (session('destroy-error'))
-               <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
-                  <strong> {{ session('destroy-error') }}</strong>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-            @endif
+
 
             {{-- Filter Being --}}
             <div class="card p-2 pt-0">
