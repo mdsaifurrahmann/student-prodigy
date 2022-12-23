@@ -6,7 +6,7 @@
    {{-- Page Css files --}}
    <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-validation.css')) }}">
    <link rel="stylesheet" href="{{ asset(mix('css/base/pages/authentication.css')) }}">
-@endsection
+@stop
 
 @section('content')
    <div class="auth-wrapper auth-basic px-2">
@@ -50,12 +50,12 @@
                   <h2 class="brand-text text-primary ms-1 mb-0">{{ env('APP_NAME') }}</h2>
                </a>
 
-               <form class="auth-register-form mt-2" action="{{ route('register') }}" method="POST">
+               <form class="auth-register-form mt-2" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                   <div class="mb-1">
                      <label for="register-username" class="form-label">Username</label>
                      <input type="text" class="form-control" id="register-username" name="username" placeholder="johndoe" aria-describedby="register-username"
-                        tabindex="1" autofocus />
+                        tabindex="1" autofocus required/>
                      @error('username')
                         <div class="text-danger">{{ $message }}</div>
                      @enderror
@@ -64,7 +64,7 @@
                   <div class="mb-1">
                      <label for="full-name" class="form-label">Full Name</label>
                      <input type="text" class="form-control" id="full-name" name="name" placeholder="Jhone Doe" aria-describedby="full-name"
-                        tabindex="1" autofocus />
+                        tabindex="1" autofocus required/>
                      @error('name')
                         <div class="text-danger">{{ $message }}</div>
                      @enderror
@@ -73,7 +73,7 @@
                   <div class="mb-1">
                      <label for="mobile-number" class="form-label">Mobile Number</label>
                      <input type="tel" class="form-control" id="mobile-number" name="mobile" placeholder="01700000000" aria-describedby="mobile-number"
-                        tabindex="1" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" autofocus />
+                        tabindex="1" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" autofocus required/>
                      @error('mobile')
                         <div class="text-danger">{{ $message }}</div>
                      @enderror
@@ -82,7 +82,7 @@
                   <div class="mb-1">
                      <label for="register-email" class="form-label">Email</label>
                      <input type="text" class="form-control" id="register-email" name="email" placeholder="john@example.com"
-                        aria-describedby="register-email" tabindex="2" />
+                        aria-describedby="register-email" tabindex="2" required/>
                      @error('email')
                         <div class="text-danger">{{ $message }}</div>
                      @enderror
@@ -94,7 +94,7 @@
                      <div class="input-group input-group-merge form-password-toggle">
                         <input type="password" class="form-control form-control-merge" id="register-password" name="password"
                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password"
-                           tabindex="3" />
+                           tabindex="3" required/>
                         <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                      </div>
                      @error('password')
@@ -108,7 +108,7 @@
                      <div class="input-group input-group-merge form-password-toggle">
                         <input type="password" class="form-control form-control-merge" id="retype-password" name="password_confirmation"
                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="retype-password"
-                           tabindex="3" />
+                           tabindex="3" required/>
                         <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                      </div>
                   </div>
@@ -117,7 +117,7 @@
                      <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="register-privacy-policy" name="register-privacy-policy" tabindex="4" />
                         <label class="form-check-label" for="register-privacy-policy">
-                           I agree to <a href="">privacy policy & terms</a>
+                           I agree to <a href="{{route('ppt')}}">privacy policy & terms</a>
                         </label>
                      </div>
                   </div>
@@ -138,15 +138,15 @@
          <!-- /Register basic -->
       </div>
    </div>
-@endsection
+@stop
 
 @section('vendor-script')
    <script src="{{ asset('vendors/js/forms/validation/jquery.validate.min.js') }}"></script>
    <script src="{{ asset(mix('vendors/js/forms/select/select2.full.min.js')) }}"></script>
-@endsection
+@stop
 
 @section('page-script')
    <script src="{{ asset('js/scripts/pages/auth-register.js') }}"></script>
    <script src="{{ asset(mix('js/scripts/forms/form-select2.js')) }}"></script>
    <script src="{{ asset(mix('js/scripts/forms/form-validation.js')) }}"></script>
-@endsection
+@stop
