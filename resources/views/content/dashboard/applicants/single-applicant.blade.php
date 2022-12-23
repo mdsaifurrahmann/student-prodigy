@@ -25,21 +25,21 @@
                </div>
             @endif
 
-{{--            @if(!file_exists(public_path('/student-images/formal-images/'. $applicant->formal_image_path)))--}}
-{{--                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">--}}
-{{--                     <strong>Formal Image associated with this application is not found on server. Please update this--}}
-{{--                        application or contact with developer for more assistance.</strong>--}}
-{{--                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--}}
-{{--                  </div>--}}
-{{--            @endif--}}
+            @if(!file_exists(public_path('/student-images/formal-images/'. $applicant->formal_image_path)))
+                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
+                     <strong>Formal Image associated with this application is not found on server. Please update this
+                        application or contact with developer for more assistance.</strong>
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+            @endif
 
-{{--            @if(!file_exists(public_path('/student-images/signature-images/'. $applicant->signature_image_path)))--}}
-{{--                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">--}}
-{{--                     <strong>Signature Image associated with this application is not found on server. Please update--}}
-{{--                        this application or contact with developer for more assistance.</strong>--}}
-{{--                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--}}
-{{--                  </div>--}}
-{{--            @endif--}}
+            @if(!file_exists(public_path('/student-images/signature-images/'. $applicant->signature_image_path)))
+                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
+                     <strong>Signature Image associated with this application is not found on server. Please update
+                        this application or contact with developer for more assistance.</strong>
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+            @endif
 
                @if (session('destroy-error'))
                   <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
