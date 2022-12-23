@@ -452,7 +452,9 @@ class FormHandlerController extends Controller
 
       ]);
 
-      $content = view('content.dashboard.applicants.pdf', compact('applicant'))->render();
+      $previousUrl = \URL::previous();
+
+      $content = view('content.dashboard.applicants.pdf', compact('applicant', 'previousUrl'))->render();
       $pdf->WriteHTML($content);
       $pdf->Output($applicant->student_name_english . '.pdf', 'D');
    }
