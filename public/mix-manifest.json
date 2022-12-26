@@ -4,6 +4,8 @@
     "/js/core/scripts.js": "/js/core/scripts.js",
     "/js/core/forms.js": "/js/core/forms.js",
     "/js/core/applicant-list-table.js": "/js/core/applicant-list-table.js",
+    "/js/core/user-list-table.js": "/js/core/user-list-table.js",
+    "/js/core/swal.js": "/js/core/swal.js",
     "/js/core/hide-option.js": "/js/core/hide-option.js",
     "/js/core/delete-alert.js": "/js/core/delete-alert.js",
     "/css/base/plugins/extensions/ext-component-ratings.css": "/css/base/plugins/extensions/ext-component-ratings.css",

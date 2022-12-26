@@ -21,6 +21,7 @@ return new class extends Migration
          $table->string('mobile')->unique();
          $table->timestamp('email_verified_at')->nullable();
          $table->string('password');
+         $table->char('responsive_id');
          $table->rememberToken();
          $table->timestamps();
       });

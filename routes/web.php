@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\appViews;
 use App\Http\Controllers\FormHandlerController;
+use App\Http\Controllers\Users;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\LanguageController;
 
@@ -26,6 +27,9 @@ Route::post('/student-form', [FormHandlerController::class, 'store'])->name('for
 Route::group(['prefix' => 'authenticated/dash'], function () {
    Route::get('welcome', [appViews::class, 'welcome'])->name('welcome')->middleware('verified');
 
+   //users
+   Route::get('api/user-list', [Users::class, 'index'])->name('user-api')->middleware('verified');
+   Route::get('user-list', [Users::class, 'showUsers'])->name('user-list')->middleware('verified');
    Route::get('profile', [appViews::class, 'profile'])->name('profile')->middleware('verified');
    Route::get('settings', [appViews::class, 'settings'])->name('settings')->middleware('verified');
 
