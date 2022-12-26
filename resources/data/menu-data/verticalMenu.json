@@ -37,7 +37,7 @@
                "slug": "add-user"
             },
             {
-               "url": "user-list",
+               "url": "authenticated/dash/user-list",
                "name": "User List",
                "icon": "circle",
                "slug": "user-list"
