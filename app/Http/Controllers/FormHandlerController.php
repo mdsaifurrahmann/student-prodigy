@@ -31,7 +31,7 @@ class FormHandlerController extends Controller
       return json_encode(['data' => formHandler::all()]);
    }
 
-    /**
+   /**
     * Show the form for creating a new resource.
     *
     * @return \Illuminate\Http\Response
@@ -150,15 +150,15 @@ class FormHandlerController extends Controller
       $applicant = formHandler::findOrFail($id);
 
       $titles = [
-         "Student Name",
-         "Father's Name",
-         "Mother's Name",
-         "Roll",
-         "Reg",
-         "Technology",
+         "Student Name (English)",
+         "Father's Name (English)",
+         "Mother's Name (English)",
+         "Current Roll",
+         "Current Reg",
+         "Current Technology",
          "Student Name (Bengali)",
          "Birth Certificate Number",
-         "Birth Date",
+         "Student's Birth Date",
          "Student's Mobile No.",
          "Blood Group",
          "Gender",
@@ -342,8 +342,11 @@ class FormHandlerController extends Controller
          }
 
          // Handle the file name for Database
-         $formal_image_name_handler = time() . Str::upper(Str::random(16)) . '_' . 'student-' . Str::replace(' ', '_',
-               $request->input('student_name_english')) . '-' . $request->input('ce_roll') . '.' .  $request->formal_image->extension();
+         $formal_image_name_handler = time() . Str::upper(Str::random(16)) . '_' . 'student-' . Str::replace(
+            ' ',
+            '_',
+            $request->input('student_name_english')
+         ) . '-' . $request->input('ce_roll') . '.' .  $request->formal_image->extension();
          // move the file
          $request->formal_image->move(public_path('/student-images/formal-images/'), $formal_image_name_handler);
       } else {
@@ -430,11 +433,11 @@ class FormHandlerController extends Controller
             __DIR__ . '/fonts',
          ]),
          'fontdata' => $fontData + [ // lowercase letters only in font key
-               'solaimanlipi' => [
-                  'R' => 'SolaimanLipi.ttf',
-                  'useOTL' => 0xFF,
-               ]
-            ],
+            'solaimanlipi' => [
+               'R' => 'SolaimanLipi.ttf',
+               'useOTL' => 0xFF,
+            ]
+         ],
 
 
          'mode' => 'utf-8',

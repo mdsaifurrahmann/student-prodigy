@@ -7,7 +7,7 @@
    <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/sweetalert2.min.css')) }}">
 @stop
 @section('page-style')
-   <link rel="stylesheet" href="{{asset(mix('css/base/plugins/extensions/ext-component-sweet-alerts.css'))}}">
+   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-sweet-alerts.css')) }}">
 @stop
 
 @section('content')
@@ -25,71 +25,69 @@
                </div>
             @endif
 
-            @if(!file_exists(public_path('/student-images/formal-images/'. $applicant->formal_image_path)))
-                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
-                     <strong>Formal Image associated with this application is not found on server. Please update this
-                        application or contact with developer for more assistance.</strong>
-                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
+            @if (!file_exists(public_path('/student-images/formal-images/' . $applicant->formal_image_path)))
+               <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
+                  <strong>Formal Image associated with this application is not found on server. Please update this
+                     application or contact with developer for more assistance.</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
             @endif
 
-            @if(!file_exists(public_path('/student-images/signature-images/'. $applicant->signature_image_path)))
-                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
-                     <strong>Signature Image associated with this application is not found on server. Please update
-                        this application or contact with developer for more assistance.</strong>
-                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
+            @if (!file_exists(public_path('/student-images/signature-images/' . $applicant->signature_image_path)))
+               <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
+                  <strong>Signature Image associated with this application is not found on server. Please update
+                     this application or contact with developer for more assistance.</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
             @endif
 
-               @if (session('destroy-error'))
-                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
-                     <strong> {{ session('destroy-error') }}</strong>
-                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
-               @endif
+
+            @if (session('destroy-error'))
+               <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
+                  <strong> {{ session('destroy-error') }}</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            @endif
 
             <div class="card p-2 pt-0">
-                  <div class="card-header p-2 px-0 pb-0" id="">
-                     <div class="head-labelx">
-                        <h6 class="mb-0">Quick Action</h6>
-                     </div>
-                     <div class="dt-action-buttons text-end">
-                        <div class="dt-buttons d-inline-flex">
-                           <a class="dt-button create-new btn btn-primary me-1" href="{{route('applicant-list')
-                        }}">
+               <div class="card-header p-2 px-0 pb-0" id="">
+                  <div class="head-labelx">
+                     <h6 class="mb-0">Quick Action</h6>
+                  </div>
+                  <div class="dt-action-buttons text-end">
+                     <div class="dt-buttons d-inline-flex">
+                        <a class="dt-button create-new btn btn-primary me-1" href="{{ route('applicant-list') }}">
                            <span>
                               Back to Applicant List
                            </span>
-                           </a>
+                        </a>
 
-                           <a class="dt-button create-new btn btn-primary me-1" href="{{route('download', $applicant->id)
-                        }}">
+                        <a class="dt-button create-new btn btn-primary me-1" href="{{ route('download', $applicant->id) }}">
                            <span>
                               Download
                            </span>
-                           </a>
+                        </a>
 
-                           <a class="create-new btn btn-warning me-1" id="edit" href="{{route('applicant-modify',
-                        $applicant->id)}}">
+                        <a class="create-new btn btn-warning me-1" id="edit" href="{{ route('applicant-modify', $applicant->id) }}">
                            <span>
                               Edit
                            </span>
-                           </a>
+                        </a>
 
 
-                           <form method="GET" action="{{route('applicant-destroy', $applicant->id)}}" id="destroy">
-                              @csrf
-                              <button class="create-new btn btn-danger" type="submit" id="confirm-destroy">
+                        <form method="GET" action="{{ route('applicant-destroy', $applicant->id) }}" id="destroy">
+                           @csrf
+                           <button class="create-new btn btn-danger" type="submit" id="confirm-destroy">
                               <span>
                                  Delete
                               </span>
-                              </button>
-                           </form>
+                           </button>
+                        </form>
 
-                        </div>
                      </div>
                   </div>
                </div>
+            </div>
 
             <div class="card p-2 pt-0">
                <div class="card-header p-2 px-0 pb-0" id="hideOption">
@@ -121,9 +119,7 @@
                      </div>
                   </div>
                </div>
-               <form class="d-none mt-1 pb-1" id="hideItem" method="GET" action="{{ route
-               ('applicant-details',
-               $applicant->id) }}">
+               <form class="d-none mt-1 pb-1" id="hideItem" method="GET" action="{{ route('applicant-details', $applicant->id) }}">
                   @csrf
                   <div class="row g-1 mb-md-1">
                      <div class="col-12">
@@ -167,20 +163,17 @@
                         <th class="w-25">Student's Name (Bengali):</th>
                         <td colspan="2">{{ !Request::get('StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
                         <td rowspan="5">
-                           <img src="
-                           @if(file_exists(public_path('/student-images/formal-images/'. $applicant->formal_image_path)))
-                              data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/formal-images/'. $applicant->formal_image_path))) }}
-                           @endif
+                           <img
+                              src="
+                           @if (file_exists(public_path('/student-images/formal-images/' . $applicant->formal_image_path))) data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/formal-images/' . $applicant->formal_image_path))) }} @endif
                            "
-                                alt="Formal Image"
-                                class="w-100"
-                              style="object-fit: cover;">
+                              alt="Formal Image" class="w-100" style="object-fit: cover;">
                         </td>
 
                      </tr>
                      <tr>
                         <th class="w-25">Student's Name (English):</th>
-                        <td colspan="2">{{ !Request::get('StudentName') ? $applicant->student_name_english : '' }}</td>
+                        <td colspan="2">{{ !Request::get('StudentNameEnglish') ? $applicant->student_name_english : '' }}</td>
 
                      </tr>
                      <tr>
@@ -190,7 +183,7 @@
                      </tr>
                      <tr>
                         <th class="w-25">Birth Date:</th>
-                        <td colspan="2">{{ !Request::get('BirthDate') ? $applicant->birth_date : '' }}</td>
+                        <td colspan="2">{{ !Request::get('StudentsBirthDate') ? $applicant->birth_date : '' }}</td>
 
                      </tr>
                      <tr>
@@ -216,9 +209,9 @@
                      </tr>
                      <tr>
                         <th class="w-25">Father's Name (English):</th>
-                        <td>{{ !Request::get('FathersName') ? $applicant->father_name_english : '' }}</td>
+                        <td>{{ !Request::get('FathersNameEnglish') ? $applicant->father_name_english : '' }}</td>
                         <th class="w-25">Mother's Name (English):</th>
-                        <td>{{ !Request::get('MothersName') ? $applicant->mother_name_english : '' }}</td>
+                        <td>{{ !Request::get('MothersNameEnglish') ? $applicant->mother_name_english : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Father's NID:</th>
@@ -324,7 +317,7 @@
                         <th class="w-25">Board:</th>
                         <td>{{ !Request::get('PreviousEducationBoard') ? $applicant->pe_board : '' }} </td>
                         <th class="w-25">Technology/Trade:</th>
-                        <td>{{ !Request::get('Technology') ? $applicant->ce_technology_trade : '' }} </td>
+                        <td>{{ !Request::get('CurrentTechnology') ? $applicant->ce_technology_trade : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Technology/Trade:</th>
@@ -336,13 +329,13 @@
                         <th class="w-25">Previous Exam Name:</th>
                         <td>{{ !Request::get('PreviousExamName') ? $applicant->pe_exam_name : '' }} </td>
                         <th class="w-25">Roll:</th>
-                        <td>{{ !Request::get('Roll') ? $applicant->ce_roll : '' }} </td>
+                        <td>{{ !Request::get('CurrentRoll') ? $applicant->ce_roll : '' }} </td>
                      </tr>
                      <tr>
                         <th class="w-25">Roll:</th>
                         <td>{{ !Request::get('PreviousExamRoll') ? $applicant->pe_roll : '' }} </td>
                         <th class="w-25">Reg:</th>
-                        <td>{{ !Request::get('Reg') ? $applicant->ce_reg : '' }}</td>
+                        <td>{{ !Request::get('CurrentReg') ? $applicant->ce_reg : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Result (GPA):</th>
@@ -371,13 +364,13 @@
                         <td>{{ !Request::get('CostBorne') ? $applicant->cost_borne : '' }} </td>
                      </tr>
                      <tr>
-                        <th class="w-25">Name (Bengali):</th>
+                        <th class="w-25">Guardian Name (Bengali):</th>
                         <td>{{ !Request::get('GuardianNameBengali') ? $applicant->guardian_name_bangla : '' }} </td>
                         <th class="w-25">Belongs to minority/ethnic groups:</th>
                         <td>{{ !Request::get('Ethnicity') ? $applicant->ethnic : '' }} </td>
                      </tr>
                      <tr>
-                        <th class="w-25">Name (English):</th>
+                        <th class="w-25">Guardian Name (English):</th>
                         <td>{{ !Request::get('GuardianNameEnglish') ? $applicant->guardian_name_english : '' }} </td>
                         <th class="w-25">Freefom Fighter Quota:</th>
                         <td>{{ !Request::get('FreedomFighterQuota') ? $applicant->ffq : '' }} </td>
@@ -408,8 +401,8 @@
                   </thead>
                   <tbody>
                      <tr>
-                        <th colspan="2" class="w-25">Payment Method:</th>
-                        <td colspan="2">{{ !Request::get('PaymentMethod') ? $applicant->payment_method : '' }}</td>
+                        <th class="w-25">Payment Method:</th>
+                        <td colspan="3">{{ !Request::get('PaymentMethod') ? $applicant->payment_method : '' }}</td>
                      </tr>
                      <tr>
                         <th colspan="2" class="w-50 text-center">Banking</th>
@@ -460,12 +453,11 @@
                <tbody>
                   <tr class="mx-auto">
                      <td class="text-center">
-                        <img src="
-                        @if(file_exists(public_path('/student-images/signature-images/'. $applicant->signature_image_path)))
-                           data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/signature-images/'. $applicant->signature_image_path))) }}
-                        @endif
-                        " alt="Applicant's Signature" class="mx-auto"
-                           style="width: 13rem; object-fit: cover; display: block;">
+                        <img
+                           src="
+                        @if (file_exists(public_path('/student-images/signature-images/' . $applicant->signature_image_path))) data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/student-images/signature-images/' . $applicant->signature_image_path))) }} @endif
+                        "
+                           alt="Applicant's Signature" class="mx-auto" style="width: 13rem; object-fit: cover; display: block;">
                      </td>
                      <td></td>
                      <td></td>

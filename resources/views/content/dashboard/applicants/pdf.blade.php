@@ -106,7 +106,7 @@
                   <tr>
                      <th class="w-25 bn">শিক্ষার্থীর নাম (বাংলা)</th>
                      <td colspan="2" class="bn">
-                        {{ !str_contains($previousUrl, 'StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
+                        {{ !stripos($previousUrl, 'StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
                      <td rowspan="5">
                         <img src="{{ public_path('/student-images/formal-images/' . $applicant->formal_image_path) }}" alt="" class="w-100"
                            width="200" height="200" style="margin: 0 3rem">
@@ -114,7 +114,7 @@
                   </tr>
                   <tr>
                      <th class="w-25">Student's Name (English):</th>
-                     <td colspan="2">{{ !str_contains($previousUrl, 'StudentName') ? $applicant->student_name_english : '' }}</td>
+                     <td colspan="2">{{ !stripos($previousUrl, 'StudentNameEnglish') ? $applicant->student_name_english : '' }}</td>
 
                   </tr>
                   <tr>
@@ -125,7 +125,7 @@
                   </tr>
                   <tr>
                      <th class="w-25">Birth Date:</th>
-                     <td colspan="2">{{ !str_contains($previousUrl, 'BirthDate') ? $applicant->birth_date : '' }}</td>
+                     <td colspan="2">{{ !str_contains($previousUrl, 'StudentsBirthDate') ? $applicant->birth_date : '' }}</td>
 
                   </tr>
                   <tr>
@@ -151,9 +151,9 @@
                   </tr>
                   <tr>
                      <th class="w-25">Father's Name (English):</th>
-                     <td>{{ !str_contains($previousUrl, 'FathersName') ? $applicant->father_name_english : '' }}</td>
+                     <td>{{ !str_contains($previousUrl, 'FathersNameEnglish') ? $applicant->father_name_english : '' }}</td>
                      <th class="w-25">Mother's Name (English):</th>
-                     <td>{{ !str_contains($previousUrl, 'MothersName') ? $applicant->mother_name_english : '' }}</td>
+                     <td>{{ !str_contains($previousUrl, 'MothersNameEnglish') ? $applicant->mother_name_english : '' }}</td>
                   </tr>
                   <tr>
                      <th class="w-25">Father's NID:</th>
@@ -251,11 +251,11 @@
                      <th class="w-25">Board:</th>
                      <td>{{ !str_contains($previousUrl, 'PreviousEducationBoard') ? $applicant->pe_board : '' }} </td>
                      <th class="w-25">Technology/Trade:</th>
-                     <td>{{ !str_contains($previousUrl, 'Technology') ? $applicant->ce_technology_trade : '' }} </td>
+                     <td>{{ !str_contains($previousUrl, 'CurrentTechnology') ? $applicant->ce_technology_trade : '' }} </td>
                   </tr>
                   <tr>
                      <th class="w-25">Technology/Trade:</th>
-                     <td>{{ !str_contains($previousUrl, 'PreviousTechnology/Trade') ? $applicant->pe_technology_trade : '' }} </td>
+                     <td>{{ !str_contains($previousUrl, 'PreviousTechnology%2FTrade') ? $applicant->pe_technology_trade : '' }} </td>
                      <th class="w-25">Shift:</th>
                      <td>{{ !str_contains($previousUrl, 'Shift') ? $applicant->ce_shift : '' }} </td>
                   </tr>
@@ -263,13 +263,13 @@
                      <th class="w-25">Previous Exam Name:</th>
                      <td>{{ !str_contains($previousUrl, 'PreviousExamName') ? $applicant->pe_exam_name : '' }} </td>
                      <th class="w-25">Roll:</th>
-                     <td>{{ !str_contains($previousUrl, 'Roll') ? $applicant->ce_roll : '' }} </td>
+                     <td>{{ !str_contains($previousUrl, 'CurrentRoll') ? $applicant->ce_roll : '' }} </td>
                   </tr>
                   <tr>
                      <th class="w-25">Roll:</th>
                      <td>{{ !str_contains($previousUrl, 'PreviousExamRoll') ? $applicant->pe_roll : '' }} </td>
                      <th class="w-25">Reg:</th>
-                     <td>{{ !str_contains($previousUrl, 'Reg') ? $applicant->ce_reg : '' }}</td>
+                     <td>{{ !str_contains($previousUrl, 'CurrentReg') ? $applicant->ce_reg : '' }}</td>
                   </tr>
                   <tr>
                      <th class="w-25">Result (GPA):</th>
@@ -294,13 +294,13 @@
                      <td>{{ !str_contains($previousUrl, 'CostBorne') ? $applicant->cost_borne : '' }} </td>
                   </tr>
                   <tr>
-                     <th class="w-25">Name (Bengali):</th>
+                     <th class="w-25">Guardian Name (Bengali):</th>
                      <td>{{ !str_contains($previousUrl, 'GuardianNameBengali') ? $applicant->guardian_name_bangla : '' }} </td>
                      <th class="w-25">Belongs to minority/ethnic groups:</th>
                      <td>{{ !str_contains($previousUrl, 'Ethnicity') ? $applicant->ethnic : '' }} </td>
                   </tr>
                   <tr>
-                     <th class="w-25">Name (English):</th>
+                     <th class="w-25">Guardian Name (English):</th>
                      <td>{{ !str_contains($previousUrl, 'GuardianNameEnglish') ? $applicant->guardian_name_english : '' }} </td>
                      <th class="w-25">Freefom Fighter Quota:</th>
                      <td>{{ !str_contains($previousUrl, 'FreedomFighterQuota') ? $applicant->ffq : '' }} </td>
@@ -327,8 +327,8 @@
                      <th colspan="4" class="bold text-center">Payment Information</th>
                   </tr>
                   <tr>
-                     <th colspan="2" class="w-25">Payment Method:</th>
-                     <td colspan="2">{{ !str_contains($previousUrl, 'PaymentMethod') ? $applicant->payment_method : '' }}</td>
+                     <th class="w-25">Payment Method:</th>
+                     <td colspan="3">{{ !str_contains($previousUrl, 'PaymentMethod') ? $applicant->payment_method : '' }}</td>
                   </tr>
                   <tr>
                      <th colspan="2" class="w-50 bold text-center">Banking</th>

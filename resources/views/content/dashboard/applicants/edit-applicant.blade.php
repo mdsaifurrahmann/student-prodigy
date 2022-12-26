@@ -13,11 +13,63 @@
 
 @section('content')
    <div class="row">
+      <div class="col-12">
+         <div class="card p-2 pt-0">
+            <div class="card-header p-2 px-0 pb-0" id="">
+               <div class="head-labelx">
+                  <h6 class="mb-0">Quick Action</h6>
+               </div>
+               <div class="dt-action-buttons text-end">
+                  <div class="dt-buttons d-inline-flex">
+                     <a class="dt-button create-new btn btn-primary me-1" href="{{ route('applicant-list') }}">
+                        <span>
+                           Back to Applicant List
+                        </span>
+                     </a>
+
+                     <a class="dt-button create-new btn btn-primary me-1" href="{{ route('download', $applicant->id) }}">
+                        <span>
+                           Download
+                        </span>
+                     </a>
+
+                     <form method="GET" action="{{ route('applicant-destroy', $applicant->id) }}" id="destroy">
+                        @csrf
+                        <button class="create-new btn btn-danger" type="submit" id="confirm-destroy">
+                           <span>
+                              Delete
+                           </span>
+                        </button>
+                     </form>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
       <div class="col-12 d-flex align-items-md-center justify-content-center">
          <div class="card">
             <div class="card-body">
                <p class="text-warning text-center">Fill the form with correct information. Each field of the form must be filled.</p>
                <p class="fw-bold text-danger text-center">All the fields are <strong><em>required</em></strong> and will be validate from the server!!!</p>
+
+               @if (!file_exists(public_path('/student-images/formal-images/' . $applicant->formal_image_path)))
+                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
+                     <strong>Formal Image associated with this application is not found on server. Please update this
+                        application or contact with developer for more assistance.</strong>
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+               @endif
+
+               @if (!file_exists(public_path('/student-images/signature-images/' . $applicant->signature_image_path)))
+                  <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
+                     <strong>Signature Image associated with this application is not found on server. Please update
+                        this application or contact with developer for more assistance.</strong>
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+               @endif
+
                @if ($errors->any())
                   <div class="alert alert-danger">
                      <ul>
@@ -1162,8 +1214,8 @@
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
                               <label class="form-label" for="bank_acc_name">Account Holder Name</label>
-                              <input type="text" id="bank_acc_name" class="form-control banking-unchecked" name="bank_acc_name" placeholder="Shakil Ahmed"
-                                 required value="{{ $applicant->bank_acc_name }}">
+                              <input type="text" id="bank_acc_name" class="form-control banking-unchecked" name="bank_acc_name"
+                                 placeholder="Shakil Ahmed" required value="{{ $applicant->bank_acc_name }}">
 
                               <div class="invalid-feedback">Please enter bank account holder name.</div>
                               @error('bank_acc_name')
