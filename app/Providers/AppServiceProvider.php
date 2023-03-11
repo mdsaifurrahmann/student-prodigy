@@ -43,5 +43,8 @@ class AppServiceProvider extends ServiceProvider
       Fortify::requestPasswordResetLinkView(function () {
          return view('content.auth.auth-forgot-password');
       });
+
+
+      config(['app.powered_by' => false]);
    }
 }

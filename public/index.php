@@ -31,6 +31,11 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 |
 */
 
+header_remove('X-Powered-By');
+header_remove('server');
+header_remove('platform');
+
+
 require __DIR__.'/../vendor/autoload.php';
 
 /*
