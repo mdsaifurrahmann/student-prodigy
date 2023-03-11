@@ -47,7 +47,7 @@
             </a>
          </li>
          <li class="nav-item nav-toggle">
-            <a class="nav-link-style nav-link modern-nav-toggle pe-1">
+            <a class="nav-link-style nav-link modern-nav-toggle pe-1" data-toggle="collapse">
                <i class="ficon" data-feather="{{ $configData['theme'] === 'dark' ? 'sun' : 'moon' }}"></i>
             </a>
          </li>

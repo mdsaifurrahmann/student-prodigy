@@ -33,7 +33,7 @@
                   @csrf
                   <div class="row">
                      <div class="divider divider-primary">
-                        <div class="divider-text">ব্যাক্তিগত তথ্য</div>
+                        <div class="divider-text">ব‍্যক্তিগত তথ্য</div>
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
@@ -173,7 +173,7 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="father_name_bangla-column">পিতার নাম (বাংলায়)</label>
-                           <input type="text" id="father_name_bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="father_name_bangla"
+                           <input type="text" id="father_name_bangla-column" class="form-control" placeholder="সাইমন হাসান সানি" name="father_name_bangla"
                               pattern="[\s\u0980-\u09FF]+$" required value="{{ old('father_name_bangla') }}">
 
                            <div class="invalid-feedback">অনুগ্রহ করে বাংলায় আপনার পিতার নাম লিখুন।</div>
@@ -185,7 +185,7 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="father_name_english-column">পিতার নাম (ইংরেজিতে)</label>
-                           <input type="text" id="father_name_english-column" class="form-control" placeholder="Shakil Ahmed" name="father_name_english"
+                           <input type="text" id="father_name_english-column" class="form-control" placeholder="Saimon Hasan Sunny" name="father_name_english"
                               required value="{{ old('father_name_english') }}">
                            <div class="invalid-feedback">অনুগ্রহ করে আপনার পিতার নাম ইংরেজিতে লিখুন।</div>
                            @error('father_name_english')
@@ -196,7 +196,7 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="mother_name_bangla-column">মাতার নাম (বাংলায়)</label>
-                           <input type="text" id="mother_name_bangla-column" class="form-control" placeholder="শাকিলা আহমেদ" name="mother_name_bangla"
+                           <input type="text" id="mother_name_bangla-column" class="form-control" placeholder="তটিনি" name="mother_name_bangla"
                               required pattern="[\s\u0980-\u09FF]+$" value="{{ old('mother_name_bangla') }}">
                            <div class="invalid-feedback">অনুগ্রহ করে বাংলায় আপনার মাতার নাম লিখুন।</div>
                            @error('mother_name_bangla')
@@ -208,7 +208,7 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="mother_name_english-column">মাতার নাম (ইংরেজিতে)</label>
-                           <input type="text" id="mother_name_english-column" class="form-control" placeholder="Shakila Ahmed" name="mother_name_english"
+                           <input type="text" id="mother_name_english-column" class="form-control" placeholder="Totini" name="mother_name_english"
                               required value="{{ old('mother_name_english') }}">
                            <div class="invalid-feedback">অনুগ্রহ করে ইংরেজিতে আপনার মাতার নাম লিখুন।</div>
                            @error('mother_name_english')
@@ -348,11 +348,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="pres_city_corp" class="form-label">পৌরসভা/সিটিকর্পোরেশন/ইউনিয়ন</label>
+                           <label for="pres_city_corp" class="form-label">পৌরসভা/সিটি কর্পোরেশন/ইউনিয়ন</label>
                            <input type="text" name="pres_city_corp" id="pres_city_corp" class="form-control" placeholder="Dinajpur" required
                               value="{{ old('pres_city_corp') }}">
 
-                           <div class="invalid-feedback">আপনার পৌরসভা/সিটিকর্পোরেশন/ইউনিয়ন লিখুন।</div>
+                           <div class="invalid-feedback">আপনার পৌরসভা/সিটি কর্পোরেশন/ইউনিয়ন লিখুন।</div>
                            @error('pres_city_corp')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -442,11 +442,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="perm_city_corp" class="form-label">পৌরসভা/সিটি কোর্পোরেশন/ইউনিয়ন </label>
+                           <label for="perm_city_corp" class="form-label">পৌরসভা/সিটি কর্পোরেশন/ইউনিয়ন </label>
                            <input type="text" name="perm_city_corp" id="perm_city_corp" class="form-control" placeholder="Dinajpur" required
                               value="{{ old('perm_city_corp') }}">
 
-                           <div class="invalid-feedback">অনুগ্রহ করে আপনার পৌরসভা/সিটিকর্পোরেশন/ইউনিয়ন লিখুন।</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার পৌরসভা/সিটি কর্পোরেশন/ইউনিয়ন লিখুন।</div>
                            @error('perm_city_corp')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -583,7 +583,7 @@
                               @endfor
                            </select>
 
-                           <div class="invalid-feedback">অনুগ্রহ করে উর্তীন্ন হওয়ার বছর নির্বাচন করুন।</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে উত্তীর্ণ হওয়ার বছর নির্বাচন করুন।</div>
                            @error('pe_passing_year')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -611,7 +611,7 @@
                            <input type="text" name="pe_exam_name" id="pe_exam_name" class="form-control" placeholder="SSC" required
                               value="{{ old('pe_exam_name') }}">
 
-                           <div class="invalid-feedback">অনুগ্রহ ক্রে পূর্ববর্তী পরীক্ষার নাম লিখুন।</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে পূর্ববর্তী পরীক্ষার নাম লিখুন।</div>
                            @error('pe_exam_name')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -790,7 +790,7 @@
                            <label for="ce_group" class="form-label">গ্রুপ</label>
                            <input type="text" id="ce_group" name="ce_group" class="form-control" required value="{{ old('ce_group') }}">
 
-                           <div class="invalid-feedback">অনুগ্রহ করে গ্র্যপ লিখুন।</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে গ্রুপ লিখুন।</div>
                            @error('ce_group')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
