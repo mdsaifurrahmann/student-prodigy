@@ -28,8 +28,7 @@ Route::group(['prefix' => 'authenticated/dash'], function () {
    Route::get('welcome', [appViews::class, 'welcome'])->name('welcome')->middleware('verified');
 
    //users
-   Route::get('api/user-list', [Users::class, 'index'])->name('user-api')->middleware('verified');
-   Route::get('user-list', [Users::class, 'showUsers'])->name('user-list')->middleware('verified');
+   Route::get('user-list', [Users::class, 'index'])->name('user-api')->middleware('verified');
    Route::get('profile', [appViews::class, 'profile'])->name('profile')->middleware('verified');
    Route::get('settings', [appViews::class, 'settings'])->name('settings')->middleware('verified');
 
@@ -42,6 +41,7 @@ Route::group(['prefix' => 'authenticated/dash'], function () {
    Route::patch('applicant-modifier/{id}', [FormHandlerController::class, 'update'])->name('applicant-modifier')->middleware('verified');
    Route::get('applicant/download/{id}', [FormHandlerController::class, 'download'])->name('download')
       ->middleware('verified');
+   Route::delete('remove-user/{id}', [Users::class, 'destroy'])->name('destroy-user')->middleware('verified');
 });
 
 Route::group(['prefix' => 'authenticate'], function () {

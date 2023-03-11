@@ -7,13 +7,6 @@
 
 
    <style>
-      @font-face {
-         font-family: 'Nikosh';
-         src: url({{ storage_path('fonts\Nikosh.ttf') }}) format("truetype");
-         font-style: normal;
-         font-weight: normal;
-      }
-
       @page {
          margin: 2rem;
       }
@@ -104,7 +97,7 @@
                      <th colspan="4" class="bold text-center">Personal Information</th>
                   </tr>
                   <tr>
-                     <th class="w-25 bn">শিক্ষার্থীর নাম (বাংলা)</th>
+                     <th class="w-25 bn">Student's Name (Bengali)</th>
                      <td colspan="2" class="bn">
                         {{ !stripos($previousUrl, 'StudentNameBengali') ? $applicant->student_name_bangla : '' }}</td>
                      <td rowspan="5">

@@ -15,10 +15,10 @@
    <div class="row vh-100">
       <div class="col-12 d-flex align-items-md-center justify-content-center py-3 px-2">
          <div class="card w-lg-75 w-100">
-            <div class="card-body">
+            <div class="card-body font-solaimanlipi">
                <h2 class="card-title text-uppercase text-center">Student Database - Textile Institute Dinajpur</h2>
-               <p class="text-warning text-center">Fill the form with correct information. Each field of the form must be filled.</p>
-               <p class="fw-bold text-danger text-center">All the fields are <strong><em>required</em></strong> and will be validate from the server!!!</p>
+               <p class="text-warning text-center">ফর্মটি সঠিক তথ্য দিয়ে পূরণ করুন। প্রতিটি ফিল্ড অবশ্যই পূরণ করতে হবে।</p>
+               <p class="fw-bold text-danger text-center">আপনার ইনপুটকৃত প্রতিটি তথ্য একাধিক ধাপে যাচাই করা হবে এবং সংরক্ষণ করা হবে।</p>
                @if ($errors->any())
                   <div class="alert alert-danger">
                      <ul>
@@ -33,15 +33,15 @@
                   @csrf
                   <div class="row">
                      <div class="divider divider-primary">
-                        <div class="divider-text">Personal Information</div>
+                        <div class="divider-text">ব্যাক্তিগত তথ্য</div>
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="student_name_bangla-column">Student Name (In Bengali)</label>
+                           <label class="form-label" for="student_name_bangla-column">শিক্ষার্থীর নাম (বাংলায়)</label>
                            <input type="text" id="student_name_bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="student_name_bangla" required
                               pattern="[\s\u0980-\u09FF]+$" value="{{ old('student_name_bangla') }}">
 
-                           <div class="invalid-feedback">Please enter your name in Bengali.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার নামটি বাংলায় লিখুন।</div>
                            @error('student_name_bangla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -49,11 +49,11 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="student_name_english-column">Student Name (In English)</label>
+                           <label class="form-label" for="student_name_english-column">শিক্ষার্থীর নাম (ইংরেজিতে)</label>
                            <input type="text" id="student_name_english-column" class="form-control" placeholder="Shakil Ahmed" name="student_name_english"
                               required value="{{ old('student_name_english') }}">
 
-                           <div class="invalid-feedback">Please enter your name in English.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার নামটি ইংরেজিতে লিখুন।</div>
                            @error('student_name_english')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -61,11 +61,11 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="birth_certificate_number">Birth Certificate Number</label>
+                           <label class="form-label" for="birth_certificate_number">জন্ম নিবন্ধন নম্বর</label>
                            <input type="text" id="birth_certificate_number" class="form-control" placeholder="20072722000000008" name="birth_certificate_number"
                               pattern="[0-9]{15,17}" required value="{{ old('birth_certificate_number') }}">
 
-                           <div class="invalid-feedback">Please enter your birth certificate number.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে ইংরেজিতে আপনার জন্মনিবন্ধন নম্বরটি লিখুন।</div>
                            @error('birth_certificate_number')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -73,11 +73,11 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="birth_date">Date of Birth</label>
+                           <label class="form-label" for="birth_date">জন্ম তারিখ</label>
                            <input type="text" id="birth_date" name="birth_date" class="form-control picker flatpickr-basic flatpickr-input active"
                               placeholder="YYYY-MM-DD" readonly="readonly" required value="{{ old('birth_date') }}">
 
-                           <div class="invalid-feedback">Please enter your date of birth.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার জম্ন তারিখ নির্বাচন করুন।</div>
                            @error('birth_date')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -86,11 +86,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="student_mobile">Student's Mobile Number</label>
+                           <label class="form-label" for="student_mobile">শিক্ষার্থীর মোবাইল নম্বর</label>
                            <input type="text" id="student_mobile" class="form-control" placeholder="017xxxxxxxx" name="student_mobile"
                               pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('student_mobile') }}">
 
-                           <div class="invalid-feedback">Please enter your mobile number.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে শিক্ষার্থীর মোবাইল নম্বরটি লিখুন।</div>
                            @error('student_mobile')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -99,7 +99,7 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="blood_group">Blood Group</label>
+                           <label class="form-label" for="blood_group">রক্তের গ্রুপ</label>
                            <select name="blood_group" id="blood_group" class="form-select" required>
                               <option selected="" value="{{ old('blood_group') ? old('blood_group') : '' }}" {{ old('blood_group') ? '' : 'disabled' }}>
                                  {{ old('blood_group') ? old('blood_group') : 'Select your Blood group' }} </option>
@@ -113,7 +113,7 @@
                               <option value="AB Negative (AB-)">AB Negative (AB-)</option>
                            </select>
 
-                           <div class="invalid-feedback">Please select your blood group.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার রক্তের গ্রুপ নির্বাচন করুন।</div>
                            @error('blood_group')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -122,18 +122,18 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label">Gender</label>
+                           <label class="form-label">লিঙ্গ</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="male" class="form-check-input" type="radio" name="gender" value="male" required
                                     {{ old('gender') == 'male' ? 'checked' : '' }}>
-                                 <label class="form-check-label" for="male">Male</label>
+                                 <label class="form-check-label" for="male">ছেলে</label>
 
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="female" class="form-check-input" type="radio" name="gender" value="female" required
                                     {{ old('gender') == 'female' ? 'checked' : '' }}>
-                                 <label class="form-check-label" for="female">Female</label>
+                                 <label class="form-check-label" for="female">মেয়ে</label>
                               </div>
 
                            </div>
@@ -144,17 +144,17 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label">Marital Status</label>
+                           <label class="form-label">বৈবাহিক অবস্থা</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="married" class="form-check-input" type="radio" name="marital_status" value="married" required
                                     {{ old('marital_status') == 'married' ? 'checked' : '' }}>
-                                 <label class="form-check-label" for="married">Married</label>
+                                 <label class="form-check-label" for="married">বিবাহিত</label>
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="unmarried" class="form-check-input" type="radio" name="marital_status" value="unmarried" required
                                     {{ old('marital_status') == 'unmarried' ? 'checked' : '' }}>
-                                 <label class="form-check-label" for="unmarried">Unmarried</label>
+                                 <label class="form-check-label" for="unmarried">অবিবাহিত</label>
                               </div>
 
                            </div>
@@ -168,15 +168,15 @@
 
 
                      <div class="divider divider-primary">
-                        <div class="divider-text">Parents Information</div>
+                        <div class="divider-text">পিতা-মাতার তথ্য</div>
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father_name_bangla-column">Father's Name (In Bengali)</label>
+                           <label class="form-label" for="father_name_bangla-column">পিতার নাম (বাংলায়)</label>
                            <input type="text" id="father_name_bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="father_name_bangla"
                               pattern="[\s\u0980-\u09FF]+$" required value="{{ old('father_name_bangla') }}">
 
-                           <div class="invalid-feedback">Please enter your father's name in Bengali.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে বাংলায় আপনার পিতার নাম লিখুন।</div>
                            @error('father_name_bangla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -184,10 +184,10 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father_name_english-column">Father's Name (In English)</label>
+                           <label class="form-label" for="father_name_english-column">পিতার নাম (ইংরেজিতে)</label>
                            <input type="text" id="father_name_english-column" class="form-control" placeholder="Shakil Ahmed" name="father_name_english"
                               required value="{{ old('father_name_english') }}">
-                           <div class="invalid-feedback">Please enter your father's name in English.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার পিতার নাম ইংরেজিতে লিখুন।</div>
                            @error('father_name_english')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -195,10 +195,10 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother_name_bangla-column">Mother's Name (In Bengali)</label>
+                           <label class="form-label" for="mother_name_bangla-column">মাতার নাম (বাংলায়)</label>
                            <input type="text" id="mother_name_bangla-column" class="form-control" placeholder="শাকিলা আহমেদ" name="mother_name_bangla"
                               required pattern="[\s\u0980-\u09FF]+$" value="{{ old('mother_name_bangla') }}">
-                           <div class="invalid-feedback">Please enter your mother's name in Bengali.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে বাংলায় আপনার মাতার নাম লিখুন।</div>
                            @error('mother_name_bangla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -207,10 +207,10 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother_name_english-column">Mother's Name (In English)</label>
+                           <label class="form-label" for="mother_name_english-column">মাতার নাম (ইংরেজিতে)</label>
                            <input type="text" id="mother_name_english-column" class="form-control" placeholder="Shakila Ahmed" name="mother_name_english"
                               required value="{{ old('mother_name_english') }}">
-                           <div class="invalid-feedback">Please enter your mother's name in English.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে ইংরেজিতে আপনার মাতার নাম লিখুন।</div>
                            @error('mother_name_english')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -220,10 +220,10 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father_nid">Father's NID Number</label>
+                           <label class="form-label" for="father_nid">পিতার NID নম্বর</label>
                            <input type="text" id="father_nid" class="form-control" placeholder="132 456 6789" name="father_nid" required
                               pattern="[0-9]{10,18}" value="{{ old('father_nid') }}">
-                           <div class="invalid-feedback">Please enter your father's NID no.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার পিতার NID নম্বরটি লিখুন।</div>
                            @error('father_nid')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -232,10 +232,10 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother_nid">Mother's NID Number</label>
+                           <label class="form-label" for="mother_nid">মাতার NID নম্বর</label>
                            <input type="text" id="mother_nid" class="form-control" placeholder="132 456 6789" name="mother_nid" required
                               pattern="[0-9]{10,18}" value="{{ old('mother_nid') }}">
-                           <div class="invalid-feedback">Please enter your mother's NID no.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার মাতার NID নম্বরটি লিখুন।</div>
                            @error('mother_nid')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -243,11 +243,11 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father_birth_date">Father's Date of Birth</label>
+                           <label class="form-label" for="father_birth_date">পিতার জন্ম তারিখ</label>
                            <input type="text" id="father_birth_date" name="father_birth_date"
                               class="form-control picker flatpickr-basic flatpickr-input active" placeholder="YYYY-MM-DD" readonly="readonly" required
                               value="{{ old('father_birth_date') }}">
-                           <div class="invalid-feedback">Please select your father's date of birth.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার পিতার জন্ম তারিখ নির্বাচন করুন।</div>
                            @error('father_birth_date')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -256,11 +256,11 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother_birth_date">Mother's Date of Birth</label>
+                           <label class="form-label" for="mother_birth_date">মাতার জন্ম তারিখ</label>
                            <input type="text" id="mother_birth_date" name="mother_birth_date"
                               class="form-control picker flatpickr-basic flatpickr-input active" placeholder="YYYY-MM-DD" readonly="readonly" required
                               value="{{ old('mother_birth_date') }}">
-                           <div class="invalid-feedback">Please select your mother's date of birth.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার মাতার জন্ম তারিখ নির্বাচন করুন।</div>
                            @error('mother_birth_date')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -269,10 +269,10 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="father_mobile">Father's Mobile Number</label>
+                           <label class="form-label" for="father_mobile">পিতার মোবাইল নম্বর</label>
                            <input type="text" id="father_mobile" class="form-control" placeholder="017xxxxxxxx" name="father_mobile"
                               pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('father_mobile') }}">
-                           <div class="invalid-feedback">Please enter your father's mobile number.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার পিতার মোবাইল নম্বরটি লিখুন।</div>
                            @error('father_mobile')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -282,10 +282,10 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="mother_mobile">Mother's Mobile Number</label>
+                           <label class="form-label" for="mother_mobile">মাতার মোবাইল নম্বর</label>
                            <input type="text" id="mother_mobile" class="form-control" placeholder="017xxxxxxxx" name="mother_mobile"
                               pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('mother_mobile') }}">
-                           <div class="invalid-feedback">Please enter your mother's mobile number.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার মাতার মোবাইল নম্বরটি লিখুন।</div>
                            @error('mother_mobile')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -295,19 +295,19 @@
 
 
                      <div class="divider divider-primary">
-                        <div class="divider-text">Present Address</div>
+                        <div class="divider-text">বর্তমান ঠিকানা</div>
                      </div>
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pres_division" class="form-label">Division</label>
+                           <label for="pres_division" class="form-label">বিভাগ</label>
                            <select name="pres_division" id="pres_division" class="form-select" required>
                               <option {{ old('pres_division') ? '' : 'disabled' }} selected value="{{ old('pres_division') }}">
                                  {{ old('pres_division') ? old('pres_division') : 'Select Division' }}
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select division.</div>
+                           <div class="invalid-feedback">বিভাগ নির্বাচন করুন।</div>
                            @error('pres_division')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -315,14 +315,14 @@
                      </div>
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pres_district" class="form-label">District</label>
+                           <label for="pres_district" class="form-label">জেলা</label>
                            <select name="pres_district" id="pres_district" class="form-select" required>
                               <option {{ old('pres_division') ? '' : 'disabled' }} selected value="{{ old('pres_district') }}">
                                  {{ old('pres_district') ? old('pres_district') : 'Select District' }}
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select District.</div>
+                           <div class="invalid-feedback">জেলা নির্বাচন করুন।</div>
                            @error('pres_district')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -332,13 +332,13 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pres_upozilla" class="form-label">Sub-District</label>
+                           <label for="pres_upozilla" class="form-label">উপজেলা</label>
                            <select name="pres_upozilla" id="pres_upozilla" class="form-select" required>
                               <option {{ old('pres_upozilla') ? '' : 'disabled' }} selected value="{{ old('pres_upozilla') }}">
                                  {{ old('pres_upozilla') ? old('pres_upozilla') : 'Select Sub District' }}</option>
                            </select>
 
-                           <div class="invalid-feedback">Please select sub district.</div>
+                           <div class="invalid-feedback">উপজেলা নির্বাচন করুন।</div>
                            @error('pres_upozilla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -348,11 +348,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="pres_city_corp" class="form-label">Municipality/Union/City Corporation </label>
+                           <label for="pres_city_corp" class="form-label">পৌরসভা/সিটিকর্পোরেশন/ইউনিয়ন</label>
                            <input type="text" name="pres_city_corp" id="pres_city_corp" class="form-control" placeholder="Dinajpur" required
                               value="{{ old('pres_city_corp') }}">
 
-                           <div class="invalid-feedback">Please enter Municipality/Union/City Corporation.</div>
+                           <div class="invalid-feedback">আপনার পৌরসভা/সিটিকর্পোরেশন/ইউনিয়ন লিখুন।</div>
                            @error('pres_city_corp')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -362,11 +362,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="pres_post_code" class="form-label">Post Code</label>
+                           <label for="pres_post_code" class="form-label">পোষ্ট কোড</label>
                            <input type="text" name="pres_post_code" id="pres_post_code" class="form-control" placeholder="5200" required
                               pattern="[0-9]{4}" value="{{ old('pres_post_code') }}">
 
-                           <div class="invalid-feedback">Please enter zip/post code.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে পোষ্ট কোড লিখুন।</div>
                            @error('pres_post_code')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -376,10 +376,10 @@
 
                      <div class="col-12">
                         <div class="mb-1">
-                           <label for="pres_address" class="form-label">Address (Village, House, Road Etc.)</label>
+                           <label for="pres_address" class="form-label">ঠিকানা (গ্রাম, বাসা, রাস্তা.)</label>
                            <textarea name="pres_address" id="pres_address" class="form-control" rows="2" required>{{ old('pres_address') }}</textarea>
 
-                           <div class="invalid-feedback">Please enter your address.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার ঠিকানা লিখুন।</div>
                            @error('pres_address')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -389,18 +389,18 @@
 
 
                      <div class="divider divider-primary">
-                        <div class="divider-text">Permanent Address</div>
+                        <div class="divider-text">স্থায়ী ঠিকানা</div>
                      </div>
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="perm_division" class="form-label">Division</label>
+                           <label for="perm_division" class="form-label">বিভাগ</label>
                            <select name="perm_division" id="perm_division" class="form-select" required>
                               <option {{ old('perm_division') ? '' : 'disabled' }} selected value="{{ old('perm_division') }}">
                                  {{ old('perm_division') ? old('perm_division') : 'Select Division' }} </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select division.</div>
+                           <div class="invalid-feedback">বিভাগ নির্বাচন করুন</div>
                            @error('perm_division')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -409,14 +409,14 @@
                      </div>
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="perm_district" class="form-label">District</label>
+                           <label for="perm_district" class="form-label">জেলা</label>
                            <select name="perm_district" id="perm_district" class="form-select" required>
                               <option {{ old('perm_district') ? '' : 'disabled' }} selected value="{{ old('perm_district') }}">
                                  {{ old('perm_district') ? old('perm_district') : 'Select District' }} </option>
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select district.</div>
+                           <div class="invalid-feedback">জেলা নির্বাচন করুন।</div>
                            @error('perm_district')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -426,14 +426,14 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="perm_upozilla" class="form-label">Sub-District</label>
+                           <label for="perm_upozilla" class="form-label">উপজেলা</label>
                            <select name="perm_upozilla" id="perm_upozilla" class="form-select" required>
                               <option {{ old('perm_upozilla') ? '' : 'disabled' }} selected value="{{ old('perm_upozilla') }}">
                                  {{ old('perm_upozilla') ? old('perm_upozilla') : 'Select Sub-District' }}
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select sub district.</div>
+                           <div class="invalid-feedback">উপজেলা নির্বাচন করুন।</div>
                            @error('perm_upozilla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -442,11 +442,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="perm_city_corp" class="form-label">Municipality/Union/City Corporation </label>
+                           <label for="perm_city_corp" class="form-label">পৌরসভা/সিটি কোর্পোরেশন/ইউনিয়ন </label>
                            <input type="text" name="perm_city_corp" id="perm_city_corp" class="form-control" placeholder="Dinajpur" required
                               value="{{ old('perm_city_corp') }}">
 
-                           <div class="invalid-feedback">Please enter Municipality/Union/City Corporation.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার পৌরসভা/সিটিকর্পোরেশন/ইউনিয়ন লিখুন।</div>
                            @error('perm_city_corp')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -455,11 +455,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="perm_post_code" class="form-label">Post Code</label>
+                           <label for="perm_post_code" class="form-label">পোষ্ট কোড</label>
                            <input type="text" name="perm_post_code" id="perm_post_code" class="form-control" placeholder="5200" required
                               pattern="[0-9]{4}" value="{{ old('perm_post_code') }}">
 
-                           <div class="invalid-feedback">Please enter zip/post code.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার পোষ্ট কোড লিখুন।</div>
                            @error('perm_post_code')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -468,10 +468,10 @@
 
                      <div class="col-12">
                         <div class="mb-1">
-                           <label for="perm_address" class="form-label">Address (Village, House, Road Etc.)</label>
+                           <label for="perm_address" class="form-label">ঠিকানা (গ্রাম, বাসা, রাস্তা.)</label>
                            <textarea name="perm_address" id="perm_address" class="form-control" rows="2" required>{{ old('perm_address') }}</textarea>
 
-                           <div class="invalid-feedback">Please enter address.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার ঠিকানা লিখুন।</div>
                            @error('perm_address')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -480,19 +480,19 @@
                      </div>
 
                      <div class="divider divider-primary">
-                        <div class="divider-text">Previous Educational Information</div>
+                        <div class="divider-text">পূর্ববর্তী শিক্ষা তথ্য</div>
                      </div>
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe_division" class="form-label">Division</label>
+                           <label for="pe_division" class="form-label">বিভাগ</label>
                            <select name="pe_division" id="pe_division" class="form-select" required>
                               <option {{ old('pe_division') ? '' : 'disabled' }} selected value="{{ old('pe_division') }}">
                                  {{ old('pe_division') ? old('pe_division') : 'Select Division' }}
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select division.</div>
+                           <div class="invalid-feedback">বিভাগ নির্বাচন করুন।</div>
                            @error('pe_division')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -500,14 +500,14 @@
                      </div>
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe_district" class="form-label">District</label>
+                           <label for="pe_district" class="form-label">জেলা</label>
                            <select name="pe_district" id="pe_district" class="form-select" required>
                               <option {{ old('pe_district') ? '' : 'disabled' }} selected value="{{ old('pe_district') }}">
                                  {{ old('pe_district') ? old('pe_district') : 'Select District' }}
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select district.</div>
+                           <div class="invalid-feedback">জেলা নির্বাচন করুন।</div>
                            @error('pe_district')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -516,14 +516,14 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe_upozilla" class="form-label">Sub-District</label>
+                           <label for="pe_upozilla" class="form-label">উপজেলা</label>
                            <select name="pe_upozilla" id="pe_upozilla" class="form-select" required>
                               <option {{ old('pe_upozilla') ? '' : 'disabled' }} selected value="{{ old('pe_upozilla') }}">
                                  {{ old('pe_upozilla') ? old('pe_upozilla') : 'Select Sub-District' }}
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select sub district.</div>
+                           <div class="invalid-feedback">উপজেলা নির্বাচন করুন।</div>
                            @error('pe_upozilla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -532,7 +532,7 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe_board" class="form-label">Board</label>
+                           <label for="pe_board" class="form-label">বোর্ড</label>
                            <select name="pe_board" id="pe_board" class="form-select" required>
                               <option {{ old('pe_board') ? '' : 'disabled' }} selected value="{{ old('pe_board') }}">
                                  {{ old('pe_board') ? old('pe_board') : 'Select Board' }}
@@ -550,7 +550,7 @@
                               <option value="Bangladesh Technical Education Board" class="text-uppercase">Bangladesh Technical Education Board</option>
                            </select>
 
-                           <div class="invalid-feedback">Please select education board.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে বোর্ড নির্বাচন করুন।</div>
                            @error('pe_board')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -560,11 +560,11 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe_institute" class="form-label">Institute Name</label>
+                           <label for="pe_institute" class="form-label">প্রতিষ্ঠানের নাম</label>
                            <input type="text" name="pe_institute" id="pe_institute" class="form-control" placeholder="Dinajpur Govt. College" required
                               value="{{ old('pe_institute') }}">
 
-                           <div class="invalid-feedback">Please enter institute name.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে প্রতিষ্ঠানের নাম লিখুন।</div>
                            @error('pe_institute')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -573,7 +573,7 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe_passing_year" class="form-label">Passing Year</label>
+                           <label for="pe_passing_year" class="form-label">উর্তীন্ন হওয়ার বছর</label>
                            <select type="number" name="pe_passing_year" id="pe_passing_year" class="form-select" required>
                               <option {{ old('pe_passing_year') ? '' : 'disabled' }} selected value="{{ old('pe_passing_year') }}">
                                  {{ old('pe_passing_year') ? old('pe_passing_year') : 'Select Passing Year' }}
@@ -583,7 +583,7 @@
                               @endfor
                            </select>
 
-                           <div class="invalid-feedback">Please enter passing year.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে উর্তীন্ন হওয়ার বছর নির্বাচন করুন।</div>
                            @error('pe_passing_year')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -593,11 +593,11 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe_gpa" class="form-label">GPA</label>
+                           <label for="pe_gpa" class="form-label">জিপিএ</label>
                            <input type="text" name="pe_gpa" id="pe_gpa" class="form-control" placeholder="4.00" required
                               value="{{ old('pe_gpa') }}">
 
-                           <div class="invalid-feedback">Please enter your CGPA.</div>
+                           <div class="invalid-feedback">আপনার জিপিএ লিখুন।</div>
                            @error('pe_gpa')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -607,11 +607,11 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe_exam_name" class="form-label">Name of previous Exam:</label>
+                           <label for="pe_exam_name" class="form-label">পূর্ববর্তী পরীক্ষার নাম</label>
                            <input type="text" name="pe_exam_name" id="pe_exam_name" class="form-control" placeholder="SSC" required
                               value="{{ old('pe_exam_name') }}">
 
-                           <div class="invalid-feedback">Please enter previous exam name.</div>
+                           <div class="invalid-feedback">অনুগ্রহ ক্রে পূর্ববর্তী পরীক্ষার নাম লিখুন।</div>
                            @error('pe_exam_name')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -621,11 +621,11 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="pe_technology_trade" class="form-label">Technology/Trade</label>
+                           <label for="pe_technology_trade" class="form-label">টেকনোলজি/ট্রেড</label>
                            <input type="text" name="pe_technology_trade" id="pe_technology_trade" class="form-control" placeholder="Computer Science"
                               required value="{{ old('pe_technology_trade') }}">
 
-                           <div class="invalid-feedback">Please select technology/trade.</div>
+                           <div class="invalid-feedback">টেকনোলজি/ট্রেড নির্বাচন করুন।</div>
                            @error('pe_technology_trade')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -634,11 +634,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="pe_roll" class="form-label">Roll</label>
+                           <label for="pe_roll" class="form-label">রোল</label>
                            <input type="number" name="pe_roll" id="pe_roll" class="form-control" placeholder="181457" required
                               value="{{ old('pe_roll') }}">
 
-                           <div class="invalid-feedback">Please enter your roll no.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে রোল লিখুন।</div>
                            @error('pe_roll')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -647,11 +647,11 @@
 
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label for="pe_att_rate" class="form-label">Attendance rate:</label>
+                           <label for="pe_att_rate" class="form-label">উপস্থিতির হার</label>
                            <input type="text" name="pe_att_rate" id="pe_att_rate" class="form-control disabled" value="75%" readonly="readonly"
                               required value="{{ old('pe_att_rate') }}">
 
-                           <div class="invalid-feedback">Please enter attendance rate.</div>
+                           <div class="invalid-feedback">এটি প্রতিষ্ঠান কর্তৃক পূরণীয়।</div>
                            @error('pe_att_rate')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -659,19 +659,19 @@
                      </div>
 
                      <div class="divider divider-primary">
-                        <div class="divider-text">Present Educational Information</div>
+                        <div class="divider-text">বর্তমান শিক্ষা তথ্য</div>
                      </div>
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="ce_division" class="form-label">Division</label>
+                           <label for="ce_division" class="form-label">বিভাগ</label>
                            <select name="ce_division" id="ce_division" class="form-select" required>
                               <option {{ old('ce_division') ? '' : 'disabled' }} selected value="{{ old('ce_division') }}">
                                  {{ old('ce_division') ? old('ce_division') : 'Select Division' }}
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select division.</div>
+                           <div class="invalid-feedback">বিভাগ নির্বাচন করুন।</div>
                            @error('ce_division')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -679,14 +679,14 @@
                      </div>
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="ce_district" class="form-label">District</label>
+                           <label for="ce_district" class="form-label">জেলা</label>
                            <select name="ce_district" id="ce_district" class="form-select" required>
                               <option {{ old('ce_district') ? '' : 'disabled' }} selected value="{{ old('ce_district') }}">
                                  {{ old('ce_district') ? old('ce_district') : 'Select District' }}
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select district.</div>
+                           <div class="invalid-feedback">জেলা নির্বাচন করুন।</div>
                            @error('ce_district')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -696,14 +696,14 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="ce_upozilla" class="form-label">Sub-District</label>
+                           <label for="ce_upozilla" class="form-label">উপজেলা নির্বাচন করুন।</label>
                            <select name="ce_upozilla" id="ce_upozilla" class="form-select" required>
                               <option {{ old('ce_upozilla') ? '' : 'disabled' }} selected value="{{ old('ce_upozilla') }}">
                                  {{ old('ce_upozilla') ? old('ce_upozilla') : 'Select Sub-District' }}
                               </option>
                            </select>
 
-                           <div class="invalid-feedback">Please select sub district.</div>
+                           <div class="invalid-feedback">উপজেলা নির্বাচন করুন।</div>
                            @error('ce_upozilla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -713,11 +713,11 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="ce_institute_name" class="form-label">Institute Name</label>
+                           <label for="ce_institute_name" class="form-label">প্রতিষ্ঠানের নাম</label>
                            <input type="text" name="ce_institute_name" id="ce_institute_name" class="form-control" placeholder="Textile Institute Dinajpur"
                               required value="{{ old('ce_institute_name') }}">
 
-                           <div class="invalid-feedback">Please enter institute name.</div>
+                           <div class="invalid-feedback">প্রতিষ্ঠানের নাম লিখুন।</div>
                            @error('ce_institute_name')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -727,7 +727,7 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="ce_semester" class="form-label">Semester</label>
+                           <label for="ce_semester" class="form-label">সেমিস্টার</label>
                            <select name="ce_semester" id="ce_semester" class="form-select" required>
                               <option selected {{ old('ce_semester') ? '' : 'disabled' }} value="{{ old('ce_semester') }}">
                                  {{ old('ce_semester') ? old('ce_semester') : 'Select Semester' }}
@@ -742,7 +742,7 @@
                               <option value="8th">8th</option>
                            </select>
 
-                           <div class="invalid-feedback">Please select your semester.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে সেমিষ্টার নির্বাচন করুন।</div>
 
                            @error('ce_semester')
                               <div class="text-danger">{{ $message }}</div>
@@ -752,7 +752,7 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="ce_technology_trade" class="form-label">Technology/Trade</label>
+                           <label for="ce_technology_trade" class="form-label">টেকনোলজি/ট্রেড</label>
                            <select name="ce_technology_trade" id="ce_technology_trade" class="form-select" required>
                               <option selected {{ old('ce_technology_trade') ? '' : 'disabled' }} value="{{ old('ce_technology_trade') }}">
                                  {{ old('ce_technology_trade') ? old('ce_technology_trade') : 'Select Technology/Trade' }}
@@ -760,7 +760,7 @@
                               <option value="textile">Textile</option>
                            </select>
 
-                           <div class="invalid-feedback">Please select technology/trade.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে টেকনোলজি/ট্রেড নির্বাচন করুন।</div>
                            @error('ce_technology_trade')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -769,7 +769,7 @@
 
                      <div class="col-md-3 col-12">
                         <div class="mb-1">
-                           <label for="ce_shift" class="form-label">Shift</label>
+                           <label for="ce_shift" class="form-label">শিফট</label>
                            <select name="ce_shift" id="ce_shift" class="form-select" required>
                               <option selected {{ old('ce_shift') ? '' : 'disabled' }} value="{{ old('ce_shift') }}">
                                  {{ old('ce_shift') ? old('ce_shift') : 'Select Shift' }}
@@ -778,7 +778,7 @@
                               <option value="day">Day</option>
                            </select>
 
-                           <div class="invalid-feedback">Please select shift.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে শিফট নির্বাচন করুন।</div>
                            @error('ce_shift')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -787,10 +787,10 @@
 
                      <div class="col-md-3 col-12">
                         <div class="mb-1">
-                           <label for="ce_group" class="form-label">Group</label>
+                           <label for="ce_group" class="form-label">গ্রুপ</label>
                            <input type="text" id="ce_group" name="ce_group" class="form-control" required value="{{ old('ce_group') }}">
 
-                           <div class="invalid-feedback">Please enter group.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে গ্র্যপ লিখুন।</div>
                            @error('ce_group')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -799,11 +799,11 @@
 
                      <div class="col-md-3 col-12">
                         <div class="mb-1">
-                           <label for="ce_roll" class="form-label">Roll</label>
+                           <label for="ce_roll" class="form-label">রোল</label>
                            <input type="number" id="ce_roll" name="ce_roll" class="form-control" placeholder="174213" required
                               value="{{ old('ce_roll') }}">
 
-                           <div class="invalid-feedback">Please enter roll.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে রোল লিখুন।</div>
                            @error('ce_roll')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -813,11 +813,11 @@
 
                      <div class="col-md-3 col-12">
                         <div class="mb-1">
-                           <label for="ce_reg" class="form-label">Registration</label>
+                           <label for="ce_reg" class="form-label">রেজিস্ট্রেশন নং</label>
                            <input type="number" id="ce_reg" name="ce_reg" class="form-control" placeholder="1500943651542" required
                               value="{{ old('ce_reg') }}">
 
-                           <div class="invalid-feedback">Please enter your reg no.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে রেজিস্ট্রেশন নং লিখুন।</div>
                            @error('ce_reg')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -825,12 +825,12 @@
                      </div>
 
                      <div class="divider divider-primary">
-                        <div class="divider-text">Presents in Absence</div>
+                        <div class="divider-text">পিতা-মাতার অনুপস্থিতিতে অভিভাবক</div>
                      </div>
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="relationship" class="form-label">Select Relationship</label>
+                           <label for="relationship" class="form-label">অভিভাবকের সাথে সম্পর্ক</label>
                            <select name="relationship" id="relationship" class="form-select" required>
                               <option selected {{ old('relationship') ? '' : 'disabled' }} value="{{ old('relationship') }}">
                                  {{ old('relationship') ? old('relationship') : 'Select Relationship' }}
@@ -842,7 +842,7 @@
                               <option value="other">Other</option>
                            </select>
 
-                           <div class="invalid-feedback">Please select relationship.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে অভিভাবকের সাথে সম্পর্ক নির্বাচন করুন।</div>
                            @error('relationship')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -851,11 +851,11 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="guardian_name_bangla" class="form-label">Guardian's Name (in Bengali)</label>
+                           <label for="guardian_name_bangla" class="form-label">অভিভাবকের নাম (বাংলায়)</label>
                            <input type="text" id="guardian_name_bangla" name="guardian_name_bangla" class="form-control" placeholder="ফজলে রাব্বি" required
                               pattern="[\s\u0980-\u09FF]+$" value="{{ old('guardian_name_bangla') }}">
 
-                           <div class="invalid-feedback">Please enter guardian's name in Bengali.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে অভিভাবকের নাম বাংলায় লিখুন।</div>
                            @error('guardian_name_bangla')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -864,11 +864,11 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="guardian_name_english" class="form-label">Guardian's Name (in English)</label>
+                           <label for="guardian_name_english" class="form-label">অভিভাবকের নাম (ইংরেজিতে)</label>
                            <input type="text" id="guardian_name_english" name="guardian_name_english" class="form-control" placeholder="Fazlay Rabbbi"
                               required value="{{ old('guardian_name_english') }}">
 
-                           <div class="invalid-feedback">Please enter guardian's name in English.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে অভিভাবকের নাম ইংরেজিতে লিখুন।</div>
                            @error('guardian_name_english')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -877,11 +877,11 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label for="guardian_nid" class="form-label">Guardian's NID</label>
+                           <label for="guardian_nid" class="form-label">অভিভাবকের NID নং</label>
                            <input type="text" id="guardian_nid" name="guardian_nid" class="form-control" placeholder="123 456 6789" required
                               pattern="[0-9]{10,18}" value="{{ old('guardian_nid') }}">
 
-                           <div class="invalid-feedback">Please enter guardian's NID.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে অভিভাবকের NID নং লিখুন।</div>
                            @error('guardian_nid')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -890,12 +890,12 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="guardian_birth_date">Date of Birth</label>
+                           <label class="form-label" for="guardian_birth_date">অভিভাবকের জন্ম তারিখ</label>
                            <input type="text" id="guardian_birth_date" name="guardian_birth_date"
                               class="form-control picker flatpickr-basic flatpickr-input active" placeholder="YYYY-MM-DD" readonly="readonly" required
                               value="{{ old('guardian_birth_date') }}">
 
-                           <div class="invalid-feedback">Please select guardian's date of birth.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে অভিভাবকের জন্ম তারিখ লিখুন।</div>
                            @error('guardian_birth_date')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -904,11 +904,11 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="guardian_mobile">Guardian's Mobile Number</label>
+                           <label class="form-label" for="guardian_mobile">অভিভাবকের মোবাইল নং</label>
                            <input type="text" id="guardian_mobile" class="form-control" placeholder="017xxxxxxxx" name="guardian_mobile"
                               pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required value="{{ old('guardian_mobile') }}">
 
-                           <div class="invalid-feedback">Please enter guardian's mobile number.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে অভিভাবকের মোবাইল নং লিখুন।</div>
                            @error('guardian_mobile')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -917,12 +917,12 @@
                      </div>
 
                      <div class="divider divider-primary">
-                        <div class="divider-text">Eligibility Conditions and Attachment</div>
+                        <div class="divider-text">যোগ্যতার শর্ত এবং সংযুক্তি</div>
                      </div>
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label">The cost of education will be borne by</label>
+                           <label class="form-label">পড়াশোনার খরচ বহন করবে - </label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="cost-father" class="form-check-input" type="radio" name="cost_borne" value="Father" required
@@ -953,7 +953,7 @@
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label">Applicant ethnic groups include</label>
+                           <label class="form-label">ক্ষুদ্র নৃ-গোষ্ঠীর অন্তর্ভুক্ত -</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="ethnic-yes" class="form-check-input" type="radio" name="ethnic" value="yes" required
@@ -974,7 +974,7 @@
                      </div>
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label">Freedom Fighter Quota</label>
+                           <label class="form-label">মুক্তিযোদ্ধা প্রজন্ম -</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="ffq-yes" class="form-check-input" type="radio" name="ffq" value="yes" required
@@ -995,7 +995,7 @@
                      </div>
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label">Any other Scholarship</label>
+                           <label class="form-label">অন্য কোনো বৃত্তি/উপবৃত্তি পান?</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="scholarship-yes" class="form-check-input" type="radio" name="scholarship" value="yes" required
@@ -1016,7 +1016,7 @@
                      </div>
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label">Physical Disabilities</label>
+                           <label class="form-label">কোনো শারীরিক প্রতিবন্ধকতা আছে?</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="disabilities-yes" class="form-check-input" type="radio" name="disabilities" value="yes" required
@@ -1037,12 +1037,12 @@
                      </div>
 
                      <div class="divider divider-primary">
-                        <div class="divider-text">Payment Details</div>
+                        <div class="divider-text">পেমেন্টের বিবরণ</div>
                      </div>
 
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
-                           <label class="form-label">Select payment method:</label>
+                           <label class="form-label">পেমেন্ট মেথড</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="payment-mobile" class="form-check-input" type="radio" name="payment_method" value="mobile banking" required
@@ -1065,7 +1065,7 @@
                      <div id="payment-mobile-info" class="row">
                         <div class="col-md-6 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="mobile_bank_provider">Mobile banking service providers</label>
+                              <label class="form-label" for="mobile_bank_provider">মোবাইল ব্যাংকিং সেবাদানকারী প্রতিষ্ঠান</label>
                               <select name="mobile_bank_provider" id="mobile_bank_provider" class="form-select mobile-unchecked">
                                  <option selected {{ old('mobile_bank_provider') ? '' : 'disabled' }} value="{{ old('mobile_bank_provider') }}">
                                     {{ old('mobile_bank_provider') ? old('mobile_bank_provider') : 'Select mobile banking service provider' }}
@@ -1075,7 +1075,7 @@
                                  @endforeach
                               </select>
 
-                              <div class="invalid-feedback">Please select mobile banking service provider.</div>
+                              <div class="invalid-feedback">অনুগ্রহ করে মোবাইল ব্যাংকিং সেবাদানকারী প্রতিষ্ঠান নির্বাচন করুন।</div>
                               @error('mobile_bank_provider')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
@@ -1084,11 +1084,11 @@
                         </div>
                         <div class="col-md-6 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="mobile_bank_account">Mobile banking account number</label>
+                              <label class="form-label" for="mobile_bank_account">মোবাইল ব্যাংকিং এর মোবাইল নম্বর</label>
                               <input type="text" id="mobile_bank_account" class="form-control mobile-unchecked" name="mobile_bank_account"
                                  placeholder="017xxxxxxxx" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" value="{{ old('mobile_bank_account') }}">
 
-                              <div class="invalid-feedback">Please enter mobile banking account number.</div>
+                              <div class="invalid-feedback">অনুগ্রহ করে মোবাইল ব্যাংকিং এর মোবাইল নম্বরটি লিখুন।</div>
                               @error('mobile_bank_account')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
@@ -1101,7 +1101,7 @@
                      <div id="payment-bank-info" class="row" style="display: none">
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank_name">Bank Name</label>
+                              <label class="form-label" for="bank_name">ব্যাংকের নাম</label>
                               <select name="bank_name" id="bank_name" class="form-select banking-unchecked" required>
                                  <option selected {{ old('bank_name') ? '' : 'disabled' }} value="{{ old('bank_name') }}">
                                     {{ old('bank_name') ? old('bank_name') : 'Select Bank' }}
@@ -1111,7 +1111,7 @@
                                  @endforeach
                               </select>
 
-                              <div class="invalid-feedback">Please select bank name.</div>
+                              <div class="invalid-feedback">অনুগ্রহ করে ব্যাংক নির্বাচন করুন।</div>
                               @error('bank_name')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
@@ -1119,11 +1119,11 @@
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank_branch">Branch</label>
+                              <label class="form-label" for="bank_branch">ব্রাঞ্চ</label>
                               <input type="text" id="bank_branch" class="form-control banking-unchecked" name="bank_branch" placeholder="Dinajpur" required
                                  value="{{ old('bank_branch') }}">
 
-                              <div class="invalid-feedback">Please enter branch.</div>
+                              <div class="invalid-feedback">অনুগ্রহ করে ব্রাঞ্চ এর নাম লিখুন।</div>
                               @error('bank_branch')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
@@ -1131,11 +1131,11 @@
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank_routing">Routing No.</label>
+                              <label class="form-label" for="bank_routing">রাউটিং নং</label>
                               <input type="text" id="bank_routing" class="form-control banking-unchecked" name="bank_routing" placeholder="070280676"
                                  required value="{{ old('bank_routing') }}">
 
-                              <div class="invalid-feedback">Please enter bank routing number.</div>
+                              <div class="invalid-feedback">অনুগ্রহ করে ব্যাংকিং রাউট নং লিখুন।</div>
                               @error('bank_routing')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
@@ -1143,7 +1143,7 @@
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank_acc_type">Account Type</label>
+                              <label class="form-label" for="bank_acc_type">এ্যাকাউন্ট এর ধরন</label>
                               <select name="bank_acc_type" id="bank_acc_type" class="form-select banking-unchecked" required>
                                  <option selected {{ old('bank_acc_type') ? '' : 'disabled' }} value="{{ old('bank_acc_type') }}">
                                     {{ old('bank_acc_type') ? old('bank_acc_type') : 'Select Account Type' }}
@@ -1152,7 +1152,7 @@
                                  <option value="current">Current</option>
                               </select>
 
-                              <div class="invalid-feedback">Please select account type.</div>
+                              <div class="invalid-feedback">এ্যাকাউন্ট এর ধরন নির্বাচন করুন।</div>
                               @error('bank_acc_type')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
@@ -1160,11 +1160,11 @@
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank_acc_name">Account Holder Name</label>
+                              <label class="form-label" for="bank_acc_name">এ্যাকাউন্টধারীর নাম</label>
                               <input type="text" id="bank_acc_name" class="form-control banking-unchecked" name="bank_acc_name" placeholder="Shakil Ahmed"
                                  required value="{{ old('bank_acc_name') }}">
 
-                              <div class="invalid-feedback">Please enter bank account holder name.</div>
+                              <div class="invalid-feedback">অনুগ্রহ করে এ্যাকাউন্ট ধারীর নাম লিখুন।</div>
                               @error('bank_acc_name')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
@@ -1172,11 +1172,11 @@
                         </div>
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
-                              <label class="form-label" for="bank_acc_number">Account Number</label>
+                              <label class="form-label" for="bank_acc_number">এ্যাকাউন্ট নম্বর</label>
                               <input type="number" id="bank_acc_number" class="form-control banking-unchecked" name="bank_acc_number"
                                  placeholder="200154655xxxxx" required value="{{ old('bank_acc_number') }}">
 
-                              <div class="invalid-feedback">Please enter bank account number.</div>
+                              <div class="invalid-feedback">অনুগ্রহ করে এ্যাকাউন্ট নম্বর লিখুন।</div>
                               @error('bank_acc_number')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
@@ -1186,16 +1186,16 @@
 
 
                      <div class="divider divider-primary">
-                        <div class="divider-text">Photo & Signature</div>
+                        <div class="divider-text">ছবি এবং স্বাক্ষর</div>
                      </div>
-                     <p class="text-warning fw-bold">Each image size is maximum 512KB.</p>
+                     <p class="text-warning fw-bold">প্রতিটি ছবির সর্বোচ্চ সাইজ ৫১২ কিলোবাইট।</p>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="formal-photo">Select your Formal Photo</label>
+                           <label class="form-label" for="formal-photo">আপনার ফরমাল ছবি সিলেক্ট করুন।</label>
                            <input type="file" id="formal-photo" class="form-control" name="formal_image" accept="image/png, image/jpeg, .jpg"
                               required>
 
-                           <div class="invalid-feedback">Please select your formal image.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার ফরমাল ছবি সিলেক্ট করুন।</div>
                            @error('formal-photo')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
@@ -1203,11 +1203,11 @@
                      </div>
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
-                           <label class="form-label" for="signature">Select your Formal Photo</label>
+                           <label class="form-label" for="signature">স্বাক্ষরের ছবি সিলেক্ট করুন।</label>
                            <input type="file" id="signature" class="form-control" name="signature_image" accept="image/png, image/jpeg, .jpg"
                               required>
 
-                           <div class="invalid-feedback">Please select signature image.</div>
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার স্বাক্ষরের ছবি সিলেক্ট করুন।</div>
                            @error('signature')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror

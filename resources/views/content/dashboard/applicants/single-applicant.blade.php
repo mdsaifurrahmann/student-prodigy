@@ -151,7 +151,7 @@
                </div>
             </div>
 
-            <div class="table-responsive">
+            <div class="table-responsive font-solaimanlipi">
                <table class="table-bordered table">
                   <thead>
                      <tr>

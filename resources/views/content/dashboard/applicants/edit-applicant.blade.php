@@ -50,7 +50,7 @@
 
       <div class="col-12 d-flex align-items-md-center justify-content-center">
          <div class="card">
-            <div class="card-body">
+            <div class="card-body font-solaimanlipi">
                <p class="text-warning text-center">Fill the form with correct information. Each field of the form must be filled.</p>
                <p class="fw-bold text-danger text-center">All the fields are <strong><em>required</em></strong> and will be validate from the server!!!</p>
 

@@ -25,7 +25,13 @@
          <div class="col-12">
 
             {{-- Notice --}}
-            @if (session('destroy-success'))
+            @if (session('success'))
+               <div class="alert alert-success alert-dismissible fade show p-2" role="alert">
+                  <strong> {{ session('update-success') || session('delete-success') }}</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            @endif
+            @if (session('error'))
                <div class="alert alert-success alert-dismissible fade show p-2" role="alert">
                   <strong> {{ session('update-success') || session('delete-success') }}</strong>
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -35,43 +41,65 @@
          {{-- Export Option Closed --}}
 
 
-         <div class="card">
-            <table class="datatables-basic table">
+
+         <div class="card table-responsive px-0">
+            <div class="card-header">
+               <div class="head-label"><h4 class="mb-0">All Users</h4></div>
+            </div>
+            <table class="table ">
                <thead>
                   <tr>
-                     <th></th>
-                     <th>id</th>
-                     <th></th>
-                     @foreach ($titles as $title)
-                        <th>{{ $title }}</th>
-                     @endforeach
+                     <th>ID</th>
+                     <th>Username</th>
+                     <th>Name</th>
+                     <th>Email</th>
+                     <th>Mobile</th>
                      <th>Actions</th>
                   </tr>
                </thead>
+               <tbody>
+                  @foreach($users as $user)
+                     <tr>
+                        <td>{{$user->id}}</td>
+                        <td>{{$user->username}}</td>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->mobile}}</td>
+                        <td>
+                           <form method="POST" action="{{ route('destroy-user', $user->id) }}" class="destroyUser">
+                              @csrf
+                              @method("DELETE")
+                              <button class="create-new btn btn-danger" type="submit" id="confirm-destroy">
+                              <span>
+                                 Delete
+                              </span>
+                              </button>
+                           </form>
+                        </td>
+                     </tr>
+
+
+                  @endforeach
+               </tbody>
             </table>
+            <hr class="divider mb-0">
+            {{ $users->links('vendor.pagination.bootstrap-5') }}
          </div>
       </div>
-      </div>
+
+
    </section>
    <!--/ Basic table -->
+
+   <form method="POST" id="destroyUser">
+      @csrf
+      @method('DELETE')
+   </form>
 
 @stop
 
 
 @section('vendor-script')
-   {{-- vendor files --}}
-   <script src="{{ asset(mix('vendors/js/tables/datatable/jquery.dataTables.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.bootstrap5.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.responsive.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/responsive.bootstrap5.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/datatables.checkboxes.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/datatables.buttons.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/jszip.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/pdfmake.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/vfs_fonts.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/buttons.html5.min.js')) }}"></script>
-   <script src="{{ asset(mix('vendors/js/tables/datatable/buttons.print.min.js')) }}"></script>
-   {{-- <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.rowGroup.min.js')) }}"></script> --}}
    <script src="{{ asset(mix('vendors/js/pickers/flatpickr/flatpickr.min.js')) }}"></script>
    <script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
    <script src="{{ asset(mix('vendors/js/extensions/polyfill.min.js')) }}"></script>
@@ -79,44 +107,5 @@
 @section('page-script')
    {{-- Page js files --}}
    <script src="{{ asset(mix('js/core/user-list-table.js')) }}"></script>
-
-   <script>
-      function swal(id) {
-         Swal.fire({
-            title: 'Are you sure?',
-            text: "This user will be deleted permanently. You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            customClass: {
-               confirmButton: 'btn btn-danger',
-               cancelButton: 'btn btn-outline-primary ms-1'
-            },
-            buttonsStyling: false
-         }).then(function(result) {
-            if (result.value) {
-               // form.submit();
-
-               console.log(id);
-               Swal.fire({
-                  icon: 'info',
-                  title: 'Deletion in Progress!',
-                  text: 'This user will be deleted.',
-                  customClass: {
-                     confirmButton: 'btn btn-success'
-                  }
-               })
-            } else if (result.dismiss === Swal.DismissReason.cancel) {
-               Swal.fire({
-                  title: 'Cancelled',
-                  text: 'User is safe :)',
-                  icon: 'error',
-                  customClass: {
-                     confirmButton: 'btn btn-success'
-                  }
-               })
-            }
-         })
-      };
-   </script>
+   <script src="{{ asset(mix('js/core/delete-alert.js')) }}"></script>
 @stop
