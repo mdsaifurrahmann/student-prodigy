@@ -185,8 +185,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="father_name_english-column">পিতার নাম (ইংরেজিতে)</label>
-                           <input type="text" id="father_name_english-column" class="form-control" placeholder="Saimon Hasan Sunny" name="father_name_english"
-                              required value="{{ old('father_name_english') }}">
+                           <input type="text" id="father_name_english-column" class="form-control" placeholder="Saimon Hasan Sunny"
+                              name="father_name_english" required value="{{ old('father_name_english') }}">
                            <div class="invalid-feedback">অনুগ্রহ করে আপনার পিতার নাম ইংরেজিতে লিখুন।</div>
                            @error('father_name_english')
                               <div class="text-danger">{{ $message }}</div>
@@ -196,8 +196,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="mother_name_bangla-column">মাতার নাম (বাংলায়)</label>
-                           <input type="text" id="mother_name_bangla-column" class="form-control" placeholder="তটিনি" name="mother_name_bangla"
-                              required pattern="[\s\u0980-\u09FF]+$" value="{{ old('mother_name_bangla') }}">
+                           <input type="text" id="mother_name_bangla-column" class="form-control" placeholder="তটিনি" name="mother_name_bangla" required
+                              pattern="[\s\u0980-\u09FF]+$" value="{{ old('mother_name_bangla') }}">
                            <div class="invalid-feedback">অনুগ্রহ করে বাংলায় আপনার মাতার নাম লিখুন।</div>
                            @error('mother_name_bangla')
                               <div class="text-danger">{{ $message }}</div>
@@ -208,8 +208,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="mother_name_english-column">মাতার নাম (ইংরেজিতে)</label>
-                           <input type="text" id="mother_name_english-column" class="form-control" placeholder="Totini" name="mother_name_english"
-                              required value="{{ old('mother_name_english') }}">
+                           <input type="text" id="mother_name_english-column" class="form-control" placeholder="Totini" name="mother_name_english" required
+                              value="{{ old('mother_name_english') }}">
                            <div class="invalid-feedback">অনুগ্রহ করে ইংরেজিতে আপনার মাতার নাম লিখুন।</div>
                            @error('mother_name_english')
                               <div class="text-danger">{{ $message }}</div>
@@ -757,7 +757,10 @@
                               <option selected {{ old('ce_technology_trade') ? '' : 'disabled' }} value="{{ old('ce_technology_trade') }}">
                                  {{ old('ce_technology_trade') ? old('ce_technology_trade') : 'Select Technology/Trade' }}
                               </option>
-                              <option value="textile">Textile</option>
+                              <option value="textile machine design & maintenance">Textile Machine Design & Maintenance</option>
+                              <option value="yarn manufacturing">Yarn Manufacturing</option>
+                              <option value="wet processing">Wet Processing</option>
+                              <option value="apparel manufacturing">Apparel Manufacturing</option>
                            </select>
 
                            <div class="invalid-feedback">অনুগ্রহ করে টেকনোলজি/ট্রেড নির্বাচন করুন।</div>

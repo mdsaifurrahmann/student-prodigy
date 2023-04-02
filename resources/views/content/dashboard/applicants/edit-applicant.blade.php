@@ -810,7 +810,10 @@
                               <option selected {{ $applicant->ce_technology_trade ? '' : 'disabled' }} value="{{ $applicant->ce_technology_trade }}">
                                  {{ $applicant->ce_technology_trade ? $applicant->ce_technology_trade : 'Select Technology/Trade' }}
                               </option>
-                              <option value="textile">Textile</option>
+                              <option value="textile machine design & maintenance">Textile Machine Design & Maintenance</option>
+                              <option value="yarn manufacturing">Yarn Manufacturing</option>
+                              <option value="wet processing">Wet Processing</option>
+                              <option value="apparel manufacturing">Apparel Manufacturing</option>
                            </select>
 
                            <div class="invalid-feedback">Please select technology/trade.</div>

@@ -14,7 +14,7 @@
 @stop
 
 @section('page-style')
-   <link rel="stylesheet" href="{{asset(mix('css/base/plugins/extensions/ext-component-sweet-alerts.css'))}}">
+   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-sweet-alerts.css')) }}">
 @stop
 
 @section('content')
@@ -83,7 +83,10 @@
                         <select class="form-select dt-input" data-column="9" data-column-index="3">
                            <option selected value=""> Select Technology/Trade</option>
                            <option value="textile">Textile</option>
-                           <option value="CSE">CSE</option>
+                           <option value="textile machine design & maintenance">Textile Machine Design & Maintenance</option>
+                           <option value="yarn manufacturing">Yarn Manufacturing</option>
+                           <option value="wet processing">Wet Processing</option>
+                           <option value="apparel manufacturing">Apparel Manufacturing</option>
                         </select>
                      </div>
                      <div class="col-md-4">
