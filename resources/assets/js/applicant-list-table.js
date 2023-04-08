@@ -235,11 +235,27 @@ $(function () {
                      }) +
                      "View Detail</a>" +
 
+                     '<a href="' + window.location.origin + '/authenticated/dash/formal/download/' + full["formal_image_path"] + '" class=" my-1 d-block btn btn-primary waves-effect waves-float waves-light">' +
+                     feather.icons["download-cloud"].toSvg({
+                        class: "font-small-4 me-50",
+                     }) +
+                     "Download Formal Image</a>" +
+
+                     '<a href="' + window.location.origin + '/authenticated/dash/signature/download/' + full["signature_image_path"] + '" class=" my-1 d-block btn btn-primary waves-effect waves-float waves-light">' +
+                     feather.icons["download-cloud"].toSvg({
+                        class: "font-small-4 me-50",
+                     }) +
+                     "Download Signature Image</a>" +
+
                      '<a href="' + window.location.origin + '/authenticated/dash/applicant-modify/' + full["id"] + '" class=" my-1 d-block btn btn-warning waves-effect waves-float waves-light">' +
                      feather.icons["edit"].toSvg({
                         class: "font-small-4 me-50",
                      }) +
                      "Edit</a>"
+
+
+
+                     // http://127.0.0.1:8000/authenticated/dash/formal/download/1671824210LB1XAOSTXFTPZGXX_student-Tamara_Herrera-55.jpg
                   );
                },
             },

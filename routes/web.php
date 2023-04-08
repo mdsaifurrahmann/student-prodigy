@@ -41,6 +41,8 @@ Route::group(['prefix' => 'authenticated/dash'], function () {
    Route::patch('applicant-modifier/{id}', [FormHandlerController::class, 'update'])->name('applicant-modifier')->middleware('verified');
    Route::get('applicant/download/{id}', [FormHandlerController::class, 'download'])->name('download')
       ->middleware('verified');
+   Route::get('formal/download/{formal}', [FormHandlerController::class, 'formalImageDownload'])->name('formal-image-download')->middleware('verified');
+   Route::get('signature/download/{signature}', [FormHandlerController::class, 'signatureImageDownload'])->name('signature-image-download')->middleware('verified');
    Route::delete('remove-user/{id}', [Users::class, 'destroy'])->name('destroy-user')->middleware('verified');
 });
 

@@ -68,6 +68,20 @@
                            </span>
                         </a>
 
+
+                        <a class="dt-button create-new btn btn-primary me-1" href="{{ route('formal-image-download', $applicant->formal_image_path) }}">
+                           <span>
+                              Download Formal Photo
+                           </span>
+                        </a>
+
+
+                        <a class="dt-button create-new btn btn-primary me-1" href="{{ route('signature-image-download', $applicant->signature_image_path) }}">
+                           <span>
+                              Download Signature
+                           </span>
+                        </a>
+
                         <a class="create-new btn btn-warning me-1" id="edit" href="{{ route('applicant-modify', $applicant->id) }}">
                            <span>
                               Edit

@@ -453,4 +453,16 @@ class FormHandlerController extends Controller
       $pdf->WriteHTML($content);
       $pdf->Output($applicant->student_name_english . '-' . Str::upper(Str::random(16)) . '.pdf', 'D');
    }
+
+   public function formalImageDownload($formal)
+   {
+      $path = public_path('student-images/formal-images/' . $formal);
+      return response()->download($path);
+   }
+
+   public function signatureImageDownload($signature)
+   {
+      $path = public_path('student-images/signature-images/' . $signature);
+      return response()->download($path);
+   }
 }
