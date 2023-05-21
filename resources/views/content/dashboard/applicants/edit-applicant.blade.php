@@ -156,14 +156,14 @@
                               <option selected="" value="{{ $applicant->blood_group ? $applicant->blood_group : '' }}"
                                  {{ $applicant->blood_group ? '' : 'disabled' }}>
                                  {{ $applicant->blood_group ? $applicant->blood_group : 'Select your Blood group' }} </option>
-                              <option value="A Positive (A+)">A Positive (A+)</option>
-                              <option value="A Negative (A-)">A Negative (A-)</option>
-                              <option value="B Positive (B+)">B Positive (B+)</option>
-                              <option value="B Negative (B-)">B Negative (B-)</option>
-                              <option value="O Positive (O+)">O Positive (O+)</option>
-                              <option value="O Negative (O-)">O Negative (O-)</option>
-                              <option value="AB Positive (AB+)">AB Positive (AB+)</option>
-                              <option value="AB Negative (AB-)">AB Negative (AB-)</option>
+                              <option value="A Positive (A+)">A POSITIVE (A+)</option>
+                              <option value="A Negative (A-)">A NEGATIVE (A-)</option>
+                              <option value="B Positive (B+)">B POSITIVE (B+)</option>
+                              <option value="B Negative (B-)">B NEGATIVE (B-)</option>
+                              <option value="O Positive (O+)">O POSITIVE (O+)</option>
+                              <option value="O Negative (O-)">O NEGATIVE (O-)</option>
+                              <option value="AB Positive (AB+)">AB POSITIVE (AB+)</option>
+                              <option value="AB Negative (AB-)">AB NEGATIVE (AB-)</option>
                            </select>
 
                            <div class="invalid-feedback">Please select your blood group.</div>
@@ -785,14 +785,14 @@
                               <option selected {{ $applicant->ce_semester ? '' : 'disabled' }} value="{{ $applicant->ce_semester }}">
                                  {{ $applicant->ce_semester ? $applicant->ce_semester : 'Select Semester' }}
                               </option>
-                              <option value="1st">1st</option>
-                              <option value="2nd">2nd</option>
-                              <option value="3rd">3rd</option>
-                              <option value="4th">4th</option>
-                              <option value="5th">5th</option>
-                              <option value="6th">6th</option>
-                              <option value="7th">7th</option>
-                              <option value="8th">8th</option>
+                              <option value="1ST">1ST</option>
+                              <option value="2ND">2ND</option>
+                              <option value="3RD">3RD</option>
+                              <option value="4TH">4TH</option>
+                              <option value="5TH">5TH</option>
+                              <option value="6TH">6TH</option>
+                              <option value="7TH">7TH</option>
+                              <option value="8TH">8TH</option>
                            </select>
 
                            <div class="invalid-feedback">Please select your semester.</div>
@@ -810,10 +810,10 @@
                               <option selected {{ $applicant->ce_technology_trade ? '' : 'disabled' }} value="{{ $applicant->ce_technology_trade }}">
                                  {{ $applicant->ce_technology_trade ? $applicant->ce_technology_trade : 'Select Technology/Trade' }}
                               </option>
-                              <option value="textile machine design & maintenance">Textile Machine Design & Maintenance</option>
-                              <option value="yarn manufacturing">Yarn Manufacturing</option>
-                              <option value="wet processing">Wet Processing</option>
-                              <option value="apparel manufacturing">Apparel Manufacturing</option>
+                              <option value="TEXTILE MACHINE DESIGN & MAINTENANCE">TEXTILE MACHINE DESIGN & MAINTENANCE</option>
+                              <option value="YARN MANUFACTURING">YARN MANUFACTURING</option>
+                              <option value="WET PROCESSING">WET PROCESSING</option>
+                              <option value="APPAREL MANUFACTURING">APPAREL MANUFACTURING</option>
                            </select>
 
                            <div class="invalid-feedback">Please select technology/trade.</div>
@@ -830,8 +830,8 @@
                               <option selected {{ $applicant->ce_shift ? '' : 'disabled' }} value="{{ $applicant->ce_shift }}">
                                  {{ $applicant->ce_shift ? $applicant->ce_shift : 'Select Shift' }}
                               </option>
-                              <option value="morning">Morning</option>
-                              <option value="day">Day</option>
+                              <option value="MORNING">MORNING</option>
+                              <option value="DAY">DAY</option>
                            </select>
 
                            <div class="invalid-feedback">Please select shift.</div>
@@ -891,11 +891,11 @@
                               <option selected {{ $applicant->relationship ? '' : 'disabled' }} value="{{ $applicant->relationship }}">
                                  {{ $applicant->relationship ? $applicant->relationship : 'Select Relationship' }}
                               </option>
-                              <option value="father">Father</option>
-                              <option value="mother">Mother</option>
-                              <option value="brother">Brother</option>
-                              <option value="sister">Sister</option>
-                              <option value="other">Other</option>
+                              <option value="FATHER">FATHER</option>
+                              <option value="MOTHER">MOTHER</option>
+                              <option value="BROTHER">BROTHER</option>
+                              <option value="SISTER">SISTER</option>
+                              <option value="OTHER">OTHER</option>
                            </select>
 
                            <div class="invalid-feedback">Please select relationship.</div>
@@ -1204,8 +1204,8 @@
                                  <option selected {{ $applicant->bank_acc_type ? '' : 'disabled' }} value="{{ $applicant->bank_acc_type }}">
                                     {{ $applicant->bank_acc_type ? $applicant->bank_acc_type : 'Select Account Type' }}
                                  </option>
-                                 <option value="savings">Savings</option>
-                                 <option value="current">Current</option>
+                                 <option value="SAVINGS">SAVINGS</option>
+                                 <option value="CURRENT">CURRENT</option>
                               </select>
 
                               <div class="invalid-feedback">Please select account type.</div>

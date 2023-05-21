@@ -103,14 +103,14 @@
                            <select name="blood_group" id="blood_group" class="form-select" required>
                               <option selected="" value="{{ old('blood_group') ? old('blood_group') : '' }}" {{ old('blood_group') ? '' : 'disabled' }}>
                                  {{ old('blood_group') ? old('blood_group') : 'Select your Blood group' }} </option>
-                              <option value="A Positive (A+)">A Positive (A+)</option>
-                              <option value="A Negative (A-)">A Negative (A-)</option>
-                              <option value="B Positive (B+)">B Positive (B+)</option>
-                              <option value="B Negative (B-)">B Negative (B-)</option>
-                              <option value="O Positive (O+)">O Positive (O+)</option>
-                              <option value="O Negative (O-)">O Negative (O-)</option>
-                              <option value="AB Positive (AB+)">AB Positive (AB+)</option>
-                              <option value="AB Negative (AB-)">AB Negative (AB-)</option>
+                              <option value="A Positive (A+)">A POSITIVE (A+)</option>
+                              <option value="A Negative (A-)">A NEGATIVE (A-)</option>
+                              <option value="B Positive (B+)">B POSITIVE (B+)</option>
+                              <option value="B Negative (B-)">B NEGATIVE (B-)</option>
+                              <option value="O Positive (O+)">O POSITIVE (O+)</option>
+                              <option value="O Negative (O-)">O NEGATIVE (O-)</option>
+                              <option value="AB Positive (AB+)">AB POSITIVE (AB+)</option>
+                              <option value="AB Negative (AB-)">AB NEGATIVE (AB-)</option>
                            </select>
 
                            <div class="invalid-feedback">অনুগ্রহ করে আপনার রক্তের গ্রুপ নির্বাচন করুন।</div>
@@ -537,17 +537,17 @@
                               <option {{ old('pe_board') ? '' : 'disabled' }} selected value="{{ old('pe_board') }}">
                                  {{ old('pe_board') ? old('pe_board') : 'Select Board' }}
                               </option>
-                              <option value="Barisal" class="text-uppercase">Barisal</option>
-                              <option value="Chittagong" class="text-uppercase">Chittagong</option>
-                              <option value="Dhaka" class="text-uppercase">Dhaka</option>
-                              <option value="Comilla" class="text-uppercase">Comilla</option>
-                              <option value="Dinajpur" class="text-uppercase">Dinajpur</option>
-                              <option value="Jessore" class="text-uppercase">Jessore</option>
-                              <option value="Mymensingh" class="text-uppercase">Mymensingh</option>
-                              <option value="Rajshahi" class="text-uppercase">Rajshahi</option>
-                              <option value="Sylhet" class="text-uppercase">Sylhet</option>
-                              <option value="Bangladesh Madrasah Education Board" class="text-uppercase">Bangladesh Madrasah Education Board</option>
-                              <option value="Bangladesh Technical Education Board" class="text-uppercase">Bangladesh Technical Education Board</option>
+                              <option value="BARISAL" class="text-uppercase">BARISAL</option>
+                              <option value="CHITTAGONG" class="text-uppercase">CHITTAGONG</option>
+                              <option value="DHAKA" class="text-uppercase">DHAKA</option>
+                              <option value="COMILLA" class="text-uppercase">COMILLA</option>
+                              <option value="DINAJPUR" class="text-uppercase">DINAJPUR</option>
+                              <option value="JESSORE" class="text-uppercase">JESSORE</option>
+                              <option value="MYMENSINGH" class="text-uppercase">MYMENSINGH</option>
+                              <option value="RAJSHAHI" class="text-uppercase">RAJSHAHI</option>
+                              <option value="SYLHET" class="text-uppercase">SYLHET</option>
+                              <option value="BANGLADESH MADRASAH EDUCATION BOARD" class="text-uppercase">BANGLADESH MADRASAH EDUCATION BOARD</option>
+                              <option value="BANGLADESH TECHNICAL EDUCATION BOARD" class="text-uppercase">BANGLADESH TECHNICAL EDUCATION BOARD</option>
                            </select>
 
                            <div class="invalid-feedback">অনুগ্রহ করে বোর্ড নির্বাচন করুন।</div>
@@ -732,14 +732,14 @@
                               <option selected {{ old('ce_semester') ? '' : 'disabled' }} value="{{ old('ce_semester') }}">
                                  {{ old('ce_semester') ? old('ce_semester') : 'Select Semester' }}
                               </option>
-                              <option value="1st">1st</option>
-                              <option value="2nd">2nd</option>
-                              <option value="3rd">3rd</option>
-                              <option value="4th">4th</option>
-                              <option value="5th">5th</option>
-                              <option value="6th">6th</option>
-                              <option value="7th">7th</option>
-                              <option value="8th">8th</option>
+                              <option value="1ST">1ST</option>
+                              <option value="2ND">2ND</option>
+                              <option value="3RD">3RD</option>
+                              <option value="4TH">4TH</option>
+                              <option value="5TH">5TH</option>
+                              <option value="6TH">6TH</option>
+                              <option value="7TH">7TH</option>
+                              <option value="8TH">8TH</option>
                            </select>
 
                            <div class="invalid-feedback">অনুগ্রহ করে সেমিষ্টার নির্বাচন করুন।</div>
@@ -757,10 +757,10 @@
                               <option selected {{ old('ce_technology_trade') ? '' : 'disabled' }} value="{{ old('ce_technology_trade') }}">
                                  {{ old('ce_technology_trade') ? old('ce_technology_trade') : 'Select Technology/Trade' }}
                               </option>
-                              <option value="textile machine design & maintenance">Textile Machine Design & Maintenance</option>
-                              <option value="yarn manufacturing">Yarn Manufacturing</option>
-                              <option value="wet processing">Wet Processing</option>
-                              <option value="apparel manufacturing">Apparel Manufacturing</option>
+                              <option value="TEXTILE MACHINE DESIGN & MAINTENANCE">TEXTILE MACHINE DESIGN & MAINTENANCE</option>
+                              <option value="YARN MANUFACTURING">YARN MANUFACTURING</option>
+                              <option value="WET PROCESSING">WET PROCESSING</option>
+                              <option value="APPAREL MANUFACTURING">APPAREL MANUFACTURING</option>
                            </select>
 
                            <div class="invalid-feedback">অনুগ্রহ করে টেকনোলজি/ট্রেড নির্বাচন করুন।</div>
@@ -777,8 +777,8 @@
                               <option selected {{ old('ce_shift') ? '' : 'disabled' }} value="{{ old('ce_shift') }}">
                                  {{ old('ce_shift') ? old('ce_shift') : 'Select Shift' }}
                               </option>
-                              <option value="morning">Morning</option>
-                              <option value="day">Day</option>
+                              <option value="MORNING">MORNING</option>
+                              <option value="DAY">DAY</option>
                            </select>
 
                            <div class="invalid-feedback">অনুগ্রহ করে শিফট নির্বাচন করুন।</div>
@@ -838,11 +838,11 @@
                               <option selected {{ old('relationship') ? '' : 'disabled' }} value="{{ old('relationship') }}">
                                  {{ old('relationship') ? old('relationship') : 'Select Relationship' }}
                               </option>
-                              <option value="father">Father</option>
-                              <option value="mother">Mother</option>
-                              <option value="brother">Brother</option>
-                              <option value="sister">Sister</option>
-                              <option value="other">Other</option>
+                              <option value="FATHER">FATHER</option>
+                              <option value="MOTHER">MOTHER</option>
+                              <option value="BROTHER">BROTHER</option>
+                              <option value="SISTER">SISTER</option>
+                              <option value="OTHER">OTHER</option>
                            </select>
 
                            <div class="invalid-feedback">অনুগ্রহ করে অভিভাবকের সাথে সম্পর্ক নির্বাচন করুন।</div>
@@ -1151,8 +1151,8 @@
                                  <option selected {{ old('bank_acc_type') ? '' : 'disabled' }} value="{{ old('bank_acc_type') }}">
                                     {{ old('bank_acc_type') ? old('bank_acc_type') : 'Select Account Type' }}
                                  </option>
-                                 <option value="savings">Savings</option>
-                                 <option value="current">Current</option>
+                                 <option value="SAVINGS">SAVINGS</option>
+                                 <option value="CURRENT">CURRENT</option>
                               </select>
 
                               <div class="invalid-feedback">এ্যাকাউন্ট এর ধরন নির্বাচন করুন।</div>
