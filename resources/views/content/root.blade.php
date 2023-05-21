@@ -43,8 +43,7 @@
                   <div class="card-body">
                      <h4 class="card-title text-center">Teachers</h4>
                      <p class="card-text text-white-50">
-                        If you're a student, you can fill out this form to submit your educational information to
-                        your institute.
+                        If you are a teacher with login privileges, you can access the dashboard and manage the data of applicants.
                      </p>
                   </div>
                </div>
@@ -57,6 +56,8 @@
       <p class="text-center">
          Copyright © 2022 <a href="/">Textile Institute Dinajpur</a> | Powered by <a href="https://codebumble.net" rel="dofollow">Codebumble
             Inc.</a>
+         <br>
+         Version: v2.225115
       </p>
    </div>
 @endsection
