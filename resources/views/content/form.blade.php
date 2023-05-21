@@ -103,14 +103,14 @@
                            <select name="blood_group" id="blood_group" class="form-select" required>
                               <option selected="" value="{{ old('blood_group') ? old('blood_group') : '' }}" {{ old('blood_group') ? '' : 'disabled' }}>
                                  {{ old('blood_group') ? old('blood_group') : 'Select your Blood group' }} </option>
-                              <option value="A Positive (A+)">A POSITIVE (A+)</option>
-                              <option value="A Negative (A-)">A NEGATIVE (A-)</option>
-                              <option value="B Positive (B+)">B POSITIVE (B+)</option>
-                              <option value="B Negative (B-)">B NEGATIVE (B-)</option>
-                              <option value="O Positive (O+)">O POSITIVE (O+)</option>
-                              <option value="O Negative (O-)">O NEGATIVE (O-)</option>
-                              <option value="AB Positive (AB+)">AB POSITIVE (AB+)</option>
-                              <option value="AB Negative (AB-)">AB NEGATIVE (AB-)</option>
+                              <option value="A POSITIVE (A+)">A POSITIVE (A+)</option>
+                              <option value="A NEGATIVE (A-)">A NEGATIVE (A-)</option>
+                              <option value="B POSITIVE (B+)">B POSITIVE (B+)</option>
+                              <option value="B NEGATIVE (B-)">B NEGATIVE (B-)</option>
+                              <option value="O POSITIVE (O+)">O POSITIVE (O+)</option>
+                              <option value="O NEGATIVE (O-)">O NEGATIVE (O-)</option>
+                              <option value="AB POSITIVE (AB+)">AB POSITIVE (AB+)</option>
+                              <option value="AB NEGATIVE (AB-)">AB NEGATIVE (AB-)</option>
                            </select>
 
                            <div class="invalid-feedback">অনুগ্রহ করে আপনার রক্তের গ্রুপ নির্বাচন করুন।</div>
@@ -125,13 +125,13 @@
                            <label class="form-label">লিঙ্গ</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="male" class="form-check-input" type="radio" name="gender" value="male" required
+                                 <input id="male" class="form-check-input" type="radio" name="gender" value="MALE" required
                                     {{ old('gender') == 'male' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="male">ছেলে</label>
 
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="female" class="form-check-input" type="radio" name="gender" value="female" required
+                                 <input id="female" class="form-check-input" type="radio" name="gender" value="FEMALE" required
                                     {{ old('gender') == 'female' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="female">মেয়ে</label>
                               </div>
@@ -147,12 +147,12 @@
                            <label class="form-label">বৈবাহিক অবস্থা</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="married" class="form-check-input" type="radio" name="marital_status" value="married" required
+                                 <input id="married" class="form-check-input" type="radio" name="marital_status" value="MARRIED" required
                                     {{ old('marital_status') == 'married' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="married">বিবাহিত</label>
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="unmarried" class="form-check-input" type="radio" name="marital_status" value="unmarried" required
+                                 <input id="unmarried" class="form-check-input" type="radio" name="marital_status" value="UNMARRIED" required
                                     {{ old('marital_status') == 'unmarried' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="unmarried">অবিবাহিত</label>
                               </div>
@@ -928,18 +928,18 @@
                            <label class="form-label">পড়াশোনার খরচ বহন করবে - </label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="cost-father" class="form-check-input" type="radio" name="cost_borne" value="Father" required
+                                 <input id="cost-father" class="form-check-input" type="radio" name="cost_borne" value="FATHER" required
                                     {{ old('cost_borne') == 'Father' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="cost-father">Father</label>
 
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="cost-mother" class="form-check-input" type="radio" name="cost_borne" value="Mother" required
+                                 <input id="cost-mother" class="form-check-input" type="radio" name="cost_borne" value="MOTHER" required
                                     {{ old('cost_borne') == 'Mother' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="cost-mother">Mother</label>
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="cost-guardian" class="form-check-input" type="radio" name="cost_borne" value="Guardian" required
+                                 <input id="cost-guardian" class="form-check-input" type="radio" name="cost_borne" value="GUARDIAN" required
                                     {{ old('cost_borne') == 'Guardian' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="cost-guardian">Guardian</label>
 
@@ -959,13 +959,13 @@
                            <label class="form-label">ক্ষুদ্র নৃ-গোষ্ঠীর অন্তর্ভুক্ত -</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="ethnic-yes" class="form-check-input" type="radio" name="ethnic" value="yes" required
+                                 <input id="ethnic-yes" class="form-check-input" type="radio" name="ethnic" value="YES" required
                                     {{ old('ethnic') == 'yes' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="ethnic-yes">Yes</label>
 
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="ethnic-no" class="form-check-input" type="radio" name="ethnic" value="no" required
+                                 <input id="ethnic-no" class="form-check-input" type="radio" name="ethnic" value="NO" required
                                     {{ old('ethnic') == 'no' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="ethnic-no">No</label>
                               </div>
@@ -980,13 +980,13 @@
                            <label class="form-label">মুক্তিযোদ্ধা প্রজন্ম -</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="ffq-yes" class="form-check-input" type="radio" name="ffq" value="yes" required
+                                 <input id="ffq-yes" class="form-check-input" type="radio" name="ffq" value="YES" required
                                     {{ old('ffq') == 'yes' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="ffq-yes">Yes</label>
 
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="ffq-no" class="form-check-input" type="radio" name="ffq" value="no" required
+                                 <input id="ffq-no" class="form-check-input" type="radio" name="ffq" value="NO" required
                                     {{ old('ffq') == 'no' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="ffq-no">No</label>
                               </div>
@@ -1001,13 +1001,13 @@
                            <label class="form-label">অন্য কোনো বৃত্তি/উপবৃত্তি পান?</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="scholarship-yes" class="form-check-input" type="radio" name="scholarship" value="yes" required
+                                 <input id="scholarship-yes" class="form-check-input" type="radio" name="scholarship" value="YES" required
                                     {{ old('scholarship') == 'yes' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="scholarship-yes">Yes</label>
 
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="scholarship-no" class="form-check-input" type="radio" name="scholarship" value="no" required
+                                 <input id="scholarship-no" class="form-check-input" type="radio" name="scholarship" value="NO" required
                                     {{ old('scholarship') == 'no' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="scholarship-no">No</label>
                               </div>
@@ -1022,13 +1022,13 @@
                            <label class="form-label">কোনো শারীরিক প্রতিবন্ধকতা আছে?</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="disabilities-yes" class="form-check-input" type="radio" name="disabilities" value="yes" required
+                                 <input id="disabilities-yes" class="form-check-input" type="radio" name="disabilities" value="YES" required
                                     {{ old('disabilities') == 'yes' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="disabilities-yes">Yes</label>
 
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="disabilities-no" class="form-check-input" type="radio" name="disabilities" value="no" required
+                                 <input id="disabilities-no" class="form-check-input" type="radio" name="disabilities" value="NO" required
                                     {{ old('disabilities') == 'no' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="disabilities-no">No</label>
                               </div>
@@ -1048,13 +1048,13 @@
                            <label class="form-label">পেমেন্ট মেথড</label>
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
-                                 <input id="payment-mobile" class="form-check-input" type="radio" name="payment_method" value="mobile banking" required
+                                 <input id="payment-mobile" class="form-check-input" type="radio" name="payment_method" value="MOBILE BANKING" required
                                     checked {{ old('payment_method') == 'mobile-banking' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="payment-mobile">Mobile Banking</label>
 
                               </div>
                               <div class="form-check form-check-inline">
-                                 <input id="payment-bank" class="form-check-input" type="radio" name="payment_method" value="banking" required
+                                 <input id="payment-bank" class="form-check-input" type="radio" name="payment_method" value="BANKING" required
                                     {{ old('payment_method') == 'banking' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="payment-bank">Banking</label>
                               </div>
