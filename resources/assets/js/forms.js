@@ -860,3 +860,12 @@ $(function () {
 		});
 	}
 });
+
+
+
+var inputFields = document.querySelectorAll('input[type="text"]:not(.bn)');
+inputFields.forEach(function (input) {
+	input.addEventListener('keyup', function () {
+		this.value = this.value.toUpperCase();
+	});
+});

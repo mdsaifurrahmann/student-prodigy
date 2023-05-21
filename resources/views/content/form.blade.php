@@ -38,7 +38,7 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="student_name_bangla-column">শিক্ষার্থীর নাম (বাংলায়)</label>
-                           <input type="text" id="student_name_bangla-column" class="form-control" placeholder="শাকিল আহমেদ" name="student_name_bangla" required
+                           <input type="text" id="student_name_bangla-column" class="form-control bn" placeholder="শাকিল আহমেদ" name="student_name_bangla" required
                               pattern="[\s\u0980-\u09FF]+$" value="{{ old('student_name_bangla') }}">
 
                            <div class="invalid-feedback">অনুগ্রহ করে আপনার নামটি বাংলায় লিখুন।</div>
@@ -173,7 +173,7 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="father_name_bangla-column">পিতার নাম (বাংলায়)</label>
-                           <input type="text" id="father_name_bangla-column" class="form-control" placeholder="সাইমন হাসান সানি" name="father_name_bangla"
+                           <input type="text" id="father_name_bangla-column" class="form-control bn" placeholder="সাইমন হাসান সানি" name="father_name_bangla"
                               pattern="[\s\u0980-\u09FF]+$" required value="{{ old('father_name_bangla') }}">
 
                            <div class="invalid-feedback">অনুগ্রহ করে বাংলায় আপনার পিতার নাম লিখুন।</div>
@@ -196,7 +196,7 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="mother_name_bangla-column">মাতার নাম (বাংলায়)</label>
-                           <input type="text" id="mother_name_bangla-column" class="form-control" placeholder="তটিনি" name="mother_name_bangla" required
+                           <input type="text" id="mother_name_bangla-column" class="form-control bn" placeholder="তটিনি" name="mother_name_bangla" required
                               pattern="[\s\u0980-\u09FF]+$" value="{{ old('mother_name_bangla') }}">
                            <div class="invalid-feedback">অনুগ্রহ করে বাংলায় আপনার মাতার নাম লিখুন।</div>
                            @error('mother_name_bangla')
@@ -855,7 +855,7 @@
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
                            <label for="guardian_name_bangla" class="form-label">অভিভাবকের নাম (বাংলায়)</label>
-                           <input type="text" id="guardian_name_bangla" name="guardian_name_bangla" class="form-control" placeholder="ফজলে রাব্বি" required
+                           <input type="text" id="guardian_name_bangla" name="guardian_name_bangla" class="form-control bn" placeholder="ফজলে রাব্বি" required
                               pattern="[\s\u0980-\u09FF]+$" value="{{ old('guardian_name_bangla') }}">
 
                            <div class="invalid-feedback">অনুগ্রহ করে অভিভাবকের নাম বাংলায় লিখুন।</div>
@@ -1248,4 +1248,5 @@
    <!-- Page js files -->
    <script src="{{ asset(mix('js/scripts/forms/pickers/student-form-pickers.js')) }}"></script>
    <script src="{{ asset(mix('js/core/forms.js')) }}"></script>
+
 @endsection
