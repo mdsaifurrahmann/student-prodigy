@@ -336,7 +336,7 @@ class FormHandlerController extends Controller
       $signature_image_path = $applicant->signature_image_path;
       // Hanfle the file name for Database
 
-      if ($request->hasFIle('formal_image')) {
+      if ($request->hasFile('formal_image')) {
          if (File::exists(public_path('student-images/formal-images/') . $formal_image_path)) {
             File::delete(public_path('student-images/formal-images/') . $formal_image_path);
          }
@@ -354,7 +354,7 @@ class FormHandlerController extends Controller
       }
 
 
-      if ($request->hasFIle('signature_image')) {
+      if ($request->hasFile('signature_image')) {
          if (File::exists(public_path('student-images/signature-images/') . $signature_image_path)) {
             File::delete(public_path('student-images/signature-images/') . $signature_image_path);
          }
@@ -371,11 +371,11 @@ class FormHandlerController extends Controller
       // update data to database
       formHandler::findOrFail($id)->update($request->all() + ['formal_image_path' => $formal_image_name_handler] + ['signature_image_path' => $signature_image_name_handler]);
 
-      if ($request->hasFIle('formal_image')) {
+      if ($request->hasFile('formal_image')) {
          $request->formal_image->move(public_path('/student-images/formal-images/'), $formal_image_name_handler);
       }
 
-      if ($request->hasFIle('signature_image')) {
+      if ($request->hasFile('signature_image')) {
          $request->signature_image->move(public_path('student-images/signature-images/'), $signature_image_name_handler);
       }
 
