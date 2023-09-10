@@ -127,12 +127,12 @@ class FormHandlerController extends Controller
 
       // Handle the file name for Database
       $signature_image_name_handler = time() . Str::upper(Str::random(16)) . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_reg') . '.' .  $request->signature_image->extension();
-      // move the file
-      $request->signature_image->move(public_path('student-images/signature-images/'), $signature_image_name_handler);
-
 
       // Insert data to database
       formHandler::create($request->all() + ['formal_image_path' => $formal_image_name_handler] + ['signature_image_path' => $signature_image_name_handler]);
+
+      // move the file
+      $request->signature_image->move(public_path('student-images/signature-images/'), $signature_image_name_handler);
 
       // redirect to confirmation page
       return redirect()->route('confirm', ['id' => $request->input('ce_reg')])->with('success', 'Data saved successfully!')->withInput();
@@ -348,7 +348,7 @@ class FormHandlerController extends Controller
             $request->input('student_name_english')
          ) . '-' . $request->input('ce_roll') . '.' .  $request->formal_image->extension();
          // move the file
-         $request->formal_image->move(public_path('/student-images/formal-images/'), $formal_image_name_handler);
+         // $request->formal_image->move(public_path('/student-images/formal-images/'), $formal_image_name_handler);
       } else {
          $formal_image_name_handler = $formal_image_path;
       }
@@ -362,7 +362,7 @@ class FormHandlerController extends Controller
          // Handle the file name for Database
          $signature_image_name_handler = time() . Str::upper(Str::random(16)) . '_' . 'student-' . Str::replace(' ', '_', $request->input('student_name_english')) . '-' . $request->input('ce_reg') . '.' .  $request->signature_image->extension();
          // move the file
-         $request->signature_image->move(public_path('student-images/signature-images/'), $signature_image_name_handler);
+         // $request->signature_image->move(public_path('student-images/signature-images/'), $signature_image_name_handler);
       } else {
          $signature_image_name_handler = $signature_image_path;
       }
@@ -370,6 +370,14 @@ class FormHandlerController extends Controller
 
       // update data to database
       formHandler::findOrFail($id)->update($request->all() + ['formal_image_path' => $formal_image_name_handler] + ['signature_image_path' => $signature_image_name_handler]);
+
+      if ($request->hasFIle('formal_image')) {
+         $request->formal_image->move(public_path('/student-images/formal-images/'), $formal_image_name_handler);
+      }
+
+      if ($request->hasFIle('signature_image')) {
+         $request->signature_image->move(public_path('student-images/signature-images/'), $signature_image_name_handler);
+      }
 
       // redirect to confirmation page
       return redirect()->route('applicant-details', ['id' => $id])->with('success', 'Data updated successfully!');
