@@ -99,8 +99,8 @@ return new class extends Migration
          $table->text('mobile_bank_provider')->nullable();
          $table->text('mobile_bank_account')->nullable();
 
-         $table->text('mobile_bank_account_holder')->required();
-         $table->text('mobile_bank_holder_nid')->required();
+         $table->text('mobile_bank_account_holder')->nullable();
+         $table->text('mobile_bank_holder_nid')->nullable();
 
          $table->text('bank_name')->nullable();
          $table->text('bank_branch')->nullable();

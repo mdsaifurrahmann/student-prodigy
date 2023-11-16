@@ -1167,8 +1167,8 @@
                         <div class="col-md-6 col-12">
                            <div class="mb-1">
                               <label class="form-label" for="mobile_bank_account_holder">Account Holder Name</label>
-                              <input type="text" id="mobile_bank_account_holder" class="form-control" name="mobile_bank_account_holder"
-                                 placeholder="Abdus Salam" required value="{{ $applicant->mobile_bank_account_holder }}">
+                              <input type="text" id="mobile_bank_account_holder" class="form-control mobile-unchecked" name="mobile_bank_account_holder"
+                                 placeholder="Abdus Salam" value="{{ $applicant->mobile_bank_account_holder }}">
 
                               <div class="invalid-feedback">Please enter Account Holder name'</div>
                               @error('mobile_bank_account_holder')
@@ -1180,8 +1180,8 @@
                         <div class="col-md-6 col-12">
                            <div class="mb-1">
                               <label class="form-label" for="mobile_bank_holder_nid">Account Holder's NID Number</label>
-                              <input type="text" id="mobile_bank_holder_nid" class="form-control" name="mobile_bank_holder_nid" placeholder="123 123 1234"
-                                 pattern="[0-9]{9,20}" required value="{{ $applicant->mobile_bank_holder_nid }}">
+                              <input type="text" id="mobile_bank_holder_nid" class="form-control mobile-unchecked" name="mobile_bank_holder_nid"
+                                 placeholder="123 123 1234" pattern="[0-9]{9,20}" value="{{ $applicant->mobile_bank_holder_nid }}">
 
                               <div class="invalid-feedback">Please enter Account Holder's NID numebr</div>
                               @error('mobile_bank_holder_nid')

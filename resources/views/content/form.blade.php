@@ -1114,8 +1114,8 @@
                         <div class="col-md-6 col-12">
                            <div class="mb-1">
                               <label class="form-label" for="mobile_bank_account_holder">এ্যাকাউন্টধারীর নাম</label>
-                              <input type="text" id="mobile_bank_account_holder" class="form-control" name="mobile_bank_account_holder"
-                                 placeholder="Abdus Salam" required value="{{ old('mobile_bank_account_holder') }}">
+                              <input type="text" id="mobile_bank_account_holder" class="form-control mobile-unchecked" name="mobile_bank_account_holder"
+                                 placeholder="Abdus Salam" value="{{ old('mobile_bank_account_holder') }}">
 
                               <div class="invalid-feedback">অনুগ্রহ করে মোবাইল ব্যাংকিং এ্যাকাউন্টধারীর নাম লিখুন।</div>
                               @error('mobile_bank_account_holder')
@@ -1127,8 +1127,8 @@
                         <div class="col-md-6 col-12">
                            <div class="mb-1">
                               <label class="form-label" for="mobile_bank_holder_nid">এ্যাকাউন্টধারীর NID নম্বর</label>
-                              <input type="text" id="mobile_bank_holder_nid" class="form-control" name="mobile_bank_holder_nid" placeholder="123 123 1234"
-                                 pattern="[0-9]{9,20}" required value="{{ old('mobile_bank_holder_nid') }}">
+                              <input type="text" id="mobile_bank_holder_nid" class="form-control mobile-unchecked" name="mobile_bank_holder_nid"
+                                 placeholder="123 123 1234" pattern="[0-9]{9,20}" value="{{ old('mobile_bank_holder_nid') }}">
 
                               <div class="invalid-feedback">অনুগ্রহ করে মোবাইল ব্যাংকিং এ্যাকাউন্টধারীর NID নম্বরটি লিখুন।</div>
                               @error('mobile_bank_holder_nid')
