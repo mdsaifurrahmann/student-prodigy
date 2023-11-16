@@ -179,13 +179,13 @@
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="male" class="form-check-input" type="radio" name="gender" value="MALE" required
-                                    {{ $applicant->gender == 'male' ? 'checked' : '' }}>
+                                    {{ $applicant->gender == 'MALE' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="male">Male</label>
 
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="female" class="form-check-input" type="radio" name="gender" value="FEMALE" required
-                                    {{ $applicant->gender == 'female' ? 'checked' : '' }}>
+                                    {{ $applicant->gender == 'FEMALE' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="female">Female</label>
                               </div>
 
@@ -201,12 +201,12 @@
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="married" class="form-check-input" type="radio" name="marital_status" value="MARRIED" required
-                                    {{ $applicant->marital_status == 'married' ? 'checked' : '' }}>
+                                    {{ $applicant->marital_status == 'MARRIED' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="married">Married</label>
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="unmarried" class="form-check-input" type="radio" name="marital_status" value="UNMARRIED" required
-                                    {{ $applicant->marital_status == 'unmarried' ? 'checked' : '' }}>
+                                    {{ $applicant->marital_status == 'UNMARRIED' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="unmarried">Unmarried</label>
                               </div>
 
@@ -764,7 +764,7 @@
                         </div>
                      </div>
 
-                     <div class="col-md-4 col-12">
+                     <div class="col-md-3 col-12">
                         <div class="mb-1">
                            <label for="ce_institute_name" class="form-label">Institute Name</label>
                            <input type="text" name="ce_institute_name" id="ce_institute_name" class="form-control" placeholder="Textile Institute Dinajpur"
@@ -778,7 +778,7 @@
                         </div>
                      </div>
 
-                     <div class="col-md-4 col-12">
+                     <div class="col-md-3 col-12">
                         <div class="mb-1">
                            <label for="ce_semester" class="form-label">Semester</label>
                            <select name="ce_semester" id="ce_semester" class="form-select" required>
@@ -803,7 +803,7 @@
                         </div>
                      </div>
 
-                     <div class="col-md-4 col-12">
+                     <div class="col-md-3 col-12">
                         <div class="mb-1">
                            <label for="ce_technology_trade" class="form-label">Technology/Trade</label>
                            <select name="ce_technology_trade" id="ce_technology_trade" class="form-select" required>
@@ -818,6 +818,19 @@
 
                            <div class="invalid-feedback">Please select technology/trade.</div>
                            @error('ce_technology_trade')
+                              <div class="text-danger">{{ $message }}</div>
+                           @enderror
+                        </div>
+                     </div>
+
+                     <div class="col-md-3 col-12">
+                        <div class="mb-1">
+                           <label for="ce_session" class="form-label">Session year</label>
+                           <input type="text" id="ce_session" name="ce_session" class="form-control" required placeholder="18-19" pattern="\d{2}-\d{2}"
+                              value="{{ $applicant->ce_session }}">
+
+                           <div class="invalid-feedback">Please enter your session year</div>
+                           @error('ce_session')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -982,18 +995,18 @@
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="cost-father" class="form-check-input" type="radio" name="cost_borne" value="FATHER" required
-                                    {{ $applicant->cost_borne == 'Father' ? 'checked' : '' }}>
+                                    {{ $applicant->cost_borne == 'FATHER' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="cost-father">Father</label>
 
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="cost-mother" class="form-check-input" type="radio" name="cost_borne" value="MOTHER" required
-                                    {{ $applicant->cost_borne == 'Mother' ? 'checked' : '' }}>
+                                    {{ $applicant->cost_borne == 'MOTHER' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="cost-mother">Mother</label>
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="cost-guardian" class="form-check-input" type="radio" name="cost_borne" value="GUARDIAN" required
-                                    {{ $applicant->cost_borne == 'Guardian' ? 'checked' : '' }}>
+                                    {{ $applicant->cost_borne == 'GUARDIAN' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="cost-guardian">Guardian</label>
 
 
@@ -1013,13 +1026,13 @@
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="ethnic-yes" class="form-check-input" type="radio" name="ethnic" value="YES" required
-                                    {{ $applicant->ethnic == 'yes' ? 'checked' : '' }}>
+                                    {{ $applicant->ethnic == 'YES' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="ethnic-yes">Yes</label>
 
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="ethnic-no" class="form-check-input" type="radio" name="ethnic" value="NO" required
-                                    {{ $applicant->ethnic == 'no' ? 'checked' : '' }}>
+                                    {{ $applicant->ethnic == 'NO' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="ethnic-no">No</label>
                               </div>
                            </div>
@@ -1034,13 +1047,13 @@
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="ffq-yes" class="form-check-input" type="radio" name="ffq" value="YES" required
-                                    {{ $applicant->ffq == 'yes' ? 'checked' : '' }}>
+                                    {{ $applicant->ffq == 'YES' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="ffq-yes">Yes</label>
 
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="ffq-no" class="form-check-input" type="radio" name="ffq" value="NO" required
-                                    {{ $applicant->ffq == 'no' ? 'checked' : '' }}>
+                                    {{ $applicant->ffq == 'NO' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="ffq-no">No</label>
                               </div>
                            </div>
@@ -1055,13 +1068,13 @@
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="scholarship-yes" class="form-check-input" type="radio" name="scholarship" value="YES" required
-                                    {{ $applicant->scholarship == 'yes' ? 'checked' : '' }}>
+                                    {{ $applicant->scholarship == 'YES' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="scholarship-yes">Yes</label>
 
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="scholarship-no" class="form-check-input" type="radio" name="scholarship" value="NO" required
-                                    {{ $applicant->scholarship == 'no' ? 'checked' : '' }}>
+                                    {{ $applicant->scholarship == 'NO' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="scholarship-no">No</label>
                               </div>
                            </div>
@@ -1076,13 +1089,13 @@
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="disabilities-yes" class="form-check-input" type="radio" name="disabilities" value="YES" required
-                                    {{ $applicant->disabilities == 'yes' ? 'checked' : '' }}>
+                                    {{ $applicant->disabilities == 'YES' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="disabilities-yes">Yes</label>
 
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="disabilities-no" class="form-check-input" type="radio" name="disabilities" value="NO" required
-                                    {{ $applicant->disabilities == 'no' ? 'checked' : '' }}>
+                                    {{ $applicant->disabilities == 'NO' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="disabilities-no">No</label>
                               </div>
                            </div>
@@ -1102,13 +1115,13 @@
                            <div class="demo-inline-spacing">
                               <div class="form-check form-check-inline">
                                  <input id="payment-mobile" class="form-check-input" type="radio" name="payment_method" value="MOBILE BANKING" required
-                                    checked {{ $applicant->payment_method == 'mobile-banking' ? 'checked' : '' }}>
+                                    checked {{ $applicant->payment_method == 'MOBILE BANKING' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="payment-mobile">Mobile Banking</label>
 
                               </div>
                               <div class="form-check form-check-inline">
                                  <input id="payment-bank" class="form-check-input" type="radio" name="payment_method" value="BANKING" required
-                                    {{ $applicant->payment_method == 'banking' ? 'checked' : '' }}>
+                                    {{ $applicant->payment_method == 'BANKING' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="payment-bank">Banking</label>
                               </div>
                            </div>
@@ -1151,6 +1164,32 @@
                            </div>
                         </div>
 
+                        <div class="col-md-6 col-12">
+                           <div class="mb-1">
+                              <label class="form-label" for="mobile_bank_account_holder">Account Holder Name</label>
+                              <input type="text" id="mobile_bank_account_holder" class="form-control" name="mobile_bank_account_holder"
+                                 placeholder="Abdus Salam" required value="{{ $applicant->mobile_bank_account_holder }}">
+
+                              <div class="invalid-feedback">Please enter Account Holder name'</div>
+                              @error('mobile_bank_account_holder')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                           <div class="mb-1">
+                              <label class="form-label" for="mobile_bank_holder_nid">Account Holder's NID Number</label>
+                              <input type="text" id="mobile_bank_holder_nid" class="form-control" name="mobile_bank_holder_nid" placeholder="123 123 1234"
+                                 pattern="[0-9]{9,20}" required value="{{ $applicant->mobile_bank_holder_nid }}">
+
+                              <div class="invalid-feedback">Please enter Account Holder's NID numebr</div>
+                              @error('mobile_bank_holder_nid')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
+                        </div>
+
                      </div>
 
 
@@ -1176,8 +1215,8 @@
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
                               <label class="form-label" for="bank_branch">Branch</label>
-                              <input type="text" id="bank_branch" class="form-control banking-unchecked" name="bank_branch" placeholder="Dinajpur" required
-                                 value="{{ $applicant->bank_branch }}">
+                              <input type="text" id="bank_branch" class="form-control banking-unchecked" name="bank_branch" placeholder="Dinajpur"
+                                 required value="{{ $applicant->bank_branch }}">
 
                               <div class="invalid-feedback">Please enter branch.</div>
                               @error('bank_branch')

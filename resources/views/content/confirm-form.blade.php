@@ -8,7 +8,7 @@
 
 @section('content')
    <div class="row no-print">
-      <div class="col-12 d-flex align-items-md-center justify-content-center flex-column py-3 px-2">
+      <div class="col-12 d-flex align-items-md-center justify-content-center flex-column px-2 py-3">
 
          {{-- Success Message --}}
          @if (session('success'))
@@ -214,20 +214,20 @@
                         <tr>
                            <th class="w-25">Roll:</th>
                            <td>{{ old('pe_roll') }} </td>
-                           <th class="w-25">Shift:</th>
-                           <td>{{ old('ce_shift') }} </td>
+                           <th class="w-25">Registration:</th>
+                           <td>{{ old('ce_reg') }} </td>
                         </tr>
                         <tr>
                            <th class="w-25">Result (GPA):</th>
                            <td>{{ old('pe_gpa') }} </td>
-                           <th class="w-25"></th>
-                           <td></td>
+                           <th class="w-25">Group</th>
+                           <td>{{ old('ce_group') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Attendance Rate:</th>
                            <td>{{ old('pe_att_rate') }} </td>
-                           <th class="w-25"></th>
-                           <td></td>
+                           <th class="w-25">Session Year</th>
+                           <td>{{ old('ce_session') }}</td>
                         </tr>
                      </tbody>
                      <thead>
@@ -304,14 +304,14 @@
                         <tr>
                            <th class="w-25">Bank Routing Number:</th>
                            <td>{{ old('bank_routing') }}</td>
-                           <th class="w-25"></th>
-                           <td></td>
+                           <th class="w-25">Mobile Banking Account Holder Name:</th>
+                           <td>{{ old('mobile_bank_account_holder') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Account Type:</th>
                            <td>{{ old('bank_acc_type') }}</td>
-                           <th class="w-25"></th>
-                           <td></td>
+                           <th class="w-25">Mobile Banking Account Holder NID:</th>
+                           <td>{{ old('mobile_bank_holder_nid') }}</td>
                         </tr>
                         <tr>
                            <th class="w-25">Account Holder Name:</th>

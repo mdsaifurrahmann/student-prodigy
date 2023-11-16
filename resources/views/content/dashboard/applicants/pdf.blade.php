@@ -273,8 +273,8 @@
                   <tr>
                      <th class="w-25">Attendance Rate:</th>
                      <td>{{ !str_contains($previousUrl, 'PreviousAttendanceRate') ? $applicant->pe_att_rate : '' }} </td>
-                     <th class="w-25"></th>
-                     <td></td>
+                     <th class="w-25">Session Year</th>
+                     <td>{{ !str_contains($previousUrl, 'SessionYear') ? $applicant->ce_session : '' }}</td>
                   </tr>
                   <tr>
                      <th colspan="2" class="bold text-center">Guardian's Information</th>
@@ -343,14 +343,14 @@
                   <tr>
                      <th class="w-25">Bank Routing Number:</th>
                      <td>{{ !str_contains($previousUrl, 'BankRoutingNumber') ? $applicant->bank_routing : '' }}</td>
-                     <th class="w-25"></th>
-                     <td></td>
+                     <th class="w-25">Mobile Banking Account Number:</th>
+                     <td>{{ !str_contains($previousUrl, 'MobileBankingAccountHolderName') ? $applicant->mobile_bank_account_holder : '' }}</td>
                   </tr>
                   <tr>
                      <th class="w-25">Account Type:</th>
                      <td>{{ !str_contains($previousUrl, 'BankAccountType') ? $applicant->bank_acc_type : '' }}</td>
-                     <th class="w-25"></th>
-                     <td></td>
+                     <th class="w-25">Mobile Banking Account Number:</th>
+                     <td>{{ !str_contains($previousUrl, 'MobileBankingAccountHolderNIDnumber') ? $applicant->mobile_bank_holder_nid : '' }}</td>
                   </tr>
                   <tr>
                      <th class="w-25">Account Holder Name:</th>

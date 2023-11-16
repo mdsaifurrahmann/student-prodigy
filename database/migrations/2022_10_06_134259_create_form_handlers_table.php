@@ -73,6 +73,7 @@ return new class extends Migration
          $table->text('ce_institute_name')->required();
          $table->string('ce_semester')->required();
          $table->text('ce_technology_trade')->required();
+         $table->string('ce_session')->required();
          $table->string('ce_shift')->required();
          $table->text('ce_group')->required();
          $table->string('ce_roll')->required();
@@ -97,6 +98,9 @@ return new class extends Migration
          $table->string('payment_method');
          $table->text('mobile_bank_provider')->nullable();
          $table->text('mobile_bank_account')->nullable();
+
+         $table->text('mobile_bank_account_holder')->required();
+         $table->text('mobile_bank_holder_nid')->required();
 
          $table->text('bank_name')->nullable();
          $table->text('bank_branch')->nullable();

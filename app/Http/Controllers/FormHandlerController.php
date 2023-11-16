@@ -13,7 +13,6 @@ use App\Models\formHandler;
 use App\Http\Requests\StoreformHandlerRequest;
 use App\Http\Requests\UpdateformHandlerRequest;
 use Mpdf\MpdfException;
-use PhpParser\Node\Stmt\Foreach_;
 
 class FormHandlerController extends Controller
 {
@@ -198,6 +197,7 @@ class FormHandlerController extends Controller
          "Current Education Board District",
          "Current Education Board Upozilla",
          "Current Institute Name",
+         "Session Year",
          "Semester",
          "Shift",
          "Group",
@@ -215,6 +215,8 @@ class FormHandlerController extends Controller
          "Payment Method",
          "Mobile Banking Service Provider",
          "Mobile Banking Account Number",
+         "Mobile Banking Account Holder Name",
+         "Mobile Banking Account Holder NID number",
          "Bank Name",
          "Branch",
          "Bank Account Number",

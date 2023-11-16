@@ -360,8 +360,8 @@
                      <tr>
                         <th class="w-25">Attendance Rate:</th>
                         <td>{{ !Request::get('PreviousAttendanceRate') ? $applicant->pe_att_rate : '' }} </td>
-                        <th class="w-25"></th>
-                        <td></td>
+                        <th class="w-25">Session:</th>
+                        <td>{{ !Request::get('SessionYear') ? $applicant->ce_session : '' }} </td>
                      </tr>
                   </tbody>
                   <thead>
@@ -438,14 +438,14 @@
                      <tr>
                         <th class="w-25">Bank Routing Number:</th>
                         <td>{{ !Request::get('BankRoutingNumber') ? $applicant->bank_routing : '' }}</td>
-                        <th class="w-25"></th>
-                        <td></td>
+                        <th class="w-25">Mobile Banking Account Holder Name:</th>
+                        <td>{{ !Request::get('MobileBankingAccountHolderName') ? $applicant->mobile_bank_account_holder : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Account Type:</th>
                         <td>{{ !Request::get('BankAccountType') ? $applicant->bank_acc_type : '' }}</td>
-                        <th class="w-25"></th>
-                        <td></td>
+                        <th class="w-25">Mobile Banking Account Holder NID:</th>
+                        <td>{{ !Request::get('MobileBankingAccountHolderNIDnumber') ? $applicant->mobile_bank_holder_nid : '' }}</td>
                      </tr>
                      <tr>
                         <th class="w-25">Account Holder Name:</th>

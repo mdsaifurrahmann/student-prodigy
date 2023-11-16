@@ -103,6 +103,11 @@
                            <option value="AB Negative (AB-)">AB Negative (AB-)</option>
                         </select>
                      </div>
+
+                     <div class="col-md-4">
+                        <label class="form-label">Session Year</label>
+                        <input type="text" class="form-control dt-input" data-column="53" placeholder="18-19" data-column-index="1" />
+                     </div>
                   </div>
                </form>
             </div>

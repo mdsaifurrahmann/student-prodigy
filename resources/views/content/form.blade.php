@@ -13,7 +13,7 @@
 
 @section('content')
    <div class="row vh-100">
-      <div class="col-12 d-flex align-items-md-center justify-content-center py-3 px-2">
+      <div class="col-12 d-flex align-items-md-center justify-content-center px-2 py-3">
          <div class="card w-lg-75 w-100">
             <div class="card-body font-solaimanlipi">
                <h2 class="card-title text-uppercase text-center">Student Database - Textile Institute Dinajpur</h2>
@@ -38,8 +38,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="student_name_bangla-column">শিক্ষার্থীর নাম (বাংলায়)</label>
-                           <input type="text" id="student_name_bangla-column" class="form-control bn" placeholder="শাকিল আহমেদ" name="student_name_bangla" required
-                              pattern="[\s\u0980-\u09FF]+$" value="{{ old('student_name_bangla') }}">
+                           <input type="text" id="student_name_bangla-column" class="form-control bn" placeholder="শাকিল আহমেদ" name="student_name_bangla"
+                              required pattern="[\s\u0980-\u09FF]+$" value="{{ old('student_name_bangla') }}">
 
                            <div class="invalid-feedback">অনুগ্রহ করে আপনার নামটি বাংলায় লিখুন।</div>
                            @error('student_name_bangla')
@@ -173,8 +173,8 @@
                      <div class="col-md-6 col-12">
                         <div class="mb-1">
                            <label class="form-label" for="father_name_bangla-column">পিতার নাম (বাংলায়)</label>
-                           <input type="text" id="father_name_bangla-column" class="form-control bn" placeholder="সাইমন হাসান সানি" name="father_name_bangla"
-                              pattern="[\s\u0980-\u09FF]+$" required value="{{ old('father_name_bangla') }}">
+                           <input type="text" id="father_name_bangla-column" class="form-control bn" placeholder="সাইমন হাসান সানি"
+                              name="father_name_bangla" pattern="[\s\u0980-\u09FF]+$" required value="{{ old('father_name_bangla') }}">
 
                            <div class="invalid-feedback">অনুগ্রহ করে বাংলায় আপনার পিতার নাম লিখুন।</div>
                            @error('father_name_bangla')
@@ -711,7 +711,7 @@
                         </div>
                      </div>
 
-                     <div class="col-md-4 col-12">
+                     <div class="col-md-3 col-12">
                         <div class="mb-1">
                            <label for="ce_institute_name" class="form-label">প্রতিষ্ঠানের নাম</label>
                            <input type="text" name="ce_institute_name" id="ce_institute_name" class="form-control" placeholder="Textile Institute Dinajpur"
@@ -725,7 +725,7 @@
                         </div>
                      </div>
 
-                     <div class="col-md-4 col-12">
+                     <div class="col-md-3 col-12">
                         <div class="mb-1">
                            <label for="ce_semester" class="form-label">সেমিস্টার</label>
                            <select name="ce_semester" id="ce_semester" class="form-select" required>
@@ -750,7 +750,7 @@
                         </div>
                      </div>
 
-                     <div class="col-md-4 col-12">
+                     <div class="col-md-3 col-12">
                         <div class="mb-1">
                            <label for="ce_technology_trade" class="form-label">টেকনোলজি/ট্রেড</label>
                            <select name="ce_technology_trade" id="ce_technology_trade" class="form-select" required>
@@ -765,6 +765,19 @@
 
                            <div class="invalid-feedback">অনুগ্রহ করে টেকনোলজি/ট্রেড নির্বাচন করুন।</div>
                            @error('ce_technology_trade')
+                              <div class="text-danger">{{ $message }}</div>
+                           @enderror
+                        </div>
+                     </div>
+
+                     <div class="col-md-3 col-12">
+                        <div class="mb-1">
+                           <label for="ce_session" class="form-label">সেশন বছর</label>
+                           <input type="text" id="ce_session" name="ce_session" class="form-control" required placeholder="18-19" pattern="\d{2}-\d{2}"
+                              value="{{ old('ce_session') }}">
+
+                           <div class="invalid-feedback">অনুগ্রহ করে আপনার সেশন বছর লিখুন।</div>
+                           @error('ce_session')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror
                         </div>
@@ -855,8 +868,8 @@
                      <div class="col-md-4 col-12">
                         <div class="mb-1">
                            <label for="guardian_name_bangla" class="form-label">অভিভাবকের নাম (বাংলায়)</label>
-                           <input type="text" id="guardian_name_bangla" name="guardian_name_bangla" class="form-control bn" placeholder="ফজলে রাব্বি" required
-                              pattern="[\s\u0980-\u09FF]+$" value="{{ old('guardian_name_bangla') }}">
+                           <input type="text" id="guardian_name_bangla" name="guardian_name_bangla" class="form-control bn" placeholder="ফজলে রাব্বি"
+                              required pattern="[\s\u0980-\u09FF]+$" value="{{ old('guardian_name_bangla') }}">
 
                            <div class="invalid-feedback">অনুগ্রহ করে অভিভাবকের নাম বাংলায় লিখুন।</div>
                            @error('guardian_name_bangla')
@@ -1098,6 +1111,32 @@
                            </div>
                         </div>
 
+                        <div class="col-md-6 col-12">
+                           <div class="mb-1">
+                              <label class="form-label" for="mobile_bank_account_holder">এ্যাকাউন্টধারীর নাম</label>
+                              <input type="text" id="mobile_bank_account_holder" class="form-control" name="mobile_bank_account_holder"
+                                 placeholder="Abdus Salam" value="{{ old('mobile_bank_account_holder') }}">
+
+                              <div class="invalid-feedback">অনুগ্রহ করে মোবাইল ব্যাংকিং এ্যাকাউন্টধারীর নাম লিখুন।</div>
+                              @error('mobile_bank_account_holder')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                           <div class="mb-1">
+                              <label class="form-label" for="mobile_bank_holder_nid">এ্যাকাউন্টধারীর NID নম্বর</label>
+                              <input type="text" id="mobile_bank_holder_nid" class="form-control" name="mobile_bank_holder_nid" placeholder="123 123 1234"
+                                 pattern="[0-9]{9,20}" value="{{ old('mobile_bank_holder_nid') }}">
+
+                              <div class="invalid-feedback">অনুগ্রহ করে মোবাইল ব্যাংকিং এ্যাকাউন্টধারীর NID নম্বরটি লিখুন।</div>
+                              @error('mobile_bank_holder_nid')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
+                        </div>
+
                      </div>
 
 
@@ -1164,8 +1203,8 @@
                         <div class="col-md-4 col-12">
                            <div class="mb-1">
                               <label class="form-label" for="bank_acc_name">এ্যাকাউন্টধারীর নাম</label>
-                              <input type="text" id="bank_acc_name" class="form-control banking-unchecked" name="bank_acc_name" placeholder="Shakil Ahmed"
-                                 required value="{{ old('bank_acc_name') }}">
+                              <input type="text" id="bank_acc_name" class="form-control banking-unchecked" name="bank_acc_name"
+                                 placeholder="Shakil Ahmed" required value="{{ old('bank_acc_name') }}">
 
                               <div class="invalid-feedback">অনুগ্রহ করে এ্যাকাউন্ট ধারীর নাম লিখুন।</div>
                               @error('bank_acc_name')
